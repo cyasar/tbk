@@ -5,14 +5,15 @@ from urllib.parse import unquote, urlsplit
 root=Path(__file__).resolve().parents[1]
 class Page(HTMLParser):
     def __init__(self,text):
-        super().__init__();self.ids=[];self.links=[];self.sections=0;self.questions=0;self.feed(text)
+        super().__init__();self.ids=[];self.links=[];self.sections=0;self.questions=0;self.in_quiz=False;self.feed(text)
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if 'id' in a:self.ids.append(a['id'])
         for key in ('href','src'):
             if a.get(key):self.links.append(a[key])
         if tag=='section' and 'lesson-section' in a.get('class',''):self.sections+=1
-        if tag=='summary':self.questions+=1
+        if tag=='section':self.in_quiz=a.get('id')=='test'
+        if tag=='summary' and self.in_quiz:self.questions+=1
 pages={p:Page(p.read_text(encoding='utf-8')) for p in [root/'index.html',*sorted((root/'weeks').glob('*.html'))]}
 errors=[]
 for path,page in pages.items():

@@ -92,3 +92,10 @@ Dönem projesi gerçek bir bulut veya sensör servisine bağlı değildir; örne
 İlk haftadaki **Bilgisayarların Tarihi** bölümü, abaküsten günümüze 14 dönüm noktasını yatay bir tarih çizgisinde gösterir. Başlangıç durağı 1947 transistör devrimidir. Transistör öncesi ve sonrası farklı renklerle ayrılır; önceki/sonraki düğmeleri ve dönem kısayolları ile gezinilir. Çizgi odaktayken ok tuşları ve Home/End tarihleri değiştirir; sunumun slaytını değiştirmez.
 
 İçerik `content/history.json`, üretim `scripts/history.py`, davranış `js/history.js`, görünüm `css/history.css` dosyalarındadır. `assets/images/history/` altındaki özgün SVG çizimler temsili eğitim görselleridir; arşiv fotoğrafı veya ölçekli teknik çizim değildir. Kaynaklar her durağın içinde bağlantılıdır. JavaScript kapalıyken ve yazdırmada tüm duraklar okunur. Tarihler sıralıdır; çizgideki aralıklar gerçek zaman uzunluğunu temsil etmez.
+
+
+## Açık ve sade görünüm
+
+Arayüz açık tema ile başlar; koyu tema isteğe bağlıdır. Yeni görünüm tercihi `tbk-theme-v2` anahtarında tutulur; önceki tema tercihi bu tasarım yenilemesinde bir kez sıfırlanır. Ders ilerlemesi korunur. Mobilde ana menü ve ders içindekiler açılıp kapanır. Hazır iki hafta öne çıkarılır, planlanan haftalar kısa kartlarda gösterilir.
+
+CSS bu proje için özgün yazılmıştır; Edunex paketinin CSS dosyaları veya bağımlılıkları kullanılmamıştır. Tasarım framework gerektirmez. Responsive kurallar `css/responsive.css` içinde, ortak değişken ve bileşenler `css/style.css` içindedir.
