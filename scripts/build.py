@@ -4,6 +4,7 @@ from html import escape as esc
 import json
 from history import render_history
 from concepts import render_concepts
+from architecture import render_architecture
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'content/weeks.json').read_text(encoding='utf-8'))
@@ -50,7 +51,8 @@ for n,w in enumerate(DATA,1):
     for j,(title,text) in enumerate(w['lessons']):
         sections.append((f'konu-{j+1}', title, ''.join('<p>'+esc(p)+'</p>' for p in text.split('\n'))))
     if 'table' in w: sections.append(('karsilastirma','Karşılaştırma',table(w['table'][0],w['table'][1:])))
-    sections.append(('mimari','Sistem Mimarisi','<div class="diagram">'+esc(w['diagram'])+'</div><p>'+esc(w['architecture'])+'</p>'))
+    architecture = render_architecture() if n == 1 else '<div class="diagram">'+esc(w['diagram'])+'</div><p>'+esc(w['architecture'])+'</p>'
+    sections.append(('mimari','Sistem Mimarisi',architecture))
     sections.append(('ornek','Gerçek Dünya Örneği','<p>'+esc(w['example'])+'</p>'))
     practice=ul(w['practice'])+code(w['code'])
     if n==7: practice+='''<div class="demo"><p>Tarayıcı simülasyonu · fiziksel sensöre bağlı değildir.</p><button id="sensor-read">Sensör değerini güncelle</button><output id="sensor-value" aria-live="polite">25.0 °C (simülasyon)</output><button id="led-toggle" aria-pressed="false"><span class="led" id="led" aria-hidden="true"></span><span id="led-state">LED kapalı</span></button></div>'''

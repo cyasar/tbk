@@ -1,0 +1,15 @@
+@media(max-width:760px){
+  .architecture-link{font-size:0;transform:none}
+  .architecture-link::after{content:'↓';font-size:25px}
+  .architecture-general .node-input,.architecture-electronic .node-sensor{order:1}
+  .link-input-process,.link-sensor-adc{order:2}
+  .architecture-general .node-process,.architecture-electronic .node-adc{order:3}
+  .link-process-memory,.link-adc-processor{order:4}
+  .architecture-general .node-memory,.architecture-electronic .node-processor{order:5}
+  .link-process-storage,.link-processor-ram{order:6}
+  .architecture-general .node-storage,.architecture-electronic .node-ram{order:7}
+  .link-process-output,.link-processor-flash{order:8}
+  .architecture-general .node-output,.architecture-electronic .node-flash{order:9}
+  .link-processor-actuator{order:10}
+  .architecture-electronic .node-actuator{order:11}
+}
