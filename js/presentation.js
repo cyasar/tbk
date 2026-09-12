@@ -1,0 +1,13 @@
+/* Each semantic lesson section is a slide; long slides remain scrollable. */
+(() => {
+  const start = document.querySelector('#start-presentation'); if (!start) return;
+  const slides = [...document.querySelectorAll('.lesson-section')];
+  const controls = document.querySelector('.presentation-controls');
+  let index = 0, active = false, previousFocus, scrollY = 0;
+  function show(next) { index = Math.max(0, Math.min(slides.length - 1, next)); slides.forEach((slide, i) => { slide.classList.toggle('active-slide', i === index); if (active) slide.setAttribute('aria-hidden', String(i !== index)); else slide.removeAttribute('aria-hidden'); }); slides[index].scrollTop = 0; document.querySelector('#slide-count').textContent = `Slayt ${index + 1} / ${slides.length}`; document.querySelector('#slide-progress').value = (index + 1) / slides.length * 100; document.querySelector('#slide-prev').disabled = index === 0; document.querySelector('#slide-next').disabled = index === slides.length - 1; }
+  function exit() { active = false; document.body.classList.remove('presentation-mode'); controls.hidden = true; show(index); if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); window.scrollTo(0, scrollY); previousFocus?.focus({preventScroll:true}); }
+  async function fullscreen() { try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch { document.querySelector('#presentation-message').textContent = 'Tam ekran bu tarayıcıda kullanılamıyor.'; } }
+  start.addEventListener('click', () => { previousFocus = document.activeElement; scrollY = window.scrollY; active = true; document.body.classList.add('presentation-mode'); controls.hidden = false; show(index); document.querySelector('#slide-exit').focus(); });
+  document.querySelector('#slide-next').addEventListener('click', () => show(index + 1)); document.querySelector('#slide-prev').addEventListener('click', () => show(index - 1)); document.querySelector('#slide-exit').addEventListener('click', exit); document.querySelector('#slide-fullscreen').addEventListener('click', fullscreen);
+  document.addEventListener('keydown', event => { if (!active) return; if (event.key === 'Escape') { event.preventDefault(); exit(); return; } if (event.target.closest('input,textarea,select,[contenteditable=true]')) return; if (event.code === 'Space' && event.target.closest('button,summary,a')) return; const actions = { ArrowRight: () => show(index + 1), ArrowLeft: () => show(index - 1), Home: () => show(0), End: () => show(slides.length - 1), f: fullscreen, F: fullscreen, ' ': () => show(index + 1) }; if (actions[event.key]) { event.preventDefault(); actions[event.key](); } });
+})();

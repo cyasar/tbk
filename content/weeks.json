@@ -1,0 +1,331 @@
+[
+  {
+    "title": "Bilgisayarların Kısa Tarihi ve Bilgisayar Sistemleri",
+    "intro": "Mekanik hesaplamadan modern işlemcilere: bir bilgisayarın parçalarını ve aralarındaki ilişkiyi keşfedin.",
+    "group": "Sistemler",
+    "category": "systems",
+    "concepts": [
+      [
+        "Bilgisayar",
+        "Kodlanmış veriler üzerinde programdaki komutları uygulayan, sonuç üreten sistem."
+      ],
+      [
+        "Von Neumann",
+        "Komut ve verinin ortak bellek modelinde tutulduğu, işlemcinin bunları yollar üzerinden aldığı mimari."
+      ],
+      [
+        "CPU / GPU",
+        "CPU genel amaçlı kontrol ve hesaplama; GPU çok sayıda benzer işlemi paralel yürütmek için tasarlanır."
+      ],
+      [
+        "RAM / Depolama",
+        "RAM çalışan programın geçici alanıdır; SSD/HDD güç kesilince veriyi korur."
+      ],
+      [
+        "ISA",
+        "Yazılımın işlemciye sunduğu komut kümesi ve programcıya görünen mimari sözleşme."
+      ],
+      [
+        "MCU",
+        "İşlemci çekirdeğini, belleği ve çevre birimlerini aynı yongada birleştiren mikrodenetleyici."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · Mekanik hesaplamadan programa",
+        "Abaküs gibi araçlar hesaplamayı insana yardımcı olacak biçimde düzenledi. Dişli tabanlı mekanik hesaplayıcılar toplama ve taşıma işlemlerini fiziksel hareketle gerçekleştirdi. Charles Babbage’ın 19. yüzyıldaki Analitik Makine tasarımı, bellek ve işlem birimi olan programlanabilir genel amaçlı makine fikrini geliştirdi; makine kendi döneminde tamamlanmadı.\nAda Lovelace, Analitik Makine üzerine notlarında Bernoulli sayıları için bir işlem dizisi anlattı ve makinenin sayılar dışındaki sembolleri de işleyebileceğini tartıştı. Burada önemli ayrım, belirli bir hesabı yapan mekanizma ile farklı algoritmalar için programlanabilen sistemdir."
+      ],
+      [
+        "Elektronik bilgisayarın dönüm noktaları",
+        "1940’larda geliştirilen ve 1946’da kamuya tanıtılan ENIAC, vakum tüpleriyle çalışan büyük ölçekli elektronik bir genel amaçlı bilgisayardı; ilk programlama süreci kablo ve anahtar düzenlemelerine dayanıyordu. “İlk bilgisayar” ifadesi elektronik, programlanabilir ve genel amaçlı gibi ölçütlere göre değişir.\n1947’de gösterilen transistör, anahtarlama ve yükseltmeyi küçük yarı iletken yapılarla sağladı. 1950’lerin sonundaki entegre devreler birden fazla elemanı aynı yongada topladı. Mikroişlemci, CPU işlevlerini bir yonga üzerinde birleştirerek 1970’lerde daha küçük ve erişilebilir sistemlerin önünü açtı."
+      ],
+      [
+        "Kişisel, bağlı ve mobil bilgisayarlar",
+        "1970–1980’lerde kişisel bilgisayarlar bireysel yazılım kullanımını yaygınlaştırdı. Grafik arayüzler etkileşim maliyetini azalttı. İnternet, paket anahtarlamalı ağların birbirine bağlanmasıyla gelişti; Web ise bu altyapıyı kullanan bağlantılı belge ve uygulama sistemidir. İkisi aynı şey değildir.\nDizüstü bilgisayarlar, akıllı telefonlar ve tek kart bilgisayarlar enerji, boyut ve bağlantıyı tasarımın merkezine taşıdı. Bugünkü bilgisayar sistemleri masaüstünden veri merkezine ve bir motor sürücüsündeki MCU’ya kadar uzanır. Performans tek başına saat frekansıyla değil iş yükü, mimari, bellek ve güç sınırlarıyla değerlendirilir."
+      ],
+      [
+        "Modern bilgisayar mimarisi ve anakart",
+        "Von Neumann modelinde CPU komutu bellekten getirir, çözer ve yürütür. Veri ve komut trafiğinin aynı kaynakları paylaşması darboğaz oluşturabilir. Modern işlemciler ayrı komut/veri önbellekleri gibi karma düzenler kullanır; basit model fiziksel tasarımın tüm ayrıntısı değildir.\nAnakart işlemci, RAM, depolama ve çevre birimleri arasındaki elektriksel bağlantıları sağlar. CPU kontrol akışını ve genel hesaplamayı yürütür; GPU görüntü işleme yanında paralel sayısal hesaplarda kullanılır. Güç kaynağı şebekeden gelen enerjiyi bileşenlerin gerektirdiği DC gerilimlere dönüştürür. Güç, soğutma ve bağlantı uyumluluğu birlikte değerlendirilmelidir."
+      ],
+      [
+        "RAM, ROM, SSD, HDD ve NVMe",
+        "RAM uçucu çalışma belleğidir; açık uygulamanın verileri burada tutulur. ROM kalıcı bellek kavramıdır; modern sistemlerin firmware’i sıklıkla güncellenebilir Flash üzerinde saklanır. HDD dönen manyetik plakalar ve hareketli kafa kullanır; SSD hareketli mekanik parça olmadan Flash bellek kullanır.\nNVMe bir disk boyutu veya Flash türü değil, çoğunlukla PCIe üzerinden çalışan depolama protokolüdür. M.2 fiziksel biçim/bağlantı standardı ailesidir; her M.2 aygıt NVMe değildir. Kapasite, gecikme, aktarım hızı ve dayanıklılık ayrı ölçütlerdir. Daha fazla RAM depolama kapasitesini artırmaz."
+      ],
+      [
+        "Giriş, çıkış ve bağlantı noktaları",
+        "Klavye, fare, mikrofon ve sensör giriş; ekran, hoparlör ve aktüatör çıkış birimleridir. Dokunmatik ekran hem giriş hem çıkış sağlar. USB çevre birimi veri iletişimini ve belirli koşullarda güç aktarımını destekler. USB-C konektör biçimidir; her USB-C portu aynı hız, görüntü veya şarj yeteneğine sahip değildir.\nHDMI ve DisplayPort dijital görüntü/ses taşır. Thunderbolt, sürüme ve aygıta bağlı olarak veri, görüntü ve güç özelliklerini bir bağlantıda birleştirir. Ethernet yerel ağ iletişiminde kullanılır; PCIe ise GPU ve NVMe gibi aygıtların yüksek hızlı dahili bağlantısıdır. Uygun kablo seçimi için konektör görünümünü değil iki uçtaki desteklenen özellikleri kontrol edin."
+      ],
+      [
+        "Intel, AMD, ARM ve Apple Silicon",
+        "Intel ve AMD işlemci üreten şirketlerdir; x86 bir komut kümesi ailesidir. x64 yaygın kullanımda x86-64’ü ifade eder. Arm hem şirketi hem mimari ailesi bağlamında kullanılır. Apple Silicon, Apple’ın Arm komut kümesini kullanan SoC ailesidir. Marka, ISA ve fiziksel ürün birbirinden ayrılmalıdır.\nRISC ve CISC, komut kümesi tasarım yaklaşımlarını anlatır. “RISC her zaman daha hızlıdır” veya “CISC daima daha fazla enerji harcar” sonucu çıkarılamaz. Modern uygulamalarda mikro mimari, üretim süreci, derleyici ve iş yükü belirleyicidir. Aynı ISA’yı kullanan iki işlemci farklı performans gösterebilir."
+      ]
+    ],
+    "diagram": "Girdi → İşleme ↔ Bellek\n             ↕\n          Depolama → Çıktı\n\nSensör → ADC → CPU/MCU ↔ RAM\n                  ↕\n              Flash/SSD → Ekran/Aktüatör",
+    "architecture": "Bellek ve depolama tek yönlü zorunlu duraklar değildir. ADC analog sinyali sayısallaştırır; dijital sensörlerde bu dönüşüm sensör içinde olabilir.",
+    "example": "Bir sıcaklık kontrol sisteminde sensör ölçüm üretir, MCU eşikle karşılaştırır ve fanı sürer. Bilgisayarda klavye yerine sensör, ekran yanında aktüatör bulunur; aynı bilgi işleme modeli geçerlidir.",
+    "practice": [
+      "Kendi bilgisayarınızın CPU, RAM, depolama ve portlarını sistem bilgilerinden belirleyin.",
+      "Bir ESP32 geliştirme kartının tam modelini seçip veri sayfasından çekirdek, RAM ve Flash bilgilerini bulun.",
+      "Girdi–işleme–bellek–depolama–çıktı modelini iki sistem için çizin."
+    ],
+    "code": "# Sistem incelemesi\n| Bileşen | Model / kapasite | Görevi | Kaynak |\n|---|---|---|---|\n| CPU | Kendi cihazınızı yazın | Komut yürütme | Sistem bilgisi |\n| RAM | Ölçüp doldurun | Geçici çalışma alanı | Sistem bilgisi |",
+    "prompt": "Bir PC ve ESP32 tabanlı sıcaklık ölçüm sistemini girdi, işlemci, bellek, depolama ve çıktı açısından karşılaştır. Marka ile komut kümesini ayır. Kart modeline bağlı bilgileri varsayım olarak işaretle; doğrulamak için gereken veri sayfası başlıklarını öner.",
+    "quiz": [
+      [
+        "İnternet ile Web aynı şey midir?",
+        "Hayır. İnternet ağ altyapısıdır; Web bu altyapıda HTTP gibi protokollerle çalışan bir hizmettir."
+      ],
+      [
+        "RAM neden SSD yerine geçmez?",
+        "RAM uçucudur ve çalışma alanıdır; SSD kalıcı depolamadır."
+      ],
+      [
+        "USB-C hızlı veri aktarımını garanti eder mi?",
+        "Hayır. Konektör biçimi, desteklenen USB sürümü ve ek protokolleri garanti etmez."
+      ],
+      [
+        "NVMe ile M.2 farkı nedir?",
+        "NVMe bir protokoldür; M.2 fiziksel biçim ve bağlantı standardıdır."
+      ],
+      [
+        "ADC ne işe yarar?",
+        "Analog sinyali örnekleyip sayısal değerlere dönüştürür; ölçüm çözünürlüğü ve örnekleme hızı önemlidir."
+      ]
+    ],
+    "task": "PC, MacBook, Raspberry Pi, Arduino ve ESP32 için kaynaklı bir karşılaştırma raporu hazırlayın. Donanım modellerini açıkça yazın.",
+    "goals": [
+      "Bilgisayar tarihindeki altı dönüşümü gerekçeleriyle açıklamak.",
+      "Von Neumann modelinde komut ve veri akışını çizmek.",
+      "CPU, GPU, RAM ve depolamanın işlevlerini ayırmak.",
+      "Port biçimi ile iletişim protokolünü ayırt etmek.",
+      "Marka, ISA ve mimari yaklaşım arasındaki farkı açıklamak.",
+      "PC ve MCU sistemlerini ortak bilgi işleme modeliyle karşılaştırmak."
+    ],
+    "verify": [
+      "Üretilen açıklamayı aşağıdaki resmî/teknik kaynakla karşılaştırın.",
+      "Örneği çalıştırıp beklenen ve gözlenen sonucu kaydedin; bir sınır durumunu deneyin.",
+      "Varsayımları, birimleri ve olası hataları açıklayın; anlamadığınız satırı teslim etmeyin."
+    ],
+    "sources": [
+      [
+        "Computer History Museum · Timeline",
+        "https://www.computerhistory.org/timeline/"
+      ],
+      [
+        "Raspberry Pi belgeleri",
+        "https://www.raspberrypi.com/documentation/"
+      ],
+      [
+        "Espressif teknik belgeler",
+        "https://docs.espressif.com/"
+      ]
+    ],
+    "table": [
+      [
+        "Platform",
+        "İşleme / bellek",
+        "Tipik kullanım"
+      ],
+      [
+        "PC",
+        "Genellikle x86-64 CPU, RAM, SSD; başka ISA’lar da mümkündür",
+        "Genel amaçlı masaüstü ve mühendislik yazılımı"
+      ],
+      [
+        "MacBook",
+        "Modele göre Intel veya Apple Silicon; RAM ve SSD",
+        "Taşınabilir genel amaçlı bilgisayar"
+      ],
+      [
+        "Raspberry Pi",
+        "Modeline göre Arm SoC; RAM ve microSD/diğer depolama",
+        "Tek kart bilgisayar; Pico ailesi MCU’dur"
+      ],
+      [
+        "Arduino Uno R3",
+        "ATmega328P MCU; SRAM ve Flash",
+        "Basit gerçek zamanlı giriş/çıkış; diğer Arduino modelleri farklıdır"
+      ],
+      [
+        "ESP32",
+        "Modele göre Xtensa veya RISC-V MCU; SRAM ve Flash",
+        "Kablosuz gömülü uygulamalar"
+      ]
+    ]
+  },
+  {
+    "title": "İşletim Sistemleri",
+    "intro": "Donanımı yöneten katman: süreçlerden dosya izinlerine, masaüstünden gerçek zamanlı cihazlara.",
+    "group": "Sistemler",
+    "category": "systems",
+    "concepts": [
+      [
+        "Kernel",
+        "CPU, bellek ve aygıt erişimini yöneten işletim sistemi çekirdeği."
+      ],
+      [
+        "Shell / GUI / CLI",
+        "Shell komut yorumlayıcıdır; CLI metin, GUI grafik tabanlı etkileşim sunar. Shell yalnızca terminal penceresi değildir."
+      ],
+      [
+        "Process / Thread",
+        "Process kaynak ve adres alanı bağlamıdır; thread bu bağlam içindeki yürütme akışıdır."
+      ],
+      [
+        "Virtual Memory",
+        "Süreçlere sanal adres alanları sunan adres çevirisi ve koruma mekanizması; yalnızca disk kullanımı değildir."
+      ],
+      [
+        "Driver",
+        "İşletim sistemi ile belirli donanım arasındaki iletişimi sağlayan sürücü."
+      ],
+      [
+        "RTOS",
+        "Görevlerin zaman sınırları içinde çalışmasını hedefleyen gerçek zamanlı işletim sistemi."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · İşletim sistemi ne yapar?",
+        "İşletim sistemi donanım kaynaklarını programlar arasında paylaştırır ve dosya, ağ, süreç gibi soyutlamalar sunar. Uygulama diskteki bir dosyayı açarken her diskin elektriksel ayrıntısını bilmez; sistem çağrıları ve sürücüler bu ayrıntıyı yönetir.\nKernel ayrıcalıklı işlemleri yürütür. GUI kullanıcıya pencere ve menü sağlar; CLI metin komutlarını kabul eder. Bash, PowerShell gibi shell’ler komutları yorumlayabilir ve otomasyon yapabilir. Bir sistem grafik arayüz olmadan da çalışabilir."
+      ],
+      [
+        "Process, thread, scheduling ve multitasking",
+        "Çalışan bir program süreçtir (process). Sürecin adres alanı, açık dosyaları ve güvenlik bağlamı vardır. Thread aynı süreç içindeki diğer thread’lerle belleği paylaşan yürütme akışıdır; paylaşım hızlıdır fakat yarış koşulları doğurabilir.\nScheduling, çalışmaya hazır görevlerden hangisinin CPU alacağını seçer. Zaman dilimleri, öncelikler ve bekleme durumları bu kararı etkiler. Multitasking görevlerin ilerlemesini sağlar; tek çekirdekte hızlı geçiş eşzamanlılık hissi verir, çok çekirdekte bazı görevler gerçekten paralel çalışabilir. Her yüksek CPU kullanımı hata anlamına gelmez."
+      ],
+      [
+        "Bellek yönetimi, swap ve page file",
+        "İşletim sistemi adres çevirisi ve koruma ile bir sürecin diğerinin belleğine izinsiz erişmesini engellemeye çalışır. Sanal adresler fiziksel sayfalara eşlenir. Bir sayfa henüz fiziksel bellekte değilse page fault oluşabilir; her page fault disk erişimi gerektirmez.\nSwap alanı veya Windows page file, bazı bellek sayfalarının disk üzerinde tutulmasını sağlar. Bunlar RAM kadar hızlı değildir. Aşırı sayfalama performansı düşürebilir. Sanal bellek ile swap aynı kavram değildir; disk sayfalaması sanal bellek sisteminin olası bir parçasıdır."
+      ],
+      [
+        "Dosyalar, kullanıcılar ve izinler",
+        "Dosya sistemi adları, klasörleri, veri bloklarını ve metadata’yı düzenler. User hesabı günlük işlemlerin yetkisini belirler. Windows Administrator ve Unix benzeri sistemlerde root daha geniş yetkilere sahiptir; günlük işi en düşük gerekli yetkiyle yapmak hata etkisini sınırlar.\nPermissions okuma, yazma ve çalıştırma gibi eylemleri sınırlar. Dosya sahibinin kim olduğu ve paylaşılan klasörün erişimleri ayrıca değerlendirilir. Bir belgenin kopyası alındığında izinlerin otomatik korunacağını varsaymayın. Driver, işletim sisteminin donanımla konuşmasına aracılık eder; yanlış sürücü aygıtın çalışmamasına neden olabilir."
+      ],
+      [
+        "Boot: güç düğmesinden kullanıcı oturumuna",
+        "Güç verildiğinde firmware donanımı başlatır. PC’lerde UEFI/BIOS başlatma ve önyükleme sürecinde rol alır. Bootloader çekirdeği ve gerekli başlangıç verilerini yükler; kernel aygıtları ve belleği hazırlar, sistem servisleri başlar, kullanıcı oturumu açılır.\nGömülü sistemde ROM içindeki önyükleyici Flash’taki uygulamaya geçebilir. Bir bootloader’ın bulunması cihazda genel amaçlı işletim sistemi olduğu anlamına gelmez. Firmware, cihazın işlevini sağlayan kalıcı yazılımdır; işletim sistemi içerebilir veya içermeyebilir."
+      ],
+      [
+        "Windows, Linux, macOS ve mobil sistemler",
+        "Windows geniş masaüstü yazılımı ve donanım ekosistemiyle; macOS Apple bilgisayarlarıyla bütünleşik ortamıyla; Linux farklı dağıtımlar ve esnek sistem yapılandırmasıyla kullanılır. Pardus, Debian tabanlı bir Linux dağıtımıdır. Linux teknik olarak çekirdeğin adıdır; dağıtım çekirdekle birlikte araç ve uygulamaları paketler.\nAndroid Linux çekirdeği üzerine mobil uygulama çerçeveleri ekler. iOS Apple’ın mobil işletim sistemidir. Uygulama uyumluluğu, sürücü desteği, lisans, güncelleme politikası ve kullanım amacı seçimi etkiler. “En iyi işletim sistemi” uygulama bağlamından bağımsız belirlenemez."
+      ],
+      [
+        "Dosya sistemi seçimi",
+        "NTFS Windows sistemlerinde izinler ve günlükleme gibi özellikler sunar. FAT32 geniş aygıt uyumluluğuna sahiptir fakat tek dosya boyutu yaklaşık 4 GiB ile sınırlıdır. exFAT büyük dosyalar ve taşınabilir depolama için kullanılır. ext4 Linux’ta yaygındır. APFS Apple sistemleri için geliştirilmiştir.\nUyumluluk işletim sistemi sürümüne ve sürücüye bağlıdır; bir diskin okunabilmesi yazılabileceğini garanti etmez. Dosya sistemi seçerken tek dosya boyutu, izinler, hata sonrası kurtarma ve hedef cihazları birlikte düşünün. Bu uygulamada gerçek diski biçimlendirmeyin; seçim gerekçesini raporlayın."
+      ],
+      [
+        "Her elektronik cihazda işletim sistemi bulunmak zorunda mıdır?",
+        "Hayır. Basit bir MCU reset sonrası doğrudan uygulama döngüsünü çalıştırabilir; buna bare-metal yaklaşım denir. Kesme mekanizmaları olaylara yanıt verir. Küçük bir kontrol görevi için süreç, kullanıcı hesabı veya dosya sistemi gerekmeyebilir.\nFreeRTOS gibi RTOS’lar görev zamanlama, kuyruk ve senkronizasyon sağlar. Gerçek zamanlılık yalnızca hız değil, belirlenen süre içinde yanıt verme gereksinimidir; RTOS seçmek tek başına son tarih garantisi vermez. Embedded Linux daha zengin ağ, dosya ve uygulama ortamı sağlar fakat kaynak gereksinimi ve zamanlama özellikleri farklıdır.\nPC ve MacBook genel amaçlı OS; Raspberry Pi tek kart bilgisayarları sıklıkla Linux; Arduino Uno basit uygulamalarda bare-metal; ESP32 kullanılan yazılım çatısına göre RTOS veya başka çalışma düzenleri kullanabilir. Router ve Smart TV’de sıklıkla gömülü OS, telefonda mobil OS bulunur. Otomobil ECU ve endüstriyel kontrol sistemi zaman gereksinimine göre RTOS veya bare-metal kullanabilir; her cihaz modeli için doğrulama gerekir."
+      ]
+    ],
+    "diagram": "Güç → Firmware → Bootloader → Kernel → Servisler → Oturum\n\nUygulama → Sistem çağrısı → Kernel → Driver → Donanım\n\nBare-metal: Reset → Başlatma → Ana döngü / Kesme",
+    "architecture": "Kullanıcı arayüzü sistemin görünen yüzüdür. Kaynakların güvenli paylaşımı kernel ve donanım korumasıyla sağlanır; küçük MCU’larda bu katmanların tamamı bulunmayabilir.",
+    "example": "Bir ortam izleme cihazında ESP32 ölçüm görevini yürütürken Raspberry Pi verileri saklayıp web sunucusu çalıştırabilir. İlkinde zamanında örnekleme, ikincisinde ağ ve dosya hizmetleri öne çıkar.",
+    "practice": [
+      "Görev Yöneticisi veya sistem izleyicisinde bir uygulamanın CPU/RAM kullanımını gözleyin.",
+      "Birden fazla uygulama açıldığında süreç sayısı ve bellek kullanımındaki değişimi kaydedin.",
+      "Salt okunur komutlarla mevcut kullanıcı ve çalışma dizinini bulun; yönetici yetkisi kullanmayın.",
+      "8 GB tek dosya taşıyacak USB bellek için FAT32 ve exFAT seçimini gerekçelendirin."
+    ],
+    "code": "# PowerShell (salt okunur)\nGet-Process | Select-Object -First 5 Name, CPU\nGet-Location\nwhoami\n\n# Linux / macOS terminali\n# ps -e\n# pwd\n# whoami",
+    "prompt": "ESP32 sıcaklık kontrolü ve Raspberry Pi web sunucusu için bare-metal, FreeRTOS ve Embedded Linux seçeneklerini karşılaştır. Kaynak gereksinimi ve zaman sınırlarını ayrı değerlendir. RTOS kullanmanın neden tek başına gerçek zaman garantisi olmadığını açıkla.",
+    "quiz": [
+      [
+        "Kernel ile shell farkı nedir?",
+        "Kernel kaynakları yönetir; shell kullanıcının komutlarını yorumlar."
+      ],
+      [
+        "Thread’ler neyi paylaşır?",
+        "Aynı süreçteki thread’ler adres alanını ve birçok kaynağı paylaşır; kendi yürütme bağlamları vardır."
+      ],
+      [
+        "Sanal bellek yalnızca swap mıdır?",
+        "Hayır. Adres çevirisi ve korumayı da kapsar; swap disk üzerindeki sayfa saklama alanıdır."
+      ],
+      [
+        "Her elektronik cihaz OS gerektirir mi?",
+        "Hayır. Basit bir MCU uygulaması doğrudan ana döngü ve kesmelerle çalışabilir."
+      ],
+      [
+        "RTOS neden yalnızca hızlı OS değildir?",
+        "Amaç yanıt süresini öngörülebilir kılmaktır; son tarih analizi tüm sistem için yapılmalıdır."
+      ]
+    ],
+    "task": "On cihaz için OS / RTOS / bare-metal olasılıklarını ve seçim gerekçelerini tabloya aktarın. Gözlemlediğiniz süreç ve bellek verilerini kişisel bilgi içermeden belgeleyin.",
+    "goals": [
+      "Kernel, shell, GUI ve CLI rollerini ayırmak.",
+      "Process, thread ve scheduling ilişkisini açıklamak.",
+      "RAM, sanal bellek ve swap ayrımını yapmak.",
+      "Dosya sistemlerini kullanım senaryosuna göre seçmek.",
+      "İzin ve ayrıcalık kavramlarını uygulamak.",
+      "Boot sürecini sıralamak.",
+      "OS, RTOS ve bare-metal seçeneklerini karşılaştırmak."
+    ],
+    "verify": [
+      "Üretilen açıklamayı aşağıdaki resmî/teknik kaynakla karşılaştırın.",
+      "Örneği çalıştırıp beklenen ve gözlenen sonucu kaydedin; bir sınır durumunu deneyin.",
+      "Varsayımları, birimleri ve olası hataları açıklayın; anlamadığınız satırı teslim etmeyin."
+    ],
+    "sources": [
+      [
+        "Operating Systems: Three Easy Pieces",
+        "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      ],
+      [
+        "FreeRTOS belgeleri",
+        "https://www.freertos.org/Documentation/"
+      ],
+      [
+        "Pardus",
+        "https://www.pardus.org.tr/"
+      ]
+    ],
+    "table": [
+      [
+        "Cihaz",
+        "Tipik yazılım",
+        "Karar ölçütü"
+      ],
+      [
+        "PC / MacBook",
+        "Windows, Linux / macOS",
+        "Uygulama ve sürücü desteği"
+      ],
+      [
+        "Raspberry Pi",
+        "Embedded Linux; modeline bağlı",
+        "Ağ, dosya ve arayüz ihtiyaçları"
+      ],
+      [
+        "Arduino Uno",
+        "Bare-metal firmware",
+        "Az bellek, basit kontrol döngüsü"
+      ],
+      [
+        "ESP32",
+        "Sıklıkla FreeRTOS tabanlı firmware",
+        "Ölçüm ve haberleşme görevleri"
+      ],
+      [
+        "Router / Smart TV",
+        "Embedded Linux veya üretici OS",
+        "Ağ / medya hizmetleri"
+      ],
+      [
+        "Akıllı telefon",
+        "Android / iOS",
+        "Mobil uygulamalar, güç ve güvenlik"
+      ],
+      [
+        "Otomobil ECU",
+        "RTOS veya bare-metal",
+        "Zaman sınırları ve güvenilirlik"
+      ],
+      [
+        "Endüstriyel kontrol",
+        "RTOS, bare-metal veya gömülü OS",
+        "Kontrol çevrimi ve sistem gereksinimleri"
+      ]
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Bilgisayarların Kısa Tarihi ve Bilgisayar Sistemleri",
+    "intro": "Mekanik hesaplamadan modern işlemcilere: bir bilgisayarın parçalarını ve aralarındaki ilişkiyi keşfedin.",
+    "category": "systems",
+    "group": "Sistemler"
+  },
+  {
+    "title": "İşletim Sistemleri",
+    "intro": "Donanımı yöneten katman: süreçlerden dosya izinlerine, masaüstünden gerçek zamanlı cihazlara.",
+    "category": "systems",
+    "group": "Sistemler"
+  },
+  {
+    "title": "İşlemci, Bellek ve Gömülü Sistemlere Giriş",
+    "intro": "Komut döngüsünü izleyin; CPU, MCU ve bellek hiyerarşisini gerçek geliştirme kartlarına bağlayın.",
+    "category": "systems",
+    "group": "Sistemler"
+  },
+  {
+    "title": "İnternet ve Ağ Teknolojilerinin Temelleri",
+    "intro": "Bir web adresinden veri paketine: cihazların birbirini nasıl bulduğunu ve haberleştiğini öğrenin.",
+    "category": "systems",
+    "group": "Ağ"
+  },
+  {
+    "title": "Web Teknolojilerine Giriş ve HTML",
+    "intro": "Elektrik-elektronik projeniz için erişilebilir, anlamlı ve bağlantılı ilk web sayfasını oluşturun.",
+    "category": "web",
+    "group": "Web"
+  },
+  {
+    "title": "CSS ve Web Tasarımı",
+    "intro": "HTML projenize görsel düzen kazandırın; farklı ekranlarda çalışan esnek bir arayüz tasarlayın.",
+    "category": "web",
+    "group": "Web"
+  },
+  {
+    "title": "JavaScript Temelleri",
+    "intro": "Sensör değerini güncelleyin, LED durumunu değiştirin ve web sayfasına davranış ekleyin.",
+    "category": "web",
+    "group": "Web"
+  },
+  {
+    "title": "Google Ekosistemi, Google Drive ve Bulut Teknolojileri",
+    "intro": "Dosyalarınızı düzenleyin, erişimi yönetin ve bulut ile yerel depolamanın rollerini ayırın.",
+    "category": "cloud",
+    "group": "Bulut"
+  },
+  {
+    "title": "Google Dokümanlar, Forms ve Ortak Çalışma",
+    "intro": "Ortak bir deney raporu hazırlayın ve yapılandırılmış ölçüm verisini formla toplayın.",
+    "category": "cloud",
+    "group": "Bulut"
+  },
+  {
+    "title": "Hesap Tablolama Teknolojileri",
+    "intro": "Hücrelerden formüllere: gerilim, akım, güç ve enerji hesabını güvenilir bir tabloya dönüştürün.",
+    "category": "cloud",
+    "group": "Veri"
+  },
+  {
+    "title": "İleri Hesap Tablolama ve Veri Analizi",
+    "intro": "Ölçüm verisini temizleyin, koşullu hesaplayın ve doğru grafiklerle yorumlayın.",
+    "category": "cloud",
+    "group": "Veri"
+  },
+  {
+    "title": "Google Servisleri ve Dijital Üretkenlik",
+    "intro": "Akademik bir çalışmanın iletişim, planlama, kaynak araştırması ve raporlama akışını birleştirin.",
+    "category": "cloud",
+    "group": "Bulut"
+  },
+  {
+    "title": "Google Sites, GitHub ve Web Yayıncılığı",
+    "intro": "Projenizi belgeleyin, sürümleyin ve GitHub Pages ile erişilebilir bir web sitesine dönüştürün.",
+    "category": "web",
+    "group": "Yayıncılık"
+  },
+  {
+    "title": "Yapay Zekâ, IoT ve Yeni Nesil Bilgi Teknolojileri",
+    "intro": "Dönemin parçalarını birleştirin; yapay zekâyı bilinçli kullanarak ölçümden karara uzanan bir sistem tasarlayın.",
+    "category": "future",
+    "group": "Gelecek"
+  }
+]
