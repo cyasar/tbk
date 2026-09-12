@@ -85,3 +85,10 @@ Bir özellik dalında çalışın; küçük ve anlamlı commit’ler oluşturun.
 Ana sayfa ve iki ders sayfasını mobil/masaüstünde, açık/koyu temada inceleyin. Filtreler, soru cevapları, kopyalama, ilerleme, önceki/sonraki hafta ve sunum kısayollarını deneyin. GitHub Pages üzerinde büyük/küçük harf duyarlılığını ve alt yol bağlantılarını ayrıca kontrol edin.
 
 Dönem projesi gerçek bir bulut veya sensör servisine bağlı değildir; örnek CSV ile çalışma öngörülür. Canlı veri entegrasyonu sonraki aşamada ayrıca tasarlanacaktır.
+
+
+## İlk hafta: etkileşimli bilgisayar tarihi
+
+İlk haftadaki **Bilgisayarların Tarihi** bölümü, abaküsten günümüze 14 dönüm noktasını yatay bir tarih çizgisinde gösterir. Başlangıç durağı 1947 transistör devrimidir. Transistör öncesi ve sonrası farklı renklerle ayrılır; önceki/sonraki düğmeleri ve dönem kısayolları ile gezinilir. Çizgi odaktayken ok tuşları ve Home/End tarihleri değiştirir; sunumun slaytını değiştirmez.
+
+İçerik `content/history.json`, üretim `scripts/history.py`, davranış `js/history.js`, görünüm `css/history.css` dosyalarındadır. `assets/images/history/` altındaki özgün SVG çizimler temsili eğitim görselleridir; arşiv fotoğrafı veya ölçekli teknik çizim değildir. Kaynaklar her durağın içinde bağlantılıdır. JavaScript kapalıyken ve yazdırmada tüm duraklar okunur. Tarihler sıralıdır; çizgideki aralıklar gerçek zaman uzunluğunu temsil etmez.

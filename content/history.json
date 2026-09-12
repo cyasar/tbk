@@ -1,0 +1,142 @@
+[
+  {
+    "year": "Antik Çağ",
+    "title": "Abaküs: hesabı görünür kılmak",
+    "era": "before",
+    "art": "abacus",
+    "text": "Boncuk ve çubuklar sayıları temsil eder; işlemleri insan yürütür. Hesaplama araçlarının kökleri, elektronik bilgisayarlardan çok daha eskidir.",
+    "impact": "Bilgiyi fiziksel bir düzenle temsil etmek.",
+    "source": "https://www.computerhistory.org/revolution/calculators/1/1",
+    "sourceName": "Computer History Museum · Calculators"
+  },
+  {
+    "year": "1642",
+    "title": "Pascaline: dişlilerle hesap",
+    "era": "before",
+    "art": "gears",
+    "text": "Blaise Pascal’ın mekanik hesaplayıcısı, toplama ve basamak taşıma işlemlerini dişli ve taşıma mekanizmalarıyla gerçekleştirir. Belirli bir işi yapan mekanizma henüz genel amaçlı bilgisayar değildir.",
+    "impact": "İnsan emeğinin bir bölümünü mekanizmaya aktarmak.",
+    "source": "https://www.computerhistory.org/revolution/calculators/1/47",
+    "sourceName": "Computer History Museum · Mechanical calculators"
+  },
+  {
+    "year": "1830’lar",
+    "title": "Babbage: programlanabilir makine fikri",
+    "era": "before",
+    "art": "gears",
+    "text": "Charles Babbage’ın Analitik Makine tasarımı, işlem birimi ve bellek içeren genel amaçlı bir mekanik bilgisayar düşüncesini geliştirir. Tasarım kendi döneminde tamamlanmaz.",
+    "impact": "Tek bir hesabı yapan araçtan farklı komutları yürüten sisteme.",
+    "source": "https://www.computerhistory.org/babbage/engines/",
+    "sourceName": "Computer History Museum · Babbage’s engines"
+  },
+  {
+    "year": "1843",
+    "title": "Ada Lovelace: makine için işlem dizisi",
+    "era": "before",
+    "art": "program",
+    "text": "Lovelace, Analitik Makine üzerine notlarında Bernoulli sayıları için bir işlem dizisi yayımlar. Makinelerin yalnızca sayıları değil, kurallarla temsil edilen başka sembolleri de işleyebileceğini tartışır.",
+    "impact": "Donanımdan ayrı olarak algoritmayı düşünmek.",
+    "source": "https://www.computerhistory.org/babbage/adalovelace/",
+    "sourceName": "Computer History Museum · Ada Lovelace"
+  },
+  {
+    "year": "1946",
+    "title": "ENIAC: vakum tüpleri çağı",
+    "era": "before",
+    "art": "tubes",
+    "text": "ENIAC kamuya tanıtılır. Yaklaşık 18.000 vakum tüpü kullanan sistem, elektronik hesaplamanın hızını gösterir; büyük alan, güç ve bakım gereksinimleri taşır.",
+    "impact": "Mekanik hareketten elektronik anahtarlamaya geçiş.",
+    "source": "https://www.computerhistory.org/timeline/1946/",
+    "sourceName": "Computer History Museum · 1946"
+  },
+  {
+    "year": "1947",
+    "title": "Transistör devrimi",
+    "era": "turn",
+    "art": "transistor",
+    "text": "Bell Labs’te John Bardeen ve Walter Brattain çalışan nokta temaslı transistörü geliştirir. William Shockley’nin de yer aldığı araştırmalar, yarı iletken elektroniğin yolunu açar.",
+    "impact": "Tüplerin yerini zamanla alabilecek küçük, düşük güçlü ve bütünleştirilebilir elektronik yapıların başlangıcı.",
+    "source": "https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/",
+    "sourceName": "Computer History Museum · Transistörün icadı"
+  },
+  {
+    "year": "1953",
+    "title": "Transistör bilgisayara giriyor",
+    "era": "after",
+    "art": "board",
+    "text": "Manchester Üniversitesi’nin deneysel transistörlü bilgisayarı çalışır. İlk sistemler karma bileşenler de içerir; 1947’deki icadın bilgisayarlara yayılması yıllar alır.",
+    "impact": "Bir bileşenin icadı ile sistemlerde yaygın kullanımı aynı tarih değildir.",
+    "source": "https://www.computerhistory.org/siliconengine/transistorized-computers-emerge/",
+    "sourceName": "Computer History Museum · Transistorized computers"
+  },
+  {
+    "year": "1958–1959",
+    "title": "Entegre devre: tek yüzeyde çok eleman",
+    "era": "after",
+    "art": "chip",
+    "text": "Jack Kilby 1958’de çalışan entegre devresini gösterir. Robert Noyce’un 1959’daki monolitik devre yaklaşımı, çok sayıda elemanın birlikte üretilmesinin önünü açar.",
+    "impact": "Ayrı ayrı bağlanan transistörlerden yonga üzerinde bütünleşmeye.",
+    "source": "https://www.computerhistory.org/revolution/story/276",
+    "sourceName": "Computer History Museum · The Integrated Circuit"
+  },
+  {
+    "year": "1971",
+    "title": "Mikroişlemci: CPU bir yongada",
+    "era": "after",
+    "art": "chip",
+    "text": "Intel 4004 ticari olarak sunulur. İşlemci işlevlerinin tek yongada toplanması, küçük sistemlerin tasarımını ve üretimini kolaylaştırır.",
+    "impact": "Bilgisayarın temel işlem birimini daha erişilebilir kılmak.",
+    "source": "https://www.computerhistory.org/timeline/1971/",
+    "sourceName": "Computer History Museum · 1971"
+  },
+  {
+    "year": "1977–1981",
+    "title": "Kişisel bilgisayar dönemi",
+    "era": "after",
+    "art": "desktop",
+    "text": "Apple II gibi 1977 bilgisayarları ve 1981 IBM PC, kişisel bilgisayar ekosisteminin önemli dönüm noktalarıdır. Bilgisayarlar ev, okul ve ofislerde daha geniş kitlelere ulaşır.",
+    "impact": "Merkezî hesaplama kaynaklarından bireysel kullanıma.",
+    "source": "https://www.ibm.com/history/personal-computer",
+    "sourceName": "IBM · Personal computer"
+  },
+  {
+    "year": "1989–1991",
+    "title": "Web: bilgisayarlar arasında belgeler",
+    "era": "after",
+    "art": "network",
+    "text": "Tim Berners-Lee 1989’da CERN’de Web’i önerir; ilk sunucu ve tarayıcı 1990’da gelişir, proje 1991’de daha geniş çevrelere açılır. Web, İnternet altyapısı üzerinde çalışır.",
+    "impact": "Bağlantılı belgelerden küresel bilgi paylaşımına.",
+    "source": "https://home.cern/science/computing/the-birth-of-the-web/",
+    "sourceName": "CERN · The birth of the Web"
+  },
+  {
+    "year": "2007",
+    "title": "Bilgisayar cebimize taşınıyor",
+    "era": "after",
+    "art": "phone",
+    "text": "iPhone’un tanıtımı, çoklu dokunmatik arayüz ve mobil Web’in görünür dönüm noktalarından biridir. Akıllı telefonların tarihi daha eskidir; gelişim tek bir ürünle başlamaz.",
+    "impact": "İşlemci, ekran, sensör ve ağın taşınabilir bir sistemde birleşmesi.",
+    "source": "https://www.apple.com/newsroom/2007/01/09Apple-Reinvents-the-Phone-with-iPhone/",
+    "sourceName": "Apple · 2007 iPhone tanıtımı"
+  },
+  {
+    "year": "2012",
+    "title": "Raspberry Pi: üretmek için bilgisayar",
+    "era": "after",
+    "art": "board",
+    "text": "Raspberry Pi satışa sunulur. Eğitim ve deney odaklı tek kart bilgisayarlar, yazılımı fiziksel giriş/çıkışlarla buluşturan projeleri daha erişilebilir hale getirir.",
+    "impact": "Bilgisayarı yalnızca kullanmak değil, onunla sistem geliştirmek.",
+    "source": "https://www.raspberrypi.com/news/the-raspberry-pi-launch/",
+    "sourceName": "Raspberry Pi · İlk çıkış"
+  },
+  {
+    "year": "2020’ler → Günümüz",
+    "title": "Bulut, IoT ve yapay zekâ",
+    "era": "after",
+    "art": "ai",
+    "text": "Hesaplama veri merkezleri, kişisel cihazlar ve sensör düğümleri arasında dağılır. CPU, GPU ve NPU farklı iş yüklerini paylaşır; yapay zekâ çıkarımı bulutta veya uç cihazda yapılabilir.",
+    "impact": "1947’deki temel fikir bugün milyarlarca transistör içeren yongalarda sürüyor. Bu durak tek bir icat tarihini değil, güncel dönemi özetler.",
+    "source": "https://www.computerhistory.org/siliconengine/",
+    "sourceName": "Computer History Museum · The Silicon Engine"
+  }
+]
