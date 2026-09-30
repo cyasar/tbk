@@ -327,5 +327,172 @@
         "Kontrol çevrimi ve sistem gereksinimleri"
       ]
     ]
+  },
+  {
+    "title": "İşlemci, Bellek ve Sistem Yönetimi",
+    "intro": "Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin.",
+    "group": "Sistemler",
+    "category": "systems",
+    "concepts": [
+      [
+        "İşlemci Yönetimi (Process & Thread)",
+        "Çalışan programın kaynak tahsisini, çekirdek zamanlamasını (scheduling) ve önceliklerini yöneten katman."
+      ],
+      [
+        "Bellek Yönetimi (RAM & Sanal Bellek)",
+        "Fiziksel RAM adreslemesi, sanal bellek (virtual memory), sayfalama (paging) ve disk takas (swap/pagefile) mekanizmaları."
+      ],
+      [
+        "Dosya Yönetimi & İzinler",
+        "Verilerin depolama aygıtlarında düzenlenme formatı (NTFS, ext4, APFS, FAT32) ve kullanıcı erişim yetkileri (ACL, POSIX permissions)."
+      ],
+      [
+        "Cihaz Yönetimi (Sürücüler & IRQ)",
+        "İşletim sistemi ile donanım donatısı arasındaki iletişimi kuran sürücüler (drivers) ve donanım kesmeleri (interrupt requests)."
+      ],
+      [
+        "Port Yönetimi (Donanım & Ağ Portları)",
+        "Fiziksel bağlantı noktaları (USB, UART/COM, GPIO) ile ağ soketleri üzerindeki mantıksal servis portları (TCP/UDP)."
+      ],
+      [
+        "İşletim Sistemi Aileleri",
+        "Windows (NT mimarisi), Linux (açık kaynak monolitik çekirdek) ve macOS (Unix tabanlı XNU/Darwin) sistem yaklaşımları."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · İşletim sistemi ekosistemleri: Windows, Linux ve macOS",
+        "Windows, iş istasyonları ve kurumsal yazılımlarda yaygın olup hibrit NT çekirdeği, Win32 API ve PowerShell altyapısına dayanır. Geniş donanım sürücüsü ve ticari yazılım desteği sunar.\nLinux, sunucular, gömülü sistemler ve geliştiriciler için esnek, açık kaynaklı monolitik bir çekirdektir (Pardus, Ubuntu vb.); POSIX standartlarını izler. Kullanıcı çekirdek parametrelerine doğrudan müdahale edebilir.\nmacOS, BSD ve Mach çekirdekleri üzerine kurulu Unix (Darwin) sertifikalı bir sistemdir; donanım-yazılım optimizasyonu ve POSIX uyumlu güçlü bir terminal ortamı sağlar.\nMühendislik projelerinde bir sistemin seçimi donanım uyumluluğu, gerçek zamanlı gereksinimler, lisanslama ve otomasyon araçlarına göre belirlenir."
+      ],
+      [
+        "İşlemci (CPU) yönetimi: Process, thread, scheduling ve çoklu görev",
+        "Bir program çalıştırıldığında işletim sistemi tarafından bir süreç (process) olarak başlatılır; kendi yalıtılmış sanal adres alanına, dosya tanıtıcılarına ve ortam değişkenlerine sahiptir.\nBir süreç içinde eşzamanlı yürütülen bağımsız akışlara iş parçacığı (thread) denir. Thread'ler aynı sürecin belleğini ortak kullanır; bu sayede hızlı veri paylaşırlar ancak eşzamanlama (mutex, semafor) dikkatle yönetilmelidir.\nCPU Zamanlayıcı (Scheduler), işlemcinin hangi iş parçacığına ne kadar zaman dilimi (time slice) ayıracağını belirler. Preemptive (öncelikli) çoklu görev mimarisi, hiçbir sürecin tüm işlemciyi kilitlemesine izin vermez.\nÇok çekirdekli sistemlerde işlemci benzeşimi (CPU affinity) ve çekirdek yük dağılımı sistem performansında belirleyicidir."
+      ],
+      [
+        "Bellek (Memory) yönetimi: Fiziksel RAM, sayfalama ve swap",
+        "Bellek yönetim birimi (MMU), işlemcinin ürettiği sanal adresleri donanım düzeyinde fiziksel RAM adreslerine dönüştürür. Bu yalıtım, bir uygulamanın çökmesinin işletim sistemini veya diğer uygulamaları etkilemesini engeller.\nSanal bellek sabit boyutlu sayfalara (pages), fiziksel RAM ise çerçevelere (page frames) bölünür. İstenen sayfa fiziksel RAM'de bulunmadığında sayfa hatası (page fault) tetiklenir.\nFiziksel RAM dolduğunda veya etkin olmayan sayfalar olduğunda, işletim sistemi bu sayfaları diske yazar: Windows'ta sayfa dosyası (pagefile.sys), Linux'ta swap alanı veya swap dosyası kullanılır.\nAşırı sayfalama (thrashing), sistemin CPU zamanını hesaplama yerine sürekli diskten sayfaları takas etmeye harcamasına ve bilgisayarın kilitlenmesine yol açar."
+      ],
+      [
+        "Dosya yönetimi: Dosya sistemleri ve erişim izinleri",
+        "Dosya sistemi; verilerin depolama aygıtlarında nasıl adlandırılacağını, saklanacağını, dizinleneceğini ve bulunacağını belirleyen mantıksal yapıdır.\nNTFS (Windows): Günlükleme (journaling), dosya düzeyinde sıkıştırma, şifreleme ve gelişmiş erişim denetim listeleri (ACL) sunar.\next4 (Linux): Yüksek performans, günlükleme, büyük dosya desteği ve standart POSIX dosya izinleri (rwx: okuma, yazma, çalıştırma) sağlar.\nAPFS (macOS): SSD optimizasyonu, anlık görüntü (snapshot), klonlama ve güçlü şifreleme özelliklerine odaklanır.\nFAT32 ve exFAT: FAT32 maksimum 4 GB tek dosya sınırına sahiptir ancak geniş cihaz uyumluluğu sunar. exFAT ise büyük taşınabilir depolama birimleri için modern alternatiftir."
+      ],
+      [
+        "Cihaz yönetimi: Sürücüler, kesmeler (IRQ) ve I/O",
+        "İşletim sistemi; ekran kartı, sensör arabirimi veya ağ adaptörü gibi donanımlarla doğrudan konuşmaz; bu iletişimi aygıt sürücüleri (device drivers) üzerinden yürütür.\nSürücüler donanıma özgü komutları işletim sisteminin anlayabileceği standart API çağrılarına çevirir. Çekirdek modunda (kernel-mode) çalışan sürücülerdeki bir hata mavi ekrana (BSOD) veya çekirdek paniğine (kernel panic) yol açabilir.\nKesme İstekleri (Interrupt Request - IRQ): Donanım acil bir olay gerçekleştiğinde (tuşa basılması, ağ paketinin gelmesi, sensör verisi) CPU'yu uyarır; CPU mevcut işini geçici olarak durdurup Kesme Hizmet Rutinini (ISR) çalıştırır.\nTak ve Çalıştır (Plug and Play - PnP) mekanizması, USB gibi harici aygıtlar bağlandığında kimlik tespiti yaparak uygun sürücüyü dinamik olarak yükler."
+      ],
+      [
+        "Port yönetimi: Donanım portları ve mantıksal ağ portları",
+        "Fiziksel ve Donanım Portları: Bilgisayara veya mikrokontrolcüye donanım bağlamak için kullanılan fiziksel arayüzlerdir. Seri portlar (COM portları / UART), USB, Ethernet, I2C, SPI ve mikrodenetleyici GPIO pinleri bu kapsama girer. Bir elektronik cihaz (ör. Arduino, ESP32) bilgisayara bağlandığında işletim sistemi bunu sanal bir seri port (Windows'ta COM3, Linux'ta /dev/ttyUSB0) olarak tanır.\nMantıksal Ağ Portları: TCP/IP ağ protokollerinde çalışan uygulamaların ve servislerin ayırt edilmesini sağlayan 16 bitlik (1-65535 arası) sayısal adreslerdir. IP adresi binayı, port numarası ise binadaki daireyi temsil eder.\nİyi bilinen portlar (0-1023): HTTP (80), HTTPS (443), SSH (22), DNS (53). Kayıtlı portlar (1024-49151) ve Dinamik/Özel portlar (49152-65535).\nSistemde hangi portun hangi süreç tarafından dinlendiği (listening socket) güvenlik ve servis yönetimi için kritik bir izleme konusudur."
+      ]
+    ],
+    "diagram": "Kullanıcı Alanı:    [Uygulama / CLI / Web Sunucusu]\n                            ↕ Sistem Çağrısı (Syscall)\nÇekirdek (Kernel):  [İşlemci]   [Bellek]   [Dosya]   [Ağ Portu]\n                   Scheduler      MMU       NTFS/ext4  TCP/UDP\n                            ↕ Sürücü (Driver) / Kesme (IRQ)\nDonanım Katmanı:    [CPU]       [RAM]      [SSD/Disk] [USB / COM / NIC]",
+    "architecture": "İşletim sistemi çekirdeği; işlemci, bellek, dosya sistemleri, cihaz sürücüleri ve portları soyutlayarak kullanıcı uygulamalarına güvenli ve eşzamanlı bir çalışma alanı sunar.",
+    "example": "Laboratuvarda bir ESP32 kartı USB üzerinden PC'ye bağlandığında: Cihaz yönetimi kartı CH340/CP2102 sürücüsüyle bir COM/ttyUSB portu olarak işletim sistemine tanıtır. Geliştirici kodu derlediğinde işlemci yönetimi derleme sürecini çekirdeklere dağıtır. Yükleme aracı seri port üzerinden veriyi aktarır. Cihaz Wi-Fi üzerinden ölçüm gönderdiğinde ise ağ portu (ör. 8080) soketi dinleyen sunucu süreci tarafından okunur.",
+    "practice": [
+      "PowerShell veya Bash üzerinden en çok bellek ve CPU kullanan ilk 5 süreci listeyin.",
+      "Sistemde açık ve dinlemede olan ağ portlarını (listening ports) komut satırından tespit edin.",
+      "Bilgisayarınıza bağlı tak-çalıştır aygıtları ve sanal seri/COM portları listeleyin.",
+      "Bir test klasörü oluşturup erişim izinlerini komut satırından (icacls veya ls -l) inceleyin."
+    ],
+    "code": "# PowerShell (Windows)\nGet-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 Name, CPU, WorkingSet\nGet-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess -First 5\nGet-PnpDevice -Class Ports, USB -Status OK | Select-Object FriendlyName, InstanceId -First 5\n\n# Linux / macOS Terminali\n# ps aux --sort=-%mem | head -n 6\n# ss -tuln  # veya netstat -tuln\n# ls -l /dev/tty*  # veya lsusb",
+    "prompt": "Windows, Linux ve macOS işletim sistemlerinde işlemci zamanlaması, sanal bellek yönetimi ve aygıt sürücüsü modellerini mühendislik bakış açısıyla karşılaştır. Bir USB-Seri dönüştürücünün (ör. CH340) takılmasından bir veri baytının kullanıcı yazılımına ulaşmasına kadar gerçekleşen işletim sistemi olaylarını (PnP tespiti, sürücü eşleme, kesme/IRQ, tampon bellek ve COM/tty port okuması) adım adım açıkla.",
+    "quiz": [
+      [
+        "Process ile Thread arasındaki temel kaynak paylaşım farkı nedir?",
+        "Process bağımsız bir sanal adres alanı ve kaynak bağlamına sahiptir; Thread'ler ise aynı process'in adres alanını ve açık kaynaklarını ortak paylaşır."
+      ],
+      [
+        "Sanal bellek sisteminde 'Thrashing' (aşırı sayfalama) ne anlama gelir?",
+        "Fiziksel RAM yetersiz kaldığında sistemin işlem yürütmek yerine zamanının çoğunu RAM ve disk (swap/pagefile) arasında sayfa takasına harcayarak kilitlenmesidir."
+      ],
+      [
+        "NTFS ile FAT32 dosya sistemleri arasındaki en belirgin sınırlama farkı nedir?",
+        "FAT32 dosya sistemi tek bir dosyada en fazla 4 GiB boyutu desteklerken, NTFS çok daha büyük dosyaları, günlüklemeyi (journaling) ve ayrıntılı güvenlik izinlerini (ACL) destekler."
+      ],
+      [
+        "Donanım kesmesi (Hardware Interrupt / IRQ) neden gereklidir?",
+        "İşlemcinin sürekli aygıtları kontrol ederek (polling) vakit kaybetmesini önler; donanım veri ürettiğinde işlemciyi anında uyararak Kesme Hizmet Rutinini (ISR) tetikler."
+      ],
+      [
+        "Fiziksel seri/USB port ile mantıksal ağ portu (TCP/UDP) arasındaki fark nedir?",
+        "Fiziksel portlar donanım sinyallerinin elektriksel olarak aktığı arabirimlerdir (COM, USB); mantıksal ağ portları ise ağ trafiğinde işletim sisteminin hangi paketi hangi uygulamaya/servise teslim edeceğini belirleyen 16 bitlik mantıksal sayılardır."
+      ]
+    ],
+    "task": "Bilgisayarınızda (Windows, Linux veya macOS) en çok CPU/RAM tüketen ilk 3 süreci, açık olan 2 dinleme ağ portunu ve sistemdeki port/aygıt listesini komut satırından sorgulayarak ekran çıktıları ve açıklamalarıyla hafta03/sistem_raporu.md dosyası olarak hazırlayın.",
+    "goals": [
+      "Windows, Linux ve macOS işletim sistemlerinin çekirdek ve yönetim mimarilerini karşılaştırmak.",
+      "İşlemci yönetiminde process, thread, multitasking ve scheduling mekanizmalarını açıklamak.",
+      "Fiziksel RAM, sanal bellek, sayfalama ve disk takas (swap/pagefile) ilişkisini kavramak.",
+      "NTFS, ext4, APFS ve FAT dosya sistemlerini mühendislik kriterlerine göre seçebilmek.",
+      "Aygıt sürücülerinin rolünü ve donanım kesmelerinin (IRQ) çalışma mantığını açıklamak.",
+      "Donanım portları (COM/USB) ile mantıksal ağ portlarını (TCP/UDP) ayırt edip analiz edebilmek."
+    ],
+    "verify": [
+      "Üretilen açıklamayı resmi işletim sistemi ve donanım dokümantasyonlarıyla karşılaştırın.",
+      "Verilen CLI komutlarını kendi işletim sisteminizde çalıştırıp beklenen çıktıları doğrulayın.",
+      "Donanım portu (COM/USB) ile ağ soket portu (TCP/UDP) kavramlarının birbirine karıştırılmadığını kontrol edin."
+    ],
+    "sources": [
+      [
+        "Microsoft Learn · Windows Internals & Architecture",
+        "https://learn.microsoft.com/en-us/windows/win32/"
+      ],
+      [
+        "The Linux Kernel Documentation",
+        "https://docs.kernel.org/"
+      ],
+      [
+        "Apple Developer Documentation · macOS Architecture",
+        "https://developer.apple.com/documentation/"
+      ],
+      [
+        "Operating Systems: Three Easy Pieces (OSTEP)",
+        "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+      ]
+    ],
+    "table": [
+      [
+        "Yönetim Alanı",
+        "Windows Yaklaşımı",
+        "Linux Yaklaşımı",
+        "macOS Yaklaşımı"
+      ],
+      [
+        "İşletim Sistemi Çekirdeği",
+        "Hibrit NT Çekirdeği",
+        "Monolitik Açık Kaynak Çekirdek",
+        "XNU (Mach + BSD Hibrit)"
+      ],
+      [
+        "İşlemci & Süreç İzleme",
+        "Görev Yöneticisi, Get-Process",
+        "ps, top, htop",
+        "Activity Monitor, ps"
+      ],
+      [
+        "Bellek Takas Alanı",
+        "pagefile.sys",
+        "Swap Bölümü / Swap Dosyası",
+        "Dinamik Takas Dosyaları (/var/vm)"
+      ],
+      [
+        "Varsayılan Dosya Sistemi",
+        "NTFS",
+        "ext4 / btrfs",
+        "APFS"
+      ],
+      [
+        "Cihaz & Port Tespiti",
+        "Get-PnpDevice, Aygıt Yöneticisi, COMx",
+        "lspci, lsusb, /dev/ttyUSBx",
+        "system_profiler, /dev/cu.*"
+      ],
+      [
+        "Ağ Portu İzleme",
+        "Get-NetTCPConnection, netstat",
+        "ss -tuln, netstat -tuln",
+        "lsof -i, netstat -an"
+      ]
+    ]
   }
 ]

@@ -2,13 +2,13 @@
 
 Çanakkale Onsekiz Mart Üniversitesi, Mühendislik Fakültesi, Elektrik-Elektronik Mühendisliği için **2026–2027** ders portalı ve web tabanlı sunum sistemi.
 
-**Durum:** İlk iki haftanın dersleri hazırdır. 3–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
+**Durum:** İlk üç haftanın dersleri hazırdır. 4–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
 
 ## Amaç
 
 Donanım, işletim sistemleri, ağ, web, bulut, veri analizi, gömülü sistemler ve yapay zekâ arasındaki ilişkileri öğretmek. Öğrenme döngüsü: **Teori → Gerçek Sistem → Küçük Uygulama → GitHub Çalışması**.
 
-İlk hafta bilgisayar tarihi, modern mimari, bileşenler, portlar ve platform karşılaştırmalarını; ikinci hafta kernel, süreç/thread, bellek, dosya sistemleri, boot, işletim sistemi aileleri ve RTOS/bare-metal ayrımını kapsar. Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi vardır.
+İlk hafta bilgisayar tarihi, modern mimari, bileşenler, portlar ve platform karşılaştırmalarını; ikinci hafta kernel, süreç/thread, bellek, dosya sistemleri, boot, işletim sistemi aileleri ve RTOS/bare-metal ayrımını; üçüncü hafta ise Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetiminin mühendislik detaylarını kapsar. Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi vardır.
 
 ## Yerel çalıştırma
 
@@ -47,6 +47,7 @@ Yayın adresi ancak Pages etkinleştirilip dağıtım tamamlandığında çalı�
 index.html                  Ana sayfa ve 14 haftalık plan
 weeks/week01.html           Ayrıntılı ilk hafta
 weeks/week02.html           Ayrıntılı ikinci hafta
+weeks/week03.html           Ayrıntılı üçüncü hafta
 css/style.css               Tema ve ortak tasarım
 css/responsive.css          Ekran, hareket ve yazdırma kuralları
 css/presentation.css        Sunum görünümü

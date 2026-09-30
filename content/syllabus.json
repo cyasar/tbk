@@ -12,8 +12,8 @@
     "group": "Sistemler"
   },
   {
-    "title": "İşlemci, Bellek ve Gömülü Sistemlere Giriş",
-    "intro": "Komut döngüsünü izleyin; CPU, MCU ve bellek hiyerarşisini gerçek geliştirme kartlarına bağlayın.",
+    "title": "İşlemci, Bellek ve Sistem Yönetimi",
+    "intro": "Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin.",
     "category": "systems",
     "group": "Sistemler"
   },
