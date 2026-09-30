@@ -7,6 +7,7 @@ from concepts import render_concepts
 from architecture import render_architecture
 from system_lab import render_system_architecture, render_system_lab
 from network_lab import render_network_architecture, render_network_lab
+from web_history import render_web_history
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'content/weeks.json').read_text(encoding='utf-8'))
@@ -50,6 +51,8 @@ for n,w in enumerate(DATA,1):
     sections.append(('kavramlar','Temel Kavramlar',concepts))
     if n == 1:
         sections.append(('bilgisayar-tarihi', 'Bilgisayarların Tarihi · Etkileşimli Zaman Çizgisi', render_history(ROOT)))
+    elif n == 4:
+        sections.append(('web-tarihi', 'Web Teknolojilerinin Tarihi ve Evrimi · Etkileşimli Zaman Çizgisi', render_web_history(ROOT)))
     for j,(title,text) in enumerate(w['lessons']):
         sections.append((f'konu-{j+1}', title, ''.join('<p>'+esc(p)+'</p>' for p in text.split('\n'))))
     if 'table' in w: sections.append(('karsilastirma','Karşılaştırma',table(w['table'][0],w['table'][1:])))
@@ -87,7 +90,7 @@ for n,w in enumerate(DATA,1):
     elif n == 3:
         extra_head = '<link rel="stylesheet" href="../css/system-lab.css"><script defer src="../js/system-lab.js"></script>'
     elif n == 4:
-        extra_head = '<link rel="stylesheet" href="../css/network-lab.css"><script defer src="../js/network-lab.js"></script>'
+        extra_head = '<link rel="stylesheet" href="../css/history.css"><link rel="stylesheet" href="../css/network-lab.css"><script defer src="../js/web-history.js"></script><script defer src="../js/network-lab.js"></script>'
     write(f'weeks/week{n:02}.html',head(w['title'],w['intro'],'../').replace('</head>', extra_head + '</head>')+f'<body data-week="{n}">'+nav('../')+f'''<main id="main" class="container"><div class="breadcrumb"><a href="../index.html#program">Ders programı</a> / {n:02}. Hafta</div><header class="lesson-header"><span class="eyebrow">{n:02}. HAFTA · {w['group']} · 2 SAAT</span><h1>{w['title']}</h1><p>{w['intro']}</p><div class="actions"><button class="primary" id="start-presentation">▷ Sunum modunu başlat</button><a class="button" href="#uygulama">Uygulamaya geç</a></div><p class="muted">Sunum: ← → / Space · Home / End · F: tam ekran · Esc: çıkış<br>Önerilen akış: 15 dk hedefler · 50 dk teori · 35 dk uygulama · 20 dk değerlendirme</p></header><div class="lesson-layout"><aside class="toc"><details class="toc-disclosure" open><summary>Bu haftanın içindekileri</summary><span class="eyebrow">BU HAFTADA</span><nav aria-label="Ders içindekiler">{toc}</nav></details></aside><article aria-label="Haftalık ders içeriği">{''.join(section(*s) for s in sections)}<div class="completion"><button id="mark-complete" aria-pressed="false">Bu haftayı tamamladım</button><p class="muted">İlerleme yalnızca bu tarayıcıda saklanır; notlandırma amacı taşımaz.</p></div><nav class="week-nav" aria-label="Haftalar arası navigasyon">{previous}{next}</nav></article></div></main><div class="presentation-controls" hidden role="region" aria-label="Sunum denetimleri"><progress id="slide-progress" max="100" value="0" aria-label="Sunum ilerlemesi"></progress><button id="slide-prev" aria-label="Önceki slayt">←</button><output id="slide-count" aria-live="polite"></output><button id="slide-next" aria-label="Sonraki slayt">→</button><button id="slide-fullscreen">Tam ekran</button><button id="slide-exit">Çıkış (Esc)</button><span class="sr-only" id="presentation-message" aria-live="polite"></span></div>'''+footer())
 print(f'Generated index.html and {len(DATA)} lesson pages.')
 

@@ -1,0 +1,92 @@
+[
+  {
+    "year": "1989",
+    "title": "Tim Berners-Lee & WWW Teklifi: 'Vague but exciting...'",
+    "era": "origin",
+    "text": "CERN nükleer araştırma merkezinde çalışan İngiliz mühendis Tim Berners-Lee, dünyanın farklı yerlerindeki araştırmacıların bilgi ve makaleleri kolayca paylaşabilmesi için hipermetin (hypertext) tabanlı küresel bir bilgi ağı tasarladı. Yöneticisi Mike Sendall, teklif taslağının üzerine meşhur 'Belirsiz ama heyecan verici...' notunu düşerek projeye onay verdi.",
+    "impact": "Bilgisayarlar arasındaki internet otoyolunu birbirine bağlı köprü metin belgeleriyle (HTML/HTTP) buluşturan World Wide Web (WWW) vizyonu doğdu.",
+    "art": "nextcube",
+    "sourceName": "CERN · The birth of the World Wide Web",
+    "source": "https://home.cern/science/computing/birth-web"
+  },
+  {
+    "year": "1990",
+    "title": "İlk Web Sunucusu ve İlk Web Sitesi: info.cern.ch",
+    "era": "origin",
+    "text": "Tim Berners-Lee, Steve Jobs'un NeXT Cube iş istasyonu üzerinde dünyanın ilk web sunucusu yazılımını (CERN httpd) ve ilk web tarayıcısı/editörünü (WorldWideWeb) kodladı. 1991'de 'http://info.cern.ch' adresinde ilk web sayfası yayımlandı. Sunucu kasasının üzerine elle 'Bu makine bir sunucudur, kapatmayın!' yazısı yapıştırılmıştı.",
+    "impact": "Dünyanın ilk çalışan web sitesi hayata geçti; HTML sözdizimi, HTTP protokolü ve URL adresleme standardı ilk kez test edildi.",
+    "art": "firstweb",
+    "sourceName": "CERN · First Web Server (NeXT Cube)",
+    "source": "https://www.w3.org/History/1989/Proposal.html"
+  },
+  {
+    "year": "1993",
+    "title": "NCSA Mosaic: Görsel Web Devrimi ve Tarayıcı Çağı",
+    "era": "web1",
+    "text": "Marc Andreessen ve Eric Bina tarafından Illinois Üniversitesi'nde geliştirilen Mosaic tarayıcısı, metin ve grafikleri aynı sayfa içinde (inline) gösteren ilk kullanıcı dostu tarayıcı oldu. Mosaic, kısa sürede Netscape Navigator'a dönüştü ve kişisel bilgisayar sahiplerinin web ile tanışmasını sağladı.",
+    "impact": "Web yalnızca araştırmacıların siyah-beyaz terminal ekranından çıkıp genel halkın ve medyanın ilgisini çeken görsel bir ortama dönüştü.",
+    "art": "browser_mosaic",
+    "sourceName": "National Center for Supercomputing Applications · Mosaic",
+    "source": "https://www.ncsa.illinois.edu/"
+  },
+  {
+    "year": "1994",
+    "title": "W3C Kuruldu: Web'in Özgür ve Açık Standartları",
+    "era": "web1",
+    "text": "Tim Berners-Lee, MIT öncülüğünde World Wide Web Consortium'u (W3C) kurdu. CERN ve W3C, web teknolojilerinin (HTML, URL, HTTP) hiçbir kurum veya şirketin mülkiyetinde olmayacağını, tamamen telifsiz, açık ve ücretsiz kalacağını resmen ilan etti.",
+    "impact": "Web teknolojilerinin tekelleşmesi önlendi; herkesin eşit erişebildiği küresel ve bağımsız bir bilgi standardı inşa edildi.",
+    "art": "w3c",
+    "sourceName": "W3C · About The World Wide Web Consortium",
+    "source": "https://www.w3.org/Consortium/"
+  },
+  {
+    "year": "1995",
+    "title": "Web 1.0 (Salt Okunur Web): JavaScript, PHP ve CSS Doğuyor",
+    "era": "web1",
+    "text": "Brendan Eich, Netscape tarayıcısı için sadece 10 günde JavaScript'i (Mocha/LiveScript) geliştirdi. Rasmus Lerdorf dinamik formlar için PHP'yi yayımladı. Håkon Wium Lie öncülüğünde CSS1 standardı duyuruldu. Web 1.0 dönemi; kullanıcıların içeriği yalnızca okuduğu (Read-Only), statik HTML ve GIF'lerle bezeli sitelerin çağıydı.",
+    "impact": "Web tasarım ve programlama katmanları ayrıştı; ancak kullanıcılar henüz içerik üretemeyen pasif birer okuyucuydu.",
+    "art": "web1",
+    "sourceName": "MDN Web Docs · A Brief History of JavaScript",
+    "source": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/About_JavaScript"
+  },
+  {
+    "year": "2004",
+    "title": "Web 2.0 (Sosyal ve Katılımcı Web) & AJAX Devrimi",
+    "era": "web2",
+    "text": "Jesse James Garrett 2005'te AJAX (Asynchronous JavaScript and XML) mimarisini tanımladı: Tarayıcılar sayfayı yenilemeden arka planda sunucudan anlık veri çekebilir hale geldi. Web 2.0 ile kullanıcılar yalnızca okuyucu değil; Wikipedia, YouTube, Facebook ve bloglarda bizzat içerik üreticisi (Read-Write Web) oldu.",
+    "impact": "Web siteleri tam teşekküllü web uygulamalarına (SaaS) dönüştü; sosyal medya ve kullanıcı üretimli içerik patlaması yaşandı.",
+    "art": "web2",
+    "sourceName": "Tim O'Reilly · What Is Web 2.0 (2005)",
+    "source": "https://www.oreilly.com/pub/a/web2/archive/what-is-web-20.html"
+  },
+  {
+    "year": "2010",
+    "title": "Mobil Web, HTML5 Standartları ve Node.js",
+    "era": "modern",
+    "text": "Akıllı telefonların ve mobil internetin yayılmasıyla Flash teknolojisi tarihe karıştı; W3C HTML5 (`<video>`, `<canvas>`, responsive grid) webin kalbi oldu. Ryan Dahl 2009'da Node.js'i duyurarak JavaScript'i tarayıcı tekelinden çıkarıp sunucuda asenkron çalışan güçlü bir backend diline dönüştürdü.",
+    "impact": "Mobil ve masaüstü web birleşti; JavaScript hem istemcide (frontend) hem de sunucuda (backend) çalışan evrensel dil haline geldi.",
+    "art": "html5_node",
+    "sourceName": "W3C · HTML5 Recommendation & Open Web Platform",
+    "source": "https://www.w3.org/TR/html5/"
+  },
+  {
+    "year": "2013",
+    "title": "React ve SPA (Tek Sayfa Uygulamaları) Çağı",
+    "era": "modern",
+    "text": "Facebook (Meta), Jordan Walke öncülüğünde geliştirdiği React kütüphanesini açık kaynak olarak yayımladı. Sanal DOM (Virtual DOM) ve bileşen tabanlı (component-driven) mimari sayesinde sayfalar hiçbir zaman yeniden yüklenmeden saniyeler içinde güncellenen zengin arayüzlere (SPA) kavuştu.",
+    "impact": "Geleneksel sayfa yenileme döngüsü sona erdi; modern web arayüzleri masaüstü uygulama akıcılığına ve mikroservis entegrasyonlarına ulaştı.",
+    "art": "react_spa",
+    "sourceName": "React Documentation · Meta Open Source",
+    "source": "https://react.dev/"
+  },
+  {
+    "year": "2020+",
+    "title": "Web 3.0: Semantik Ağ, WebAssembly ve Yapay Zekâ",
+    "era": "future",
+    "text": "Tim Berners-Lee'nin ilk günden beri hayal ettiği 'Semantik Web' (makinelerin verinin anlamını kavradığı bağlantılı veri ağı - RDF/Linked Data), WebAssembly (Wasm ile tarayıcıda C++/Rust performansı), merkeziyetsiz veri sahipliği ve Üretken Yapay Zekâ (LLM) servisleriyle birleşti.",
+    "impact": "Web; insanlara belge sunan bir depodan, kullanıcı adına düşünen, sorgulayan ve analiz eden akıllı otonom sistemler platformuna evrildi.",
+    "art": "web3_ai",
+    "sourceName": "W3C · Semantic Web & WebAssembly Standards",
+    "source": "https://www.w3.org/standards/semanticweb/"
+  }
+]

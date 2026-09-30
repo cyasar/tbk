@@ -820,3 +820,23 @@
     transform: rotate(90deg);
   }
 }
+
+/* Web History Timeline Eras */
+.history-stop.origin:before { background: #9a560b; }
+.history-stop.web1:before { background: #b86214; }
+.history-stop.web2:before { background: #0078d4; }
+.history-stop.modern:before { background: #24705b; }
+.history-stop.future:before { background: #6f42c1; }
+
+.origin .history-dot { border-color: #9a560b; }
+.web1 .history-dot { border-color: #b86214; }
+.web2 .history-dot { border-color: #0078d4; }
+.modern .history-dot { border-color: #24705b; }
+.future .history-dot { border-color: #6f42c1; }
+
+.origin .history-era { color: #9a560b; }
+.web1 .history-era { color: #b86214; }
+.web2 .history-era { color: #0078d4; }
+.modern .history-era { color: #24705b; }
+.future .history-era { color: #6f42c1; }
+

@@ -94,15 +94,18 @@ js/main.js                  Arama, kopyalama ve ilerleme
 js/presentation.js          Slayt ve tam ekran denetimi
 js/system-lab.js            3. hafta etkileşimli CPU, bellek ve port simülatörleri
 js/network-lab.js           4. hafta etkileşimli DNS, DHCP, NAT, Web Server ve Tech Stack simülatörleri
+js/web-history.js           4. hafta etkileşimli Web Teknolojileri Tarihi zaman çizgisi
 js/demos.js                 İlerideki dersler için örnek etkileşimler
 content/weeks.json          Yayındaki derslerin içerik kaynağı
 content/syllabus.json       14 haftalık plan
+content/web_history.json    Web teknolojileri tarihi veri kaynağı
 scripts/build.py            Kaynaktan statik HTML üretimi
 scripts/system_lab.py       3. hafta etkileşimli bileşen üretimi
 scripts/network_lab.py      4. hafta etkileşimli ağ ve web bileşeni üretimi
+scripts/web_history.py      4. hafta etkileşimli web tarihi bileşeni üretimi
 scripts/check.py            Bağlantı ve içerik denetimi
 assets/icons/               Yerel SVG favicon
-assets/images/              İleride eklenecek görseller
+assets/images/web_history/  Web tarihi vektörel çizimleri
 assets/data/olcumler.csv     Dönem projesi örnek verisi
 ```
 
