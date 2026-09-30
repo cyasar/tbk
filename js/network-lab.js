@@ -582,6 +582,31 @@
     const checkAllBtn = container.querySelector('[data-action="check-all-quiz"]');
     const resetBtn = container.querySelector('[data-action="reset-quiz"]');
 
+    function shuffleSelectOptions(selectEl) {
+      const options = Array.from(selectEl.options);
+      if (options.length <= 2) return;
+      const placeholder = options[0];
+      const items = options.slice(1);
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const temp = items[i];
+        items[i] = items[j];
+        items[j] = temp;
+      }
+      const currentVal = selectEl.value;
+      selectEl.innerHTML = '';
+      selectEl.appendChild(placeholder);
+      items.forEach(function(opt) {
+        selectEl.appendChild(opt);
+      });
+      selectEl.value = currentVal;
+    }
+
+    // Shuffle dropdown choices initially so order is never predictable
+    container.querySelectorAll('select').forEach(function(sel) {
+      shuffleSelectOptions(sel);
+    });
+
     const EXPLANATIONS = {
       1: {
         correct: 'Tebrikler! DHCP kiralama süreci tam olarak DORA (Discover → Offer → Request → Acknowledge) sırasıyla işler: İstemci önce arama yayını yapar, sunucu boş IP teklif eder, istemci onay ister, sunucu kira parametrelerini onaylar.',
@@ -703,7 +728,10 @@
           const fb = card.querySelector('.q-feedback');
           if (fb) fb.setAttribute('hidden', '');
           const selects = card.querySelectorAll('select');
-          selects.forEach(function(s) { s.value = ''; });
+          selects.forEach(function(s) {
+            s.value = '';
+            shuffleSelectOptions(s);
+          });
           const radios = card.querySelectorAll('input[type="radio"]');
           radios.forEach(function(r) { r.checked = false; });
         });

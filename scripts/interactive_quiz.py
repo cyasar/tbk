@@ -27,40 +27,40 @@ def render_interactive_quiz():
               <label>1. Adım:</label>
               <select data-user-step="1" aria-label="1. DHCP Adımı">
                 <option value="">Seçiniz...</option>
-                <option value="D">Discover (İstemcinin 255.255.255.255 yayınla DHCP sunucusu araması)</option>
-                <option value="O">Offer (Yönlendiricinin boş IP teklif etmesi)</option>
-                <option value="R">Request (İstemcinin bu IP'yi onaylama isteği)</option>
+                <option value="O">Offer (Yönlendiricinin boş IP adresi teklif etmesi)</option>
+                <option value="D">Discover (İstemcinin 255.255.255.255 yayınıyla DHCP sunucusu araması)</option>
                 <option value="A">ACK (Sunucunun kira onayını ve parametreleri göndermesi)</option>
+                <option value="R">Request (İstemcinin teklif edilen IP'yi onaylama isteği)</option>
               </select>
             </div>
             <div class="combo-row">
               <label>2. Adım:</label>
               <select data-user-step="2" aria-label="2. DHCP Adımı">
                 <option value="">Seçiniz...</option>
-                <option value="D">Discover (İstemcinin yayınla DHCP araması)</option>
-                <option value="O">Offer (Yönlendiricinin boş IP teklif etmesi)</option>
-                <option value="R">Request (İstemcinin bu IP'yi onaylama isteği)</option>
-                <option value="A">ACK (Sunucunun kira onayını göndermesi)</option>
+                <option value="R">Request (İstemcinin teklif edilen IP'yi onaylama isteği)</option>
+                <option value="A">ACK (Sunucunun kira onayını ve parametreleri göndermesi)</option>
+                <option value="O">Offer (Yönlendiricinin boş IP adresi teklif etmesi)</option>
+                <option value="D">Discover (İstemcinin 255.255.255.255 yayınıyla DHCP sunucusu araması)</option>
               </select>
             </div>
             <div class="combo-row">
               <label>3. Adım:</label>
               <select data-user-step="3" aria-label="3. DHCP Adımı">
                 <option value="">Seçiniz...</option>
-                <option value="D">Discover (İstemcinin arama yayını)</option>
-                <option value="O">Offer (Yönlendiricinin IP teklifi)</option>
-                <option value="R">Request (İstemcinin bu IP'yi onaylama isteği)</option>
-                <option value="A">ACK (Sunucunun kira onayını göndermesi)</option>
+                <option value="A">ACK (Sunucunun kira onayını ve parametreleri göndermesi)</option>
+                <option value="O">Offer (Yönlendiricinin boş IP adresi teklif etmesi)</option>
+                <option value="D">Discover (İstemcinin 255.255.255.255 yayınıyla DHCP sunucusu araması)</option>
+                <option value="R">Request (İstemcinin teklif edilen IP'yi onaylama isteği)</option>
               </select>
             </div>
             <div class="combo-row">
               <label>4. Adım:</label>
               <select data-user-step="4" aria-label="4. DHCP Adımı">
                 <option value="">Seçiniz...</option>
-                <option value="D">Discover (İstemcinin arama yayını)</option>
-                <option value="O">Offer (Yönlendiricinin IP teklifi)</option>
-                <option value="R">Request (İstemcinin IP isteği)</option>
+                <option value="D">Discover (İstemcinin 255.255.255.255 yayınıyla DHCP sunucusu araması)</option>
+                <option value="R">Request (İstemcinin teklif edilen IP'yi onaylama isteği)</option>
                 <option value="A">ACK (Sunucunun kira onayını ve parametreleri göndermesi)</option>
+                <option value="O">Offer (Yönlendiricinin boş IP adresi teklif etmesi)</option>
               </select>
             </div>
           </div>
@@ -148,8 +148,8 @@ def render_interactive_quiz():
               <label>Statik HTML, salt okunur içerik (Read-Only), tek yönlü yayın:</label>
               <select data-era-match="1" aria-label="1. Dönem Seçimi">
                 <option value="">Seçiniz...</option>
-                <option value="web1">Web 1.0</option>
                 <option value="web2">Web 2.0</option>
+                <option value="web1">Web 1.0</option>
                 <option value="web3">Web 3.0</option>
               </select>
             </div>
@@ -157,9 +157,9 @@ def render_interactive_quiz():
               <label>AJAX, sayfa yenilenmeden asenkron veri, sosyal ağlar, kullanıcı üretimli içerik (Read-Write):</label>
               <select data-era-match="2" aria-label="2. Dönem Seçimi">
                 <option value="">Seçiniz...</option>
-                <option value="web1">Web 1.0</option>
-                <option value="web2">Web 2.0</option>
                 <option value="web3">Web 3.0</option>
+                <option value="web2">Web 2.0</option>
+                <option value="web1">Web 1.0</option>
               </select>
             </div>
             <div class="combo-row">
@@ -167,8 +167,8 @@ def render_interactive_quiz():
               <select data-era-match="3" aria-label="3. Dönem Seçimi">
                 <option value="">Seçiniz...</option>
                 <option value="web1">Web 1.0</option>
-                <option value="web2">Web 2.0</option>
                 <option value="web3">Web 3.0</option>
+                <option value="web2">Web 2.0</option>
               </select>
             </div>
           </div>
@@ -188,20 +188,20 @@ def render_interactive_quiz():
               <label>Nginx web sunucusu ayakta ancak arkasındaki PHP-FPM / Python backend servisi çökmüşse:</label>
               <select data-http-match="1" aria-label="1. Durum Kodu">
                 <option value="">Seçiniz...</option>
-                <option value="200">200 OK</option>
                 <option value="404">404 Not Found</option>
-                <option value="500">500 Internal Server Error</option>
                 <option value="502">502 Bad Gateway</option>
+                <option value="200">200 OK</option>
+                <option value="500">500 Internal Server Error</option>
               </select>
             </div>
             <div class="combo-row">
               <label>İstemci diskte ve routing tablosunda tanımlı olmayan bir URL talep ettiğinde:</label>
               <select data-http-match="2" aria-label="2. Durum Kodu">
                 <option value="">Seçiniz...</option>
+                <option value="502">502 Bad Gateway</option>
+                <option value="404">404 Not Found</option>
                 <option value="400">400 Bad Request</option>
                 <option value="403">403 Forbidden</option>
-                <option value="404">404 Not Found</option>
-                <option value="502">502 Bad Gateway</option>
               </select>
             </div>
             <div class="combo-row">
@@ -209,9 +209,9 @@ def render_interactive_quiz():
               <select data-http-match="3" aria-label="3. Durum Kodu">
                 <option value="">Seçiniz...</option>
                 <option value="200">200 OK</option>
+                <option value="301">301 Moved Permanently</option>
                 <option value="201">201 Created</option>
                 <option value="204">204 No Content</option>
-                <option value="301">301 Moved Permanently</option>
               </select>
             </div>
           </div>
