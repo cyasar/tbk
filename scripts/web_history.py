@@ -83,8 +83,8 @@ def web_illustration(kind):
             '<circle cx="160" cy="60" r="24" fill="#213954"/>'
             '<circle cx="160" cy="140" r="24" fill="#213954"/>'
             '<path d="M100 100l60-40 60 40-60 40zM160 60v80" stroke="#f4c38b" stroke-width="2"/>'
-            '<text x="160" y="105" fill="#ffffff" font-weight="bold" font-size="12" text-anchor="middle">AI & Wasm</text>'
-            '<text x="160" y="190" fill="#9cbfe8" font-family="sans-serif" font-size="11" text-anchor="middle">Semantik Ağ & Akıllı Ajanlar</text>'
+            '<text x="160" y="105" fill="#ffffff" font-weight="bold" font-size="12" text-anchor="middle">AI &amp; Wasm</text>'
+            '<text x="160" y="190" fill="#9cbfe8" font-family="sans-serif" font-size="11" text-anchor="middle">Semantik Ağ &amp; Akıllı Ajanlar</text>'
         )
     }
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 225"><rect width="320" height="225" rx="16" fill="#102440"/><g fill="none" stroke="#9cbfe8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">{drawings[kind]}</g></svg>'
