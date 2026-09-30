@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCpuSim();
   initMemSim();
   initPortsSim();
+  initTaskAndDiskSim();
 });
 
 /* ========================================================
@@ -591,3 +592,72 @@ function initPortsSim() {
     });
   });
 }
+
+/* ========================================================
+   6. Task Manager & Disk Maintenance Station
+   ======================================================== */
+function initTaskAndDiskSim() {
+  const panel = document.querySelector('[data-sim-panel="tasks-disk"]');
+  if (!panel) return;
+
+  // 1. Task Manager Logic
+  const killBtn = panel.querySelector('[data-task-action="kill-rogue"]');
+  const rogueRow = panel.querySelector('[data-task-row="rogue"]');
+  const taskLog = panel.querySelector('[data-taskmgr-log]');
+
+  if (killBtn && rogueRow) {
+    killBtn.addEventListener('click', () => {
+      rogueRow.style.background = 'rgba(0,0,0,0.03)';
+      rogueRow.style.opacity = '0.5';
+      rogueRow.innerHTML = `
+        <td style="text-decoration:line-through">data_leak_script.py<br><small>Süreç Kapatıldı</small></td>
+        <td>%0</td>
+        <td>0 MB</td>
+        <td><span class="status-pill closed">Sonlandırıldı (kill -9)</span></td>
+      `;
+      if (taskLog) {
+        taskLog.innerHTML = `<span style="color:#24705b;font-weight:700">[BAŞARILI]</span> <strong>data_leak_script.py (PID: 4920)</strong> başarıyla sonlandırıldı! <strong>3.8 GB bellek ve %94 CPU</strong> anında serbest bırakıldı. İşletim sistemi çökmekten kurtarıldı.`;
+      }
+    });
+  }
+
+  // 2. Disk Maintenance Logic
+  const chkdskBtn = panel.querySelector('[data-disk-action="chkdsk"]');
+  const trimBtn = panel.querySelector('[data-disk-action="trim"]');
+  const cleanBtn = panel.querySelector('[data-disk-action="clean"]');
+  const diskLog = panel.querySelector('[data-disk-log]');
+  const diskSpaceText = panel.querySelector('[data-disk-space-text]');
+  const diskBar = panel.querySelector('[data-disk-bar]');
+  const tempFilesBadge = panel.querySelector('[data-temp-files]');
+
+  if (chkdskBtn) {
+    chkdskBtn.addEventListener('click', () => {
+      if (diskLog) {
+        diskLog.innerHTML = `<span style="color:var(--accent)">[CHKDSK / FSCK Başlatıldı]</span> Aşama 1: Dosya sistemi metadata ve MFT tablosu taranıyor... Aşama 2: Dizin indeksleri doğrulandı. Aşama 3: Bozuk sektör denetimi tamamlandı. <strong style="color:#24705b">Sonuç: 0 Hata, dosya sistemi bütünlüğü %100 temiz.</strong>`;
+      }
+    });
+  }
+
+  if (trimBtn) {
+    trimBtn.addEventListener('click', () => {
+      if (diskLog) {
+        diskLog.innerHTML = `<span style="color:var(--accent)">[SSD TRIM Devrede]</span> <code>Optimize-Volume -DriveLetter C -ReTrim</code> / <code>fstrim -v /</code> komutu işletim sistemi çekirdeğinden NVMe SSD denetleyicisine iletildi. <strong>8.4 GB silinmiş geçersiz blok sıfırlandı.</strong> Blok yazma gecikmesi düşürüldü ve SSD hücre ömrü uzatıldı.`;
+      }
+    });
+  }
+
+  if (cleanBtn) {
+    cleanBtn.addEventListener('click', () => {
+      if (diskSpaceText) diskSpaceText.textContent = '348 GB / 512 GB (%68 Dolu)';
+      if (diskBar) {
+        diskBar.style.width = '68%';
+        diskBar.style.background = '#24705b';
+      }
+      if (tempFilesBadge) tempFilesBadge.textContent = '0.3 GB';
+      if (diskLog) {
+        diskLog.innerHTML = `<span style="color:#24705b;font-weight:700">[DİSK TEMİZLEME TAMAMLANDI]</span> Geçici dosyalar (temp), çöp kutusu ve eski güncelleme kalıntıları temizlendi. <strong>18.1 GB boş alan kazanıldı!</strong> Sanal bellek (swap/pagefile) ve dosya yazma işlemleri için güvenli alan açıldı.`;
+      }
+    });
+  }
+}
+

@@ -79,6 +79,9 @@ def render_system_lab():
         <button type="button" role="tab" id="tab-ports" aria-controls="panel-ports" aria-selected="false" data-sim-tab="ports">
           🔌 3. Donanım & Ağ Portları İstasyonu
         </button>
+        <button type="button" role="tab" id="tab-tasks-disk" aria-controls="panel-tasks-disk" aria-selected="false" data-sim-tab="tasks-disk">
+          🛠️ 4. Görev Yöneticisi & Disk Bakımı
+        </button>
       </div>
 
       <!-- PANEL 1: CPU SCHEDULING SIMULATOR -->
@@ -324,6 +327,106 @@ def render_system_lab():
               </div>
               <div class="packet-result-log" data-packet-log>
                 <span class="muted">Bir servisi başlatın ve paket göndererek TCP soket el sıkışmasını (SYN-ACK) test edin.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PANEL 4: TASK MANAGER & DISK MAINTENANCE LAB -->
+      <div class="sim-panel" id="panel-tasks-disk" role="tabpanel" aria-labelledby="tab-tasks-disk" data-sim-panel="tasks-disk" hidden>
+        <div class="sim-header">
+          <div>
+            <span class="eyebrow">İNTERAKTİF SİSTEM BAKIM MERKEZİ</span>
+            <h3>Görev Yöneticisi & Disk Bakım İstasyonu</h3>
+            <p><strong>Ne işe yarar? Neden çok önemlidir?</strong> Görev Yöneticisi kilitlenen süreçleri sonlandırıp sistemin çökmesini engeller; Disk Bakımı ise bozuk sektörleri onarır, SSD TRIM ile yazma hızını ve veri bütünlüğünü korur.</p>
+          </div>
+        </div>
+
+        <div class="ports-dual-grid">
+          <!-- SUB-COL 1: TASK MANAGER / PROCESS CONTROL -->
+          <div class="port-sublab">
+            <div class="sublab-head">
+              <h4>1. Canlı Görev Yöneticisi (Task Manager)</h4>
+              <span class="sublab-tag">Sistem Kararlılığı</span>
+            </div>
+            <p class="sublab-desc">Aşağıda çalışan süreçler listelenmektedir. Kilitlenen ve aşırı bellek tüketen süreci tespit edip <strong>Görevi Sonlandır (End Task)</strong> ile sistemi kurtarın.</p>
+
+            <div class="network-ports-table-wrap">
+              <table class="sim-table" aria-label="Görev Yöneticisi Süreç Tablosu">
+                <thead>
+                  <tr>
+                    <th>Süreç Adı</th>
+                    <th>CPU</th>
+                    <th>Bellek</th>
+                    <th>Durum / İşlem</th>
+                  </tr>
+                </thead>
+                <tbody data-taskmgr-body>
+                  <tr data-task-row="nginx">
+                    <td><strong>nginx.exe</strong><br><small>Web Sunucu</small></td>
+                    <td>%2</td>
+                    <td>140 MB</td>
+                    <td><span class="status-pill listening">Çalışıyor</span></td>
+                  </tr>
+                  <tr data-task-row="esp32-service">
+                    <td><strong>esp32_collector.py</strong><br><small>Sensör Servisi</small></td>
+                    <td>%8</td>
+                    <td>95 MB</td>
+                    <td><span class="status-pill listening">Çalışıyor</span></td>
+                  </tr>
+                  <tr data-task-row="chrome">
+                    <td><strong>chrome.exe</strong><br><small>Tarayıcı (14 Sekme)</small></td>
+                    <td>%16</td>
+                    <td>1.4 GB</td>
+                    <td><span class="status-pill listening">Çalışıyor</span></td>
+                  </tr>
+                  <tr data-task-row="rogue" class="danger-row" style="background:rgba(220,38,38,0.08)">
+                    <td><strong style="color:#dc2626">data_leak_script.py</strong><br><small style="color:#dc2626">⚠️ Bellek Sızıntısı & Kilitlenme!</small></td>
+                    <td><strong style="color:#dc2626">%94</strong></td>
+                    <td><strong style="color:#dc2626">3.8 GB</strong></td>
+                    <td><button type="button" class="primary" style="background:#dc2626;border-color:#dc2626;color:#fff" data-task-action="kill-rogue">Görevi Sonlandır (kill -9)</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="packet-result-log" data-taskmgr-log>
+              <span class="muted">Görev yöneticisindeki 'data_leak_script.py' süreci CPU'nun %94'ünü sömürüyor. 'Görevi Sonlandır' butonuna basarak RAM'i kurtarın.</span>
+            </div>
+          </div>
+
+          <!-- SUB-COL 2: DISK MAINTENANCE & SSD TRIM -->
+          <div class="port-sublab">
+            <div class="sublab-head">
+              <h4>2. Disk Bakımı, TRIM & Sağlık İstasyonu</h4>
+              <span class="sublab-tag">Depolama Güvenliği</span>
+            </div>
+            <p class="sublab-desc">Disk bakımı; dosya sistemi çökmelerini önler (chkdsk), SSD ömrünü ve yazma hızını uzatır (TRIM), disk doluluğunu temizler (cleanmgr).</p>
+
+            <div class="disk-health-card">
+              <div class="disk-meta" style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:8px">
+                <strong>Yerel Disk (C:) · NVMe SSD 512 GB</strong>
+                <span data-disk-space-text>440 GB / 512 GB (%86 Dolu)</span>
+              </div>
+              <div class="core-meter" style="height:14px;margin-bottom:12px">
+                <div class="meter-bar" data-disk-bar style="width:86%;background:#d97706"></div>
+              </div>
+
+              <div class="disk-smart-badges" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+                <span class="sim-stats-badge">Sağlık Durumu (SMART): <strong style="color:#24705b" data-smart-health>%98 Mükemmel</strong></span>
+                <span class="sim-stats-badge">Sıcaklık: <strong data-smart-temp>36 °C</strong></span>
+                <span class="sim-stats-badge">Gereksiz Geçici Dosya: <strong data-temp-files>18.4 GB</strong></span>
+              </div>
+
+              <div class="packet-actions" style="margin-bottom:12px">
+                <button type="button" data-disk-action="chkdsk">🔍 Dosya Bütünlüğü (chkdsk / fsck)</button>
+                <button type="button" class="primary" data-disk-action="trim">⚡ SSD TRIM Optimizasyonu</button>
+                <button type="button" data-disk-action="clean">🧹 Gereksiz Dosyaları Temizle</button>
+              </div>
+
+              <div class="packet-result-log" data-disk-log>
+                <span class="muted">Bir bakım aracı seçerek disk sağlığını koruyun ve performansını artırın.</span>
               </div>
             </div>
           </div>

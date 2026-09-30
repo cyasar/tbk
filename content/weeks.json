@@ -357,6 +357,14 @@
       [
         "İşletim Sistemi Aileleri",
         "Windows (NT mimarisi), Linux (açık kaynak monolitik çekirdek) ve macOS (Unix tabanlı XNU/Darwin) sistem yaklaşımları."
+      ],
+      [
+        "Görev Yöneticisi & Kaynak İzleme",
+        "Çalışan süreçleri, CPU/RAM/Disk/Ağ tüketimini ve kilitlenen uygulamaları izleyip yöneten işletim sistemi aracı."
+      ],
+      [
+        "Disk Bakımı & TRIM",
+        "Dosya bütünlüğünü koruyan (chkdsk/fsck), SSD yazma performansını sürdüren (TRIM) ve depolama sağlığını izleyen bakım mekanizmaları."
       ]
     ],
     "lessons": [
@@ -383,6 +391,14 @@
       [
         "Port yönetimi: Donanım portları ve mantıksal ağ portları",
         "Fiziksel ve Donanım Portları: Bilgisayara veya mikrokontrolcüye donanım bağlamak için kullanılan fiziksel arayüzlerdir. Seri portlar (COM portları / UART), USB, Ethernet, I2C, SPI ve mikrodenetleyici GPIO pinleri bu kapsama girer. Bir elektronik cihaz (ör. Arduino, ESP32) bilgisayara bağlandığında işletim sistemi bunu sanal bir seri port (Windows'ta COM3, Linux'ta /dev/ttyUSB0) olarak tanır.\nMantıksal Ağ Portları: TCP/IP ağ protokollerinde çalışan uygulamaların ve servislerin ayırt edilmesini sağlayan 16 bitlik (1-65535 arası) sayısal adreslerdir. IP adresi binayı, port numarası ise binadaki daireyi temsil eder.\nİyi bilinen portlar (0-1023): HTTP (80), HTTPS (443), SSH (22), DNS (53). Kayıtlı portlar (1024-49151) ve Dinamik/Özel portlar (49152-65535).\nSistemde hangi portun hangi süreç tarafından dinlendiği (listening socket) güvenlik ve servis yönetimi için kritik bir izleme konusudur."
+      ],
+      [
+        "Görev Yöneticisi ve sistem izleme: Ne işe yarar, neden çok önemlidir?",
+        "Görev Yöneticisi (Windows Task Manager, Linux top/htop, macOS Activity Monitor), işletim sisteminin anlık sağlık ve performans röntgenidir.\nNe İşe Yarar? 1) Kaynak Kullanımı Takibi: Hangi sürecin ne kadar CPU, fiziksel RAM, disk yazma/okuma ve ağ bant genişliği tükettiğini canlı gösterir. 2) Kilitlenen Programları Sonlandırma: Yanıt vermeyen (Not Responding) süreçleri bellekten temizleyerek tüm sistemin kilitlenmesini önler (End Task / kill -9). 3) Başlangıç Uygulamaları ve Servisler: Bilgisayar açılışında devreye giren programları yöneterek açılış süresini hızlandırır. 4) Bellek Sızıntısı (Memory Leak) ve Şüpheli Süreç Tespiti: Zamanla belleği boşaltmayan hatalı kodları veya arka planda çalışan şüpheli süreçleri yakalar.\nNeden Çok Önemlidir? Mühendislik projelerinde bir algoritmanın işlemciyi boğup boğmadığını, bellek sınırlarını aşıp aşmadığını anlamak ve sistem darboğazlarını (bottleneck) anında saptamak için vazgeçilmez temel kontrol panelidir."
+      ],
+      [
+        "Disk bakımı ve depolama sağlığı: Dosya bütünlüğü, TRIM ve temizlik",
+        "Depolama birimleri (SSD ve HDD), verilerin kalıcı tutulduğu ancak mekanik veya elektronik sınırları olan en kritik bileşenlerdir.\nNe İşe Yarar? 1) Dosya Sistemi Bütünlüğü Denetimi: Ani güç kesintileri veya çökmeler sonrası diskteki bozuk blokları ve dosya tablosu hatalarını tarar ve onarır (Windows'ta chkdsk, Linux'ta fsck). 2) SSD TRIM Optimizasyonu: SSD'lerde silinen dosyaların kapladığı blokları arka planda temizleyerek diskin yazma hızını ve kullanım ömrünü korur (Optimize-Volume -ReTrim, fstrim). 3) Disk Alanı ve Geçici Dosya Temizliği: Disk tamamen dolarsa sanal bellek (swap/pagefile) çalışamaz hale gelir ve sistem kilitlenir; disk temizliği gereksiz önbellekleri temizler (cleanmgr). 4) SMART Sağlık Takibi: Diskin sıcaklığını, bozuk sektör sayısını ve kalan ömrünü izleyerek ani veri kaybından önce yedekleme yapılmasına imkan tanır.\nNeden Çok Önemlidir? İşletim sisteminde bir işlemcinin çökmesi yeniden başlatılarak aşılabilir, ancak depolama birimindeki dosya bozulması geri dönülemez veri kaybına yol açar. Düzenli disk bakımı veri güvenliğini, yazma hızını ve sistem kararlılığını teminat altına alır."
       ]
     ],
     "diagram": "Kullanıcı Alanı:    [Uygulama / CLI / Web Sunucusu]\n                            ↕ Sistem Çağrısı (Syscall)\nÇekirdek (Kernel):  [İşlemci]   [Bellek]   [Dosya]   [Ağ Portu]\n                   Scheduler      MMU       NTFS/ext4  TCP/UDP\n                            ↕ Sürücü (Driver) / Kesme (IRQ)\nDonanım Katmanı:    [CPU]       [RAM]      [SSD/Disk] [USB / COM / NIC]",
@@ -390,11 +406,13 @@
     "example": "Laboratuvarda bir ESP32 kartı USB üzerinden PC'ye bağlandığında: Cihaz yönetimi kartı CH340/CP2102 sürücüsüyle bir COM/ttyUSB portu olarak işletim sistemine tanıtır. Geliştirici kodu derlediğinde işlemci yönetimi derleme sürecini çekirdeklere dağıtır. Yükleme aracı seri port üzerinden veriyi aktarır. Cihaz Wi-Fi üzerinden ölçüm gönderdiğinde ise ağ portu (ör. 8080) soketi dinleyen sunucu süreci tarafından okunur.",
     "practice": [
       "PowerShell veya Bash üzerinden en çok bellek ve CPU kullanan ilk 5 süreci listeyin.",
+      "Görev Yöneticisi (veya top/htop) ile çalışan süreçleri, bellek tüketimini ve kilitlenen görevleri inceleyin.",
+      "Disk doluluk durumunu ve sağlık optimizasyonunu (Optimize-Volume / df -h / fstrim) sorgulayın.",
       "Sistemde açık ve dinlemede olan ağ portlarını (listening ports) komut satırından tespit edin.",
       "Bilgisayarınıza bağlı tak-çalıştır aygıtları ve sanal seri/COM portları listeleyin.",
       "Bir test klasörü oluşturup erişim izinlerini komut satırından (icacls veya ls -l) inceleyin."
     ],
-    "code": "# PowerShell (Windows)\nGet-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 Name, CPU, WorkingSet\nGet-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess -First 5\nGet-PnpDevice -Class Ports, USB -Status OK | Select-Object FriendlyName, InstanceId -First 5\n\n# Linux / macOS Terminali\n# ps aux --sort=-%mem | head -n 6\n# ss -tuln  # veya netstat -tuln\n# ls -l /dev/tty*  # veya lsusb",
+    "code": "# PowerShell (Windows)\n# 1. Süreç ve Görev Yönetimi:\nGet-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5 Name, Id, @{N='RAM(MB)';E={[math]::Round($_.WorkingSet64/1MB,2)}}, CPU\n# 2. Disk Bakımı ve TRIM:\nGet-Volume\nOptimize-Volume -DriveLetter C -Defrag -Verbose\n# 3. Port ve Cihaz Denetimi:\nGet-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess -First 5\nGet-PnpDevice -Class Ports, USB -Status OK | Select-Object FriendlyName, InstanceId -First 5\n\n# Linux / macOS Terminali\n# ps aux --sort=-%mem | head -n 6\n# df -h && sudo fstrim -v / 2>/dev/null\n# ss -tuln\n# ls -l /dev/tty* 2>/dev/null",
     "prompt": "Windows, Linux ve macOS işletim sistemlerinde işlemci zamanlaması, sanal bellek yönetimi ve aygıt sürücüsü modellerini mühendislik bakış açısıyla karşılaştır. Bir USB-Seri dönüştürücünün (ör. CH340) takılmasından bir veri baytının kullanıcı yazılımına ulaşmasına kadar gerçekleşen işletim sistemi olaylarını (PnP tespiti, sürücü eşleme, kesme/IRQ, tampon bellek ve COM/tty port okuması) adım adım açıkla.",
     "quiz": [
       [
@@ -418,12 +436,13 @@
         "Fiziksel portlar donanım sinyallerinin elektriksel olarak aktığı arabirimlerdir (COM, USB); mantıksal ağ portları ise ağ trafiğinde işletim sisteminin hangi paketi hangi uygulamaya/servise teslim edeceğini belirleyen 16 bitlik mantıksal sayılardır."
       ]
     ],
-    "task": "Bilgisayarınızda (Windows, Linux veya macOS) en çok CPU/RAM tüketen ilk 3 süreci, açık olan 2 dinleme ağ portunu ve sistemdeki port/aygıt listesini komut satırından sorgulayarak ekran çıktıları ve açıklamalarıyla hafta03/sistem_raporu.md dosyası olarak hazırlayın.",
+    "task": "Bilgisayarınızda (Windows, Linux veya macOS) en çok CPU/RAM tüketen ilk 3 süreci, açık olan 2 dinleme ağ portunu, disk doluluk durumunu ve sistemdeki aygıt listesini komut satırından sorgulayarak ekran çıktıları ve açıklamalarıyla hafta03/sistem_raporu.md dosyası olarak hazırlayın.",
     "goals": [
       "Windows, Linux ve macOS işletim sistemlerinin çekirdek ve yönetim mimarilerini karşılaştırmak.",
       "İşlemci yönetiminde process, thread, multitasking ve scheduling mekanizmalarını açıklamak.",
       "Fiziksel RAM, sanal bellek, sayfalama ve disk takas (swap/pagefile) ilişkisini kavramak.",
       "NTFS, ext4, APFS ve FAT dosya sistemlerini mühendislik kriterlerine göre seçebilmek.",
+      "Görev Yöneticisi ve disk bakım araçlarının (TRIM, chkdsk/fsck) sistem kararlılığındaki hayati rolünü açıklamak.",
       "Aygıt sürücülerinin rolünü ve donanım kesmelerinin (IRQ) çalışma mantığını açıklamak.",
       "Donanım portları (COM/USB) ile mantıksal ağ portlarını (TCP/UDP) ayırt edip analiz edebilmek."
     ],
