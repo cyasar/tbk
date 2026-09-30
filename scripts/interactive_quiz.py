@@ -64,7 +64,11 @@ def render_interactive_quiz():
               </select>
             </div>
           </div>
-          <button type="button" class="check-btn" data-check-q="1">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="1">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="1" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="1" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="1" hidden></div>
         </div>
 
@@ -81,7 +85,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q2" value="C"> <span>C) Yalnızca DNS sorgulaması yapar; IP adreslerinde hiçbir değişiklik yapmadan paketi geçirir.</span></label>
             <label class="opt-label"><input type="radio" name="q2" value="D"> <span>D) Paketi doğrudan yerel ağda yayın (broadcast) yaparak diğer tüm bilgisayarlara çoğaltır.</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="2">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="2">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="2" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="2" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="2" hidden></div>
         </div>
 
@@ -98,7 +106,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q3" value="C"> <span>C) Kök DNS Sunucuları (.) → Üst Düzey Alan Adı TLD Sunucusu (.tr) → ÇOMÜ Yetkili DNS Sunucusu (Authoritative)</span></label>
             <label class="opt-label"><input type="radio" name="q3" value="D"> <span>D) Nginx Web Sunucusu → MySQL Veritabanı → Linux Kernel Socket Katmanı</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="3">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="3">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="3" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="3" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="3" hidden></div>
         </div>
 
@@ -115,7 +127,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q4" value="C"> <span>C) Wikipedia web sayfalarındaki görsellerin yüklenmesi</span></label>
             <label class="opt-label"><input type="radio" name="q4" value="D"> <span>D) Port 22 üzerinden sunucuya bağlanan SSH uzak terminali ve Port 1883 ile veri ileten MQTT IoT sensörü</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="4">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="4">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="4" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="4" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="4" hidden></div>
         </div>
 
@@ -132,7 +148,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q5" value="C"> <span>C) Yalnızca statik HTML dosyası okuyabilen Python simple HTTP modülü</span></label>
             <label class="opt-label"><input type="radio" name="q5" value="D"> <span>D) Salt Windows COM+ nesneleri çalıştıran eski IIS 5.0 sunucusu</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="5">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="5">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="5" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="5" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="5" hidden></div>
         </div>
 
@@ -172,7 +192,11 @@ def render_interactive_quiz():
               </select>
             </div>
           </div>
-          <button type="button" class="check-btn" data-check-q="6">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="6">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="6" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="6" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="6" hidden></div>
         </div>
 
@@ -215,7 +239,11 @@ def render_interactive_quiz():
               </select>
             </div>
           </div>
-          <button type="button" class="check-btn" data-check-q="7">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="7">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="7" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="7" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="7" hidden></div>
         </div>
 
@@ -232,7 +260,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q8" value="C"> <span>C) PHP/Python sunucu tarafında çalışarak dinamik HTML/JSON üretir; HTML, CSS ve React/JS ise kullanıcının tarayıcısında (Client) yorumlanıp ekrana çizilir.</span></label>
             <label class="opt-label"><input type="radio" name="q8" value="D"> <span>D) CSS dosyaları işletim sistemi kernel'ında derlenir ve doğrudan ekran kartı sürücüsüne gönderilir.</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="8">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="8">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="8" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="8" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="8" hidden></div>
         </div>
 
@@ -249,7 +281,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q9" value="C"> <span>C) Web sitelerinde CSS kullanımını yasaklayarak yalnızca siyah-beyaz metin yayınlanmasını zorunlu kılmıştır.</span></label>
             <label class="opt-label"><input type="radio" name="q9" value="D"> <span>D) HTTP protokolünü kapatıp yerine doğrudan FTP protokolünü koymuştur.</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="9">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="9">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="9" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="9" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="9" hidden></div>
         </div>
 
@@ -266,7 +302,11 @@ def render_interactive_quiz():
             <label class="opt-label"><input type="radio" name="q10" value="C"> <span>C) Her iki görev için de sadece DNS (Port 53)</span></label>
             <label class="opt-label"><input type="radio" name="q10" value="D"> <span>D) Her iki görev için de yalnızca ARP protokolü</span></label>
           </div>
-          <button type="button" class="check-btn" data-check-q="10">Cevabı Kontrol Et</button>
+          <div class="q-actions-bar">
+            <button type="button" class="check-btn" data-check-q="10">Cevabı Kontrol Et</button>
+            <button type="button" class="retry-btn" data-retry-q="10" title="Bu soruyu temizle ve tekrar dene">🔄 Tekrar Dene</button>
+            <button type="button" class="solution-btn" data-solution-q="10" title="Doğru çözümü soru üzerinde göster">💡 Çözümü Göster</button>
+          </div>
           <div class="q-feedback" data-feedback="10" hidden></div>
         </div>
       </div>

@@ -689,6 +689,71 @@
       return isCorrect;
     }
 
+    function retryQuestion(card) {
+      const qNum = Number(card.dataset.q);
+      const feedbackEl = card.querySelector('[data-feedback="' + qNum + '"]');
+
+      card.classList.remove('answered-correct', 'answered-wrong');
+      if (feedbackEl) {
+        feedbackEl.setAttribute('hidden', '');
+        feedbackEl.innerHTML = '';
+      }
+
+      const selects = card.querySelectorAll('select');
+      selects.forEach(function(s) {
+        s.value = '';
+        shuffleSelectOptions(s);
+      });
+
+      const radios = card.querySelectorAll('input[type="radio"]');
+      radios.forEach(function(r) {
+        r.checked = false;
+      });
+    }
+
+    function showSolution(card) {
+      const qNum = Number(card.dataset.q);
+      const feedbackEl = card.querySelector('[data-feedback="' + qNum + '"]');
+
+      if (qNum === 1) {
+        const s1 = card.querySelector('[data-user-step="1"]');
+        const s2 = card.querySelector('[data-user-step="2"]');
+        const s3 = card.querySelector('[data-user-step="3"]');
+        const s4 = card.querySelector('[data-user-step="4"]');
+        if (s1) s1.value = 'D';
+        if (s2) s2.value = 'O';
+        if (s3) s3.value = 'R';
+        if (s4) s4.value = 'A';
+      } else if (qNum === 6) {
+        const e1 = card.querySelector('[data-era-match="1"]');
+        const e2 = card.querySelector('[data-era-match="2"]');
+        const e3 = card.querySelector('[data-era-match="3"]');
+        if (e1) e1.value = 'web1';
+        if (e2) e2.value = 'web2';
+        if (e3) e3.value = 'web3';
+      } else if (qNum === 7) {
+        const h1 = card.querySelector('[data-http-match="1"]');
+        const h2 = card.querySelector('[data-http-match="2"]');
+        const h3 = card.querySelector('[data-http-match="3"]');
+        if (h1) h1.value = '502';
+        if (h2) h2.value = '404';
+        if (h3) h3.value = '201';
+      } else {
+        const correctVal = card.dataset.correct;
+        const targetRadio = card.querySelector('input[type="radio"][value="' + correctVal + '"]');
+        if (targetRadio) targetRadio.checked = true;
+      }
+
+      card.classList.remove('answered-wrong');
+      card.classList.add('answered-correct');
+
+      if (feedbackEl) {
+        feedbackEl.removeAttribute('hidden');
+        feedbackEl.className = 'q-feedback solution';
+        feedbackEl.innerHTML = '💡 <strong>Doğru Çözüm:</strong> ' + EXPLANATIONS[qNum].correct;
+      }
+    }
+
     function updateScore() {
       let correctCount = 0;
       cards.forEach(function(card) {
@@ -704,12 +769,38 @@
     cards.forEach(function(card) {
       const qNum = card.dataset.q;
       const checkBtn = card.querySelector('[data-check-q="' + qNum + '"]');
+      const retryBtn = card.querySelector('[data-retry-q="' + qNum + '"]');
+      const solutionBtn = card.querySelector('[data-solution-q="' + qNum + '"]');
+
       if (checkBtn) {
         checkBtn.addEventListener('click', function() {
           evaluateQuestion(card);
           updateScore();
         });
       }
+
+      if (retryBtn) {
+        retryBtn.addEventListener('click', function() {
+          retryQuestion(card);
+          updateScore();
+        });
+      }
+
+      if (solutionBtn) {
+        solutionBtn.addEventListener('click', function() {
+          showSolution(card);
+          updateScore();
+        });
+      }
+
+      // Clear error state when user changes an answer to retry
+      card.addEventListener('change', function() {
+        if (card.classList.contains('answered-wrong')) {
+          card.classList.remove('answered-wrong');
+          const fb = card.querySelector('.q-feedback');
+          if (fb) fb.setAttribute('hidden', '');
+        }
+      });
     });
 
     if (checkAllBtn) {
@@ -724,16 +815,7 @@
     if (resetBtn) {
       resetBtn.addEventListener('click', function() {
         cards.forEach(function(card) {
-          card.classList.remove('answered-correct', 'answered-wrong');
-          const fb = card.querySelector('.q-feedback');
-          if (fb) fb.setAttribute('hidden', '');
-          const selects = card.querySelectorAll('select');
-          selects.forEach(function(s) {
-            s.value = '';
-            shuffleSelectOptions(s);
-          });
-          const radios = card.querySelectorAll('input[type="radio"]');
-          radios.forEach(function(r) { r.checked = false; });
+          retryQuestion(card);
         });
         if (scoreDisplay) scoreDisplay.textContent = '0 / ' + cards.length;
       });
