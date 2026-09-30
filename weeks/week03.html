@@ -1,9 +1,312 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>İşlemci, Bellek ve Sistem Yönetimi | TBK · ÇOMÜ</title><meta name="description" content="Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin."><meta property="og:title" content="İşlemci, Bellek ve Sistem Yönetimi"><meta property="og:description" content="Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin."><meta property="og:type" content="website"><meta property="og:locale" content="tr_TR"><meta name="theme-color" content="#fafafc"><link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml"><script src="../js/theme.js"></script><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/presentation.css"><link rel="stylesheet" href="../css/responsive.css"><script defer src="../js/main.js"></script><script defer src="../js/presentation.js"></script><script defer src="../js/demos.js"></script></head><body data-week="3"><a class="skip" href="#main">İçeriğe geç</a><header class="topbar"><nav class="nav-inner" aria-label="Ana navigasyon"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">TBK</span><span><strong>Temel Bilgi Teknolojileri</strong><small>ÇOMÜ · ELEKTRİK-ELEKTRONİK</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" hidden>Menü <span aria-hidden="true">☰</span></button><div class="nav-links" id="primary-links"><a href="../index.html#program">Ders programı</a><a href="../index.html#proje">Dönem projesi</a><a href="../index.html#ai">AI ilkeleri</a></div><button class="theme-toggle" type="button" aria-label="Temayı değiştir">☾</button></nav></header><main id="main" class="container"><div class="breadcrumb"><a href="../index.html#program">Ders programı</a> / 03. Hafta</div><header class="lesson-header"><span class="eyebrow">03. HAFTA · Sistemler · 2 SAAT</span><h1>İşlemci, Bellek ve Sistem Yönetimi</h1><p>Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin.</p><div class="actions"><button class="primary" id="start-presentation">▷ Sunum modunu başlat</button><a class="button" href="#uygulama">Uygulamaya geç</a></div><p class="muted">Sunum: ← → / Space · Home / End · F: tam ekran · Esc: çıkış<br>Önerilen akış: 15 dk hedefler · 50 dk teori · 35 dk uygulama · 20 dk değerlendirme</p></header><div class="lesson-layout"><aside class="toc"><details class="toc-disclosure" open><summary>Bu haftanın içindekileri</summary><span class="eyebrow">BU HAFTADA</span><nav aria-label="Ders içindekiler"><a href="#hedefler">Öğrenme Hedefleri</a><a href="#kavramlar">Temel Kavramlar</a><a href="#karsilastirma">Karşılaştırma</a><a href="#mimari">Sistem Mimarisi</a><a href="#ornek">Gerçek Dünya Örneği</a><a href="#uygulama">Uygulama</a><a href="#ai-calisma">Yapay Zekâ ile Çalışma</a><a href="#test">Kendini Test Et</a><a href="#gorev">Haftalık Çalışma</a><a href="#kaynaklar">Kaynaklar ve İleri Okuma</a></nav></details></aside><article aria-label="Haftalık ders içeriği"><section class="lesson-section" id="hedefler" aria-labelledby="hedefler-title"><h2 id="hedefler-title">Öğrenme Hedefleri</h2><ul><li>Windows, Linux ve macOS işletim sistemlerinin çekirdek ve yönetim mimarilerini karşılaştırmak.</li><li>İşlemci yönetiminde process, thread, multitasking ve scheduling mekanizmalarını açıklamak.</li><li>Fiziksel RAM, sanal bellek, sayfalama ve disk takas (swap/pagefile) ilişkisini kavramak.</li><li>NTFS, ext4, APFS ve FAT dosya sistemlerini mühendislik kriterlerine göre seçebilmek.</li><li>Aygıt sürücülerinin rolünü ve donanım kesmelerinin (IRQ) çalışma mantığını açıklamak.</li><li>Donanım portları (COM/USB) ile mantıksal ağ portlarını (TCP/UDP) ayırt edip analiz edebilmek.</li></ul></section><section class="lesson-section" id="kavramlar" aria-labelledby="kavramlar-title"><h2 id="kavramlar-title">Temel Kavramlar</h2><div class="concepts"><div class="concept"><strong>İşlemci Yönetimi (Process &amp; Thread)</strong>Çalışan programın kaynak tahsisini, çekirdek zamanlamasını (scheduling) ve önceliklerini yöneten katman.</div><div class="concept"><strong>Bellek Yönetimi (RAM &amp; Sanal Bellek)</strong>Fiziksel RAM adreslemesi, sanal bellek (virtual memory), sayfalama (paging) ve disk takas (swap/pagefile) mekanizmaları.</div><div class="concept"><strong>Dosya Yönetimi &amp; İzinler</strong>Verilerin depolama aygıtlarında düzenlenme formatı (NTFS, ext4, APFS, FAT32) ve kullanıcı erişim yetkileri (ACL, POSIX permissions).</div><div class="concept"><strong>Cihaz Yönetimi (Sürücüler &amp; IRQ)</strong>İşletim sistemi ile donanım donatısı arasındaki iletişimi kuran sürücüler (drivers) ve donanım kesmeleri (interrupt requests).</div><div class="concept"><strong>Port Yönetimi (Donanım &amp; Ağ Portları)</strong>Fiziksel bağlantı noktaları (USB, UART/COM, GPIO) ile ağ soketleri üzerindeki mantıksal servis portları (TCP/UDP).</div><div class="concept"><strong>İşletim Sistemi Aileleri</strong>Windows (NT mimarisi), Linux (açık kaynak monolitik çekirdek) ve macOS (Unix tabanlı XNU/Darwin) sistem yaklaşımları.</div></div></section><section class="lesson-section" id="konu-1" aria-labelledby="konu-1-title"><h2 id="konu-1-title">Ders İçeriği · İşletim sistemi ekosistemleri: Windows, Linux ve macOS</h2><p>Windows, iş istasyonları ve kurumsal yazılımlarda yaygın olup hibrit NT çekirdeği, Win32 API ve PowerShell altyapısına dayanır. Geniş donanım sürücüsü ve ticari yazılım desteği sunar.</p><p>Linux, sunucular, gömülü sistemler ve geliştiriciler için esnek, açık kaynaklı monolitik bir çekirdektir (Pardus, Ubuntu vb.); POSIX standartlarını izler. Kullanıcı çekirdek parametrelerine doğrudan müdahale edebilir.</p><p>macOS, BSD ve Mach çekirdekleri üzerine kurulu Unix (Darwin) sertifikalı bir sistemdir; donanım-yazılım optimizasyonu ve POSIX uyumlu güçlü bir terminal ortamı sağlar.</p><p>Mühendislik projelerinde bir sistemin seçimi donanım uyumluluğu, gerçek zamanlı gereksinimler, lisanslama ve otomasyon araçlarına göre belirlenir.</p></section><section class="lesson-section" id="konu-2" aria-labelledby="konu-2-title"><h2 id="konu-2-title">İşlemci (CPU) yönetimi: Process, thread, scheduling ve çoklu görev</h2><p>Bir program çalıştırıldığında işletim sistemi tarafından bir süreç (process) olarak başlatılır; kendi yalıtılmış sanal adres alanına, dosya tanıtıcılarına ve ortam değişkenlerine sahiptir.</p><p>Bir süreç içinde eşzamanlı yürütülen bağımsız akışlara iş parçacığı (thread) denir. Thread&#x27;ler aynı sürecin belleğini ortak kullanır; bu sayede hızlı veri paylaşırlar ancak eşzamanlama (mutex, semafor) dikkatle yönetilmelidir.</p><p>CPU Zamanlayıcı (Scheduler), işlemcinin hangi iş parçacığına ne kadar zaman dilimi (time slice) ayıracağını belirler. Preemptive (öncelikli) çoklu görev mimarisi, hiçbir sürecin tüm işlemciyi kilitlemesine izin vermez.</p><p>Çok çekirdekli sistemlerde işlemci benzeşimi (CPU affinity) ve çekirdek yük dağılımı sistem performansında belirleyicidir.</p></section><section class="lesson-section" id="konu-3" aria-labelledby="konu-3-title"><h2 id="konu-3-title">Bellek (Memory) yönetimi: Fiziksel RAM, sayfalama ve swap</h2><p>Bellek yönetim birimi (MMU), işlemcinin ürettiği sanal adresleri donanım düzeyinde fiziksel RAM adreslerine dönüştürür. Bu yalıtım, bir uygulamanın çökmesinin işletim sistemini veya diğer uygulamaları etkilemesini engeller.</p><p>Sanal bellek sabit boyutlu sayfalara (pages), fiziksel RAM ise çerçevelere (page frames) bölünür. İstenen sayfa fiziksel RAM&#x27;de bulunmadığında sayfa hatası (page fault) tetiklenir.</p><p>Fiziksel RAM dolduğunda veya etkin olmayan sayfalar olduğunda, işletim sistemi bu sayfaları diske yazar: Windows&#x27;ta sayfa dosyası (pagefile.sys), Linux&#x27;ta swap alanı veya swap dosyası kullanılır.</p><p>Aşırı sayfalama (thrashing), sistemin CPU zamanını hesaplama yerine sürekli diskten sayfaları takas etmeye harcamasına ve bilgisayarın kilitlenmesine yol açar.</p></section><section class="lesson-section" id="konu-4" aria-labelledby="konu-4-title"><h2 id="konu-4-title">Dosya yönetimi: Dosya sistemleri ve erişim izinleri</h2><p>Dosya sistemi; verilerin depolama aygıtlarında nasıl adlandırılacağını, saklanacağını, dizinleneceğini ve bulunacağını belirleyen mantıksal yapıdır.</p><p>NTFS (Windows): Günlükleme (journaling), dosya düzeyinde sıkıştırma, şifreleme ve gelişmiş erişim denetim listeleri (ACL) sunar.</p><p>ext4 (Linux): Yüksek performans, günlükleme, büyük dosya desteği ve standart POSIX dosya izinleri (rwx: okuma, yazma, çalıştırma) sağlar.</p><p>APFS (macOS): SSD optimizasyonu, anlık görüntü (snapshot), klonlama ve güçlü şifreleme özelliklerine odaklanır.</p><p>FAT32 ve exFAT: FAT32 maksimum 4 GB tek dosya sınırına sahiptir ancak geniş cihaz uyumluluğu sunar. exFAT ise büyük taşınabilir depolama birimleri için modern alternatiftir.</p></section><section class="lesson-section" id="konu-5" aria-labelledby="konu-5-title"><h2 id="konu-5-title">Cihaz yönetimi: Sürücüler, kesmeler (IRQ) ve I/O</h2><p>İşletim sistemi; ekran kartı, sensör arabirimi veya ağ adaptörü gibi donanımlarla doğrudan konuşmaz; bu iletişimi aygıt sürücüleri (device drivers) üzerinden yürütür.</p><p>Sürücüler donanıma özgü komutları işletim sisteminin anlayabileceği standart API çağrılarına çevirir. Çekirdek modunda (kernel-mode) çalışan sürücülerdeki bir hata mavi ekrana (BSOD) veya çekirdek paniğine (kernel panic) yol açabilir.</p><p>Kesme İstekleri (Interrupt Request - IRQ): Donanım acil bir olay gerçekleştiğinde (tuşa basılması, ağ paketinin gelmesi, sensör verisi) CPU&#x27;yu uyarır; CPU mevcut işini geçici olarak durdurup Kesme Hizmet Rutinini (ISR) çalıştırır.</p><p>Tak ve Çalıştır (Plug and Play - PnP) mekanizması, USB gibi harici aygıtlar bağlandığında kimlik tespiti yaparak uygun sürücüyü dinamik olarak yükler.</p></section><section class="lesson-section" id="konu-6" aria-labelledby="konu-6-title"><h2 id="konu-6-title">Port yönetimi: Donanım portları ve mantıksal ağ portları</h2><p>Fiziksel ve Donanım Portları: Bilgisayara veya mikrokontrolcüye donanım bağlamak için kullanılan fiziksel arayüzlerdir. Seri portlar (COM portları / UART), USB, Ethernet, I2C, SPI ve mikrodenetleyici GPIO pinleri bu kapsama girer. Bir elektronik cihaz (ör. Arduino, ESP32) bilgisayara bağlandığında işletim sistemi bunu sanal bir seri port (Windows&#x27;ta COM3, Linux&#x27;ta /dev/ttyUSB0) olarak tanır.</p><p>Mantıksal Ağ Portları: TCP/IP ağ protokollerinde çalışan uygulamaların ve servislerin ayırt edilmesini sağlayan 16 bitlik (1-65535 arası) sayısal adreslerdir. IP adresi binayı, port numarası ise binadaki daireyi temsil eder.</p><p>İyi bilinen portlar (0-1023): HTTP (80), HTTPS (443), SSH (22), DNS (53). Kayıtlı portlar (1024-49151) ve Dinamik/Özel portlar (49152-65535).</p><p>Sistemde hangi portun hangi süreç tarafından dinlendiği (listening socket) güvenlik ve servis yönetimi için kritik bir izleme konusudur.</p></section><section class="lesson-section" id="karsilastirma" aria-labelledby="karsilastirma-title"><h2 id="karsilastirma-title">Karşılaştırma</h2><div class="table-wrap"><table><thead><tr><th scope="col">Yönetim Alanı</th><th scope="col">Windows Yaklaşımı</th><th scope="col">Linux Yaklaşımı</th><th scope="col">macOS Yaklaşımı</th></tr></thead><tbody><tr><td>İşletim Sistemi Çekirdeği</td><td>Hibrit NT Çekirdeği</td><td>Monolitik Açık Kaynak Çekirdek</td><td>XNU (Mach + BSD Hibrit)</td></tr><tr><td>İşlemci &amp; Süreç İzleme</td><td>Görev Yöneticisi, Get-Process</td><td>ps, top, htop</td><td>Activity Monitor, ps</td></tr><tr><td>Bellek Takas Alanı</td><td>pagefile.sys</td><td>Swap Bölümü / Swap Dosyası</td><td>Dinamik Takas Dosyaları (/var/vm)</td></tr><tr><td>Varsayılan Dosya Sistemi</td><td>NTFS</td><td>ext4 / btrfs</td><td>APFS</td></tr><tr><td>Cihaz &amp; Port Tespiti</td><td>Get-PnpDevice, Aygıt Yöneticisi, COMx</td><td>lspci, lsusb, /dev/ttyUSBx</td><td>system_profiler, /dev/cu.*</td></tr><tr><td>Ağ Portu İzleme</td><td>Get-NetTCPConnection, netstat</td><td>ss -tuln, netstat -tuln</td><td>lsof -i, netstat -an</td></tr></tbody></table></div></section><section class="lesson-section" id="mimari" aria-labelledby="mimari-title"><h2 id="mimari-title">Sistem Mimarisi</h2><div class="diagram">Kullanıcı Alanı:    [Uygulama / CLI / Web Sunucusu]
-                            ↕ Sistem Çağrısı (Syscall)
-Çekirdek (Kernel):  [İşlemci]   [Bellek]   [Dosya]   [Ağ Portu]
-                   Scheduler      MMU       NTFS/ext4  TCP/UDP
-                            ↕ Sürücü (Driver) / Kesme (IRQ)
-Donanım Katmanı:    [CPU]       [RAM]      [SSD/Disk] [USB / COM / NIC]</div><p>İşletim sistemi çekirdeği; işlemci, bellek, dosya sistemleri, cihaz sürücüleri ve portları soyutlayarak kullanıcı uygulamalarına güvenli ve eşzamanlı bir çalışma alanı sunar.</p></section><section class="lesson-section" id="ornek" aria-labelledby="ornek-title"><h2 id="ornek-title">Gerçek Dünya Örneği</h2><p>Laboratuvarda bir ESP32 kartı USB üzerinden PC&#x27;ye bağlandığında: Cihaz yönetimi kartı CH340/CP2102 sürücüsüyle bir COM/ttyUSB portu olarak işletim sistemine tanıtır. Geliştirici kodu derlediğinde işlemci yönetimi derleme sürecini çekirdeklere dağıtır. Yükleme aracı seri port üzerinden veriyi aktarır. Cihaz Wi-Fi üzerinden ölçüm gönderdiğinde ise ağ portu (ör. 8080) soketi dinleyen sunucu süreci tarafından okunur.</p></section><section class="lesson-section" id="uygulama" aria-labelledby="uygulama-title"><h2 id="uygulama-title">Uygulama</h2><ul><li>PowerShell veya Bash üzerinden en çok bellek ve CPU kullanan ilk 5 süreci listeyin.</li><li>Sistemde açık ve dinlemede olan ağ portlarını (listening ports) komut satırından tespit edin.</li><li>Bilgisayarınıza bağlı tak-çalıştır aygıtları ve sanal seri/COM portları listeleyin.</li><li>Bir test klasörü oluşturup erişim izinlerini komut satırından (icacls veya ls -l) inceleyin.</li></ul><div class="code-wrap"><pre><code># PowerShell (Windows)
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>İşlemci, Bellek ve Sistem Yönetimi | TBK · ÇOMÜ</title><meta name="description" content="Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin."><meta property="og:title" content="İşlemci, Bellek ve Sistem Yönetimi"><meta property="og:description" content="Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin."><meta property="og:type" content="website"><meta property="og:locale" content="tr_TR"><meta name="theme-color" content="#fafafc"><link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml"><script src="../js/theme.js"></script><link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/presentation.css"><link rel="stylesheet" href="../css/responsive.css"><script defer src="../js/main.js"></script><script defer src="../js/presentation.js"></script><script defer src="../js/demos.js"></script><link rel="stylesheet" href="../css/system-lab.css"><script defer src="../js/system-lab.js"></script></head><body data-week="3"><a class="skip" href="#main">İçeriğe geç</a><header class="topbar"><nav class="nav-inner" aria-label="Ana navigasyon"><a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">TBK</span><span><strong>Temel Bilgi Teknolojileri</strong><small>ÇOMÜ · ELEKTRİK-ELEKTRONİK</small></span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links" hidden>Menü <span aria-hidden="true">☰</span></button><div class="nav-links" id="primary-links"><a href="../index.html#program">Ders programı</a><a href="../index.html#proje">Dönem projesi</a><a href="../index.html#ai">AI ilkeleri</a></div><button class="theme-toggle" type="button" aria-label="Temayı değiştir">☾</button></nav></header><main id="main" class="container"><div class="breadcrumb"><a href="../index.html#program">Ders programı</a> / 03. Hafta</div><header class="lesson-header"><span class="eyebrow">03. HAFTA · Sistemler · 2 SAAT</span><h1>İşlemci, Bellek ve Sistem Yönetimi</h1><p>Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetimini keşfedin; sistem kaynaklarını denetleyin.</p><div class="actions"><button class="primary" id="start-presentation">▷ Sunum modunu başlat</button><a class="button" href="#uygulama">Uygulamaya geç</a></div><p class="muted">Sunum: ← → / Space · Home / End · F: tam ekran · Esc: çıkış<br>Önerilen akış: 15 dk hedefler · 50 dk teori · 35 dk uygulama · 20 dk değerlendirme</p></header><div class="lesson-layout"><aside class="toc"><details class="toc-disclosure" open><summary>Bu haftanın içindekileri</summary><span class="eyebrow">BU HAFTADA</span><nav aria-label="Ders içindekiler"><a href="#hedefler">Öğrenme Hedefleri</a><a href="#kavramlar">Temel Kavramlar</a><a href="#karsilastirma">Karşılaştırma</a><a href="#mimari">Sistem Mimarisi</a><a href="#simulasyon-lab">İşletim Sistemleri Simülasyon Laboratuvarı</a><a href="#ornek">Gerçek Dünya Örneği</a><a href="#uygulama">Uygulama</a><a href="#ai-calisma">Yapay Zekâ ile Çalışma</a><a href="#test">Kendini Test Et</a><a href="#gorev">Haftalık Çalışma</a><a href="#kaynaklar">Kaynaklar ve İleri Okuma</a></nav></details></aside><article aria-label="Haftalık ders içeriği"><section class="lesson-section" id="hedefler" aria-labelledby="hedefler-title"><h2 id="hedefler-title">Öğrenme Hedefleri</h2><ul><li>Windows, Linux ve macOS işletim sistemlerinin çekirdek ve yönetim mimarilerini karşılaştırmak.</li><li>İşlemci yönetiminde process, thread, multitasking ve scheduling mekanizmalarını açıklamak.</li><li>Fiziksel RAM, sanal bellek, sayfalama ve disk takas (swap/pagefile) ilişkisini kavramak.</li><li>NTFS, ext4, APFS ve FAT dosya sistemlerini mühendislik kriterlerine göre seçebilmek.</li><li>Aygıt sürücülerinin rolünü ve donanım kesmelerinin (IRQ) çalışma mantığını açıklamak.</li><li>Donanım portları (COM/USB) ile mantıksal ağ portlarını (TCP/UDP) ayırt edip analiz edebilmek.</li></ul></section><section class="lesson-section" id="kavramlar" aria-labelledby="kavramlar-title"><h2 id="kavramlar-title">Temel Kavramlar</h2><div class="concepts"><div class="concept"><strong>İşlemci Yönetimi (Process &amp; Thread)</strong>Çalışan programın kaynak tahsisini, çekirdek zamanlamasını (scheduling) ve önceliklerini yöneten katman.</div><div class="concept"><strong>Bellek Yönetimi (RAM &amp; Sanal Bellek)</strong>Fiziksel RAM adreslemesi, sanal bellek (virtual memory), sayfalama (paging) ve disk takas (swap/pagefile) mekanizmaları.</div><div class="concept"><strong>Dosya Yönetimi &amp; İzinler</strong>Verilerin depolama aygıtlarında düzenlenme formatı (NTFS, ext4, APFS, FAT32) ve kullanıcı erişim yetkileri (ACL, POSIX permissions).</div><div class="concept"><strong>Cihaz Yönetimi (Sürücüler &amp; IRQ)</strong>İşletim sistemi ile donanım donatısı arasındaki iletişimi kuran sürücüler (drivers) ve donanım kesmeleri (interrupt requests).</div><div class="concept"><strong>Port Yönetimi (Donanım &amp; Ağ Portları)</strong>Fiziksel bağlantı noktaları (USB, UART/COM, GPIO) ile ağ soketleri üzerindeki mantıksal servis portları (TCP/UDP).</div><div class="concept"><strong>İşletim Sistemi Aileleri</strong>Windows (NT mimarisi), Linux (açık kaynak monolitik çekirdek) ve macOS (Unix tabanlı XNU/Darwin) sistem yaklaşımları.</div></div></section><section class="lesson-section" id="konu-1" aria-labelledby="konu-1-title"><h2 id="konu-1-title">Ders İçeriği · İşletim sistemi ekosistemleri: Windows, Linux ve macOS</h2><p>Windows, iş istasyonları ve kurumsal yazılımlarda yaygın olup hibrit NT çekirdeği, Win32 API ve PowerShell altyapısına dayanır. Geniş donanım sürücüsü ve ticari yazılım desteği sunar.</p><p>Linux, sunucular, gömülü sistemler ve geliştiriciler için esnek, açık kaynaklı monolitik bir çekirdektir (Pardus, Ubuntu vb.); POSIX standartlarını izler. Kullanıcı çekirdek parametrelerine doğrudan müdahale edebilir.</p><p>macOS, BSD ve Mach çekirdekleri üzerine kurulu Unix (Darwin) sertifikalı bir sistemdir; donanım-yazılım optimizasyonu ve POSIX uyumlu güçlü bir terminal ortamı sağlar.</p><p>Mühendislik projelerinde bir sistemin seçimi donanım uyumluluğu, gerçek zamanlı gereksinimler, lisanslama ve otomasyon araçlarına göre belirlenir.</p></section><section class="lesson-section" id="konu-2" aria-labelledby="konu-2-title"><h2 id="konu-2-title">İşlemci (CPU) yönetimi: Process, thread, scheduling ve çoklu görev</h2><p>Bir program çalıştırıldığında işletim sistemi tarafından bir süreç (process) olarak başlatılır; kendi yalıtılmış sanal adres alanına, dosya tanıtıcılarına ve ortam değişkenlerine sahiptir.</p><p>Bir süreç içinde eşzamanlı yürütülen bağımsız akışlara iş parçacığı (thread) denir. Thread&#x27;ler aynı sürecin belleğini ortak kullanır; bu sayede hızlı veri paylaşırlar ancak eşzamanlama (mutex, semafor) dikkatle yönetilmelidir.</p><p>CPU Zamanlayıcı (Scheduler), işlemcinin hangi iş parçacığına ne kadar zaman dilimi (time slice) ayıracağını belirler. Preemptive (öncelikli) çoklu görev mimarisi, hiçbir sürecin tüm işlemciyi kilitlemesine izin vermez.</p><p>Çok çekirdekli sistemlerde işlemci benzeşimi (CPU affinity) ve çekirdek yük dağılımı sistem performansında belirleyicidir.</p></section><section class="lesson-section" id="konu-3" aria-labelledby="konu-3-title"><h2 id="konu-3-title">Bellek (Memory) yönetimi: Fiziksel RAM, sayfalama ve swap</h2><p>Bellek yönetim birimi (MMU), işlemcinin ürettiği sanal adresleri donanım düzeyinde fiziksel RAM adreslerine dönüştürür. Bu yalıtım, bir uygulamanın çökmesinin işletim sistemini veya diğer uygulamaları etkilemesini engeller.</p><p>Sanal bellek sabit boyutlu sayfalara (pages), fiziksel RAM ise çerçevelere (page frames) bölünür. İstenen sayfa fiziksel RAM&#x27;de bulunmadığında sayfa hatası (page fault) tetiklenir.</p><p>Fiziksel RAM dolduğunda veya etkin olmayan sayfalar olduğunda, işletim sistemi bu sayfaları diske yazar: Windows&#x27;ta sayfa dosyası (pagefile.sys), Linux&#x27;ta swap alanı veya swap dosyası kullanılır.</p><p>Aşırı sayfalama (thrashing), sistemin CPU zamanını hesaplama yerine sürekli diskten sayfaları takas etmeye harcamasına ve bilgisayarın kilitlenmesine yol açar.</p></section><section class="lesson-section" id="konu-4" aria-labelledby="konu-4-title"><h2 id="konu-4-title">Dosya yönetimi: Dosya sistemleri ve erişim izinleri</h2><p>Dosya sistemi; verilerin depolama aygıtlarında nasıl adlandırılacağını, saklanacağını, dizinleneceğini ve bulunacağını belirleyen mantıksal yapıdır.</p><p>NTFS (Windows): Günlükleme (journaling), dosya düzeyinde sıkıştırma, şifreleme ve gelişmiş erişim denetim listeleri (ACL) sunar.</p><p>ext4 (Linux): Yüksek performans, günlükleme, büyük dosya desteği ve standart POSIX dosya izinleri (rwx: okuma, yazma, çalıştırma) sağlar.</p><p>APFS (macOS): SSD optimizasyonu, anlık görüntü (snapshot), klonlama ve güçlü şifreleme özelliklerine odaklanır.</p><p>FAT32 ve exFAT: FAT32 maksimum 4 GB tek dosya sınırına sahiptir ancak geniş cihaz uyumluluğu sunar. exFAT ise büyük taşınabilir depolama birimleri için modern alternatiftir.</p></section><section class="lesson-section" id="konu-5" aria-labelledby="konu-5-title"><h2 id="konu-5-title">Cihaz yönetimi: Sürücüler, kesmeler (IRQ) ve I/O</h2><p>İşletim sistemi; ekran kartı, sensör arabirimi veya ağ adaptörü gibi donanımlarla doğrudan konuşmaz; bu iletişimi aygıt sürücüleri (device drivers) üzerinden yürütür.</p><p>Sürücüler donanıma özgü komutları işletim sisteminin anlayabileceği standart API çağrılarına çevirir. Çekirdek modunda (kernel-mode) çalışan sürücülerdeki bir hata mavi ekrana (BSOD) veya çekirdek paniğine (kernel panic) yol açabilir.</p><p>Kesme İstekleri (Interrupt Request - IRQ): Donanım acil bir olay gerçekleştiğinde (tuşa basılması, ağ paketinin gelmesi, sensör verisi) CPU&#x27;yu uyarır; CPU mevcut işini geçici olarak durdurup Kesme Hizmet Rutinini (ISR) çalıştırır.</p><p>Tak ve Çalıştır (Plug and Play - PnP) mekanizması, USB gibi harici aygıtlar bağlandığında kimlik tespiti yaparak uygun sürücüyü dinamik olarak yükler.</p></section><section class="lesson-section" id="konu-6" aria-labelledby="konu-6-title"><h2 id="konu-6-title">Port yönetimi: Donanım portları ve mantıksal ağ portları</h2><p>Fiziksel ve Donanım Portları: Bilgisayara veya mikrokontrolcüye donanım bağlamak için kullanılan fiziksel arayüzlerdir. Seri portlar (COM portları / UART), USB, Ethernet, I2C, SPI ve mikrodenetleyici GPIO pinleri bu kapsama girer. Bir elektronik cihaz (ör. Arduino, ESP32) bilgisayara bağlandığında işletim sistemi bunu sanal bir seri port (Windows&#x27;ta COM3, Linux&#x27;ta /dev/ttyUSB0) olarak tanır.</p><p>Mantıksal Ağ Portları: TCP/IP ağ protokollerinde çalışan uygulamaların ve servislerin ayırt edilmesini sağlayan 16 bitlik (1-65535 arası) sayısal adreslerdir. IP adresi binayı, port numarası ise binadaki daireyi temsil eder.</p><p>İyi bilinen portlar (0-1023): HTTP (80), HTTPS (443), SSH (22), DNS (53). Kayıtlı portlar (1024-49151) ve Dinamik/Özel portlar (49152-65535).</p><p>Sistemde hangi portun hangi süreç tarafından dinlendiği (listening socket) güvenlik ve servis yönetimi için kritik bir izleme konusudur.</p></section><section class="lesson-section" id="karsilastirma" aria-labelledby="karsilastirma-title"><h2 id="karsilastirma-title">Karşılaştırma</h2><div class="table-wrap"><table><thead><tr><th scope="col">Yönetim Alanı</th><th scope="col">Windows Yaklaşımı</th><th scope="col">Linux Yaklaşımı</th><th scope="col">macOS Yaklaşımı</th></tr></thead><tbody><tr><td>İşletim Sistemi Çekirdeği</td><td>Hibrit NT Çekirdeği</td><td>Monolitik Açık Kaynak Çekirdek</td><td>XNU (Mach + BSD Hibrit)</td></tr><tr><td>İşlemci &amp; Süreç İzleme</td><td>Görev Yöneticisi, Get-Process</td><td>ps, top, htop</td><td>Activity Monitor, ps</td></tr><tr><td>Bellek Takas Alanı</td><td>pagefile.sys</td><td>Swap Bölümü / Swap Dosyası</td><td>Dinamik Takas Dosyaları (/var/vm)</td></tr><tr><td>Varsayılan Dosya Sistemi</td><td>NTFS</td><td>ext4 / btrfs</td><td>APFS</td></tr><tr><td>Cihaz &amp; Port Tespiti</td><td>Get-PnpDevice, Aygıt Yöneticisi, COMx</td><td>lspci, lsusb, /dev/ttyUSBx</td><td>system_profiler, /dev/cu.*</td></tr><tr><td>Ağ Portu İzleme</td><td>Get-NetTCPConnection, netstat</td><td>ss -tuln, netstat -tuln</td><td>lsof -i, netstat -an</td></tr></tbody></table></div></section><section class="lesson-section" id="mimari" aria-labelledby="mimari-title"><h2 id="mimari-title">Sistem Mimarisi</h2><div class="sys-architecture-explorer" data-sys-arch>
+      <p class="sys-arch-lead">İşletim sistemi; donanım ile kullanıcı yazılımları arasında köprü kuran <strong>katmanlı bir denetim merkezidir</strong>. Bir katmana tıklayarak görevini, Windows/Linux/macOS karşılıklarını ve kilit mühendislik detaylarını inceleyin.</p>
+      
+      <div class="sys-arch-grid" role="region" aria-label="Sistem Mimarisi Katmanları">
+        <button type="button" class="sys-arch-node" data-arch-id="user-space" data-title="Kullanıcı Alanı" data-en="User Space" data-desc="Uygulamalar, web sunucuları ve terminal kabukları (CLI/GUI) burada kısıtlı yetkiyle (Ring 3) çalışır." data-win="Windows: Win32/UWP Apps, PowerShell" data-lnx="Linux: Kullanıcı Süreçleri, Bash, Zsh" data-mac="macOS: Cocoa Apps, Zsh Terminali" data-tip="Doğrudan donanıma erişemez; sistem çağrısı (syscall) yapmak zorundadır." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="24" width="28" height="24" rx="4"/><rect x="50" y="24" width="28" height="24" rx="4"/><rect x="18" y="52" width="60" height="20" rx="4"/><circle cx="28" cy="62" r="3"/><circle cx="38" cy="62" r="3"/></g></svg></div>
+          <div class="node-text"><strong>Kullanıcı Alanı</strong><small lang="en">User Space</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="syscalls" data-title="Sistem Çağrıları" data-en="System Calls (Syscall)" data-desc="Kullanıcı programlarının işletim sistemi çekirdeğinden kaynak istemesini sağlayan güvenli geçiş kapısı." data-win="Windows: Win32 API, NTDLL.dll (NtReadFile vb.)" data-lnx="Linux: POSIX API (read, write, fork, exec)" data-mac="macOS: BSD/Mach Syscalls (open, mmap, fork)" data-tip="Kullanıcı modundan çekirdek moduna (Ring 0) bağlam geçişi (context switch) tetikler." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 48h56m-14-14 14 14-14 14M76 48H20"/><rect x="14" y="22" width="68" height="52" rx="8" stroke-dasharray="4 4"/></g></svg></div>
+          <div class="node-text"><strong>Sistem Çağrıları</strong><small lang="en">System Calls (Syscall)</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="scheduler" data-title="İşlemci &amp; Zamanlayıcı" data-en="CPU Scheduler &amp; Processes" data-desc="Çalışmaya hazır süreçleri ve iş parçacıklarını CPU çekirdeklerine paylaştırır." data-win="Windows: Preemptive Priority Scheduler (0-31)" data-lnx="Linux: Completely Fair Scheduler (CFS)" data-mac="macOS: Mach Preemptive Scheduler" data-tip="Round-Robin ve öncelik algoritmalarıyla hiçbir sürecin sistemi kilitlemesine izin vermez." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="26" y="26" width="44" height="44" rx="8"/><rect x="38" y="38" width="20" height="20" rx="4"/><path d="M36 16v10m12-10v10m12-10v10M36 70v10m12-10v10m12-10v10M16 36h10m-10 12h10m-10 12h10M70 36h10m-10 12h10m-10 12h10"/></g></svg></div>
+          <div class="node-text"><strong>İşlemci &amp; Zamanlayıcı</strong><small lang="en">CPU Scheduler &amp; Processes</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="vmm" data-title="Sanal Bellek &amp; MMU" data-en="Virtual Memory Manager (VMM)" data-desc="Her sürece izole 64-bit sanal adres alanı sunar; fiziksel RAM ve disk takas (swap) alanını yönetir." data-win="Windows: VirtualAlloc, pagefile.sys" data-lnx="Linux: mmap, /dev/swap veya swapfile" data-mac="macOS: VM Subsystem, dinamik takas (/var/vm)" data-tip="Sayfalama (paging) ve MMU ile süreçlerin birbirinin belleğine müdahalesini engeller." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="30" width="64" height="36" rx="6"/><path d="M26 40h12v16H26zM42 40h12v16H42zM58 40h12v16H58zM24 66v8m12-8v8m12-8v8m12-8v8m12-8v8"/></g></svg></div>
+          <div class="node-text"><strong>Sanal Bellek &amp; MMU</strong><small lang="en">Virtual Memory Manager (VMM)</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="vfs" data-title="Sanal Dosya Sistemi (VFS)" data-en="Virtual File System &amp; Storage" data-desc="Farklı disk formatlarını tek tip dosya ağacı altında uygulamalara sunar." data-win="Windows: NTFS, ReFS, FAT32 / Sürücü Harfleri (C:, D:)" data-lnx="Linux: VFS (ext4, btrfs) / Tek Ağaç Hiyerarşisi (/)" data-mac="macOS: APFS, HFS+ / Kök Dizin (/)" data-tip="Günlükleme (journaling) ile ani güç kesintilerinde dosya bozulmalarını önler." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="22" y="20" width="52" height="56" rx="8"/><circle cx="48" cy="48" r="16"/><circle cx="48" cy="48" r="4"/><path d="M30 68h36"/></g></svg></div>
+          <div class="node-text"><strong>Sanal Dosya Sistemi (VFS)</strong><small lang="en">Virtual File System &amp; Storage</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="drivers" data-title="Aygıt Sürücüleri &amp; IRQ" data-en="Device Drivers &amp; Interrupts" data-desc="Donanıma özgü sinyalleri çekirdeğin anlayabileceği standart API&#x27;lere çevirir." data-win="Windows: Windows Driver Framework (WDF, KMDF)" data-lnx="Linux: Kernel Modules (.ko), udev kuralları" data-mac="macOS: DriverKit / I/O Kit" data-tip="Donanım veri ürettiğinde kesme (IRQ) göndererek CPU&#x27;nun hemen işlem yapmasını sağlar." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M48 20v14m0 28v14M20 48h14m28 0h14"/><circle cx="48" cy="48" r="14"/><circle cx="48" cy="48" r="5"/></g></svg></div>
+          <div class="node-text"><strong>Aygıt Sürücüleri &amp; IRQ</strong><small lang="en">Device Drivers &amp; Interrupts</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="net-stack" data-title="Ağ Yığını &amp; Portlar" data-en="Network Stack &amp; Socket Ports" data-desc="TCP/IP protokollerini ve 1-65535 arası mantıksal servis portlarını yönetir." data-win="Windows: Winsock2, Get-NetTCPConnection" data-lnx="Linux: Netfilter/Socket API, ss, ip, netstat" data-mac="macOS: BSD Sockets, lsof -i" data-tip="Hangi ağ paketinin hangi yerel sürece teslim edileceğini port numaraları belirler." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="30" r="10"/><circle cx="28" cy="66" r="10"/><circle cx="68" cy="66" r="10"/><path d="M42 38l-9 20m15-20l9 20M38 66h20"/></g></svg></div>
+          <div class="node-text"><strong>Ağ Yığını &amp; Portlar</strong><small lang="en">Network Stack &amp; Socket Ports</small></div>
+        </button><button type="button" class="sys-arch-node" data-arch-id="hardware" data-title="Fiziksel Donanım Katmanı" data-en="Physical Hardware" data-desc="İşlemci, RAM, SSD/Flash, USB-UART dönüştürücüler, Ethernet ve çevre birimleri." data-win="Windows: ACPI, PCI Express, USB PnP" data-lnx="Linux: /sys, /dev, lspci, lsusb" data-mac="macOS: Apple Silicon / Thunderbolt Fabric" data-tip="Elektriksel sinyaller, veri yolları ve saat frekansı seviyesinde çalışan fiziksel dünya." aria-pressed="false">
+          <div class="node-icon"><svg viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="56" height="56" rx="8"/><circle cx="32" cy="32" r="3"/><circle cx="64" cy="32" r="3"/><circle cx="32" cy="64" r="3"/><circle cx="64" cy="64" r="3"/><path d="M40 38h16v20H40z"/></g></svg></div>
+          <div class="node-text"><strong>Fiziksel Donanım Katmanı</strong><small lang="en">Physical Hardware</small></div>
+        </button>
+      </div>
+
+      <aside class="sys-arch-inspector" data-arch-inspector aria-live="polite">
+        <div class="inspector-header">
+          <span class="eyebrow">SEÇİLİ SİSTEM KATMANI</span>
+          <h3 data-inspector-title>İncelemek için yukarıdan bir katman seçin</h3>
+          <p class="inspector-en" data-inspector-en lang="en">User Space ↔ Kernel Subsystems ↔ Hardware Layer</p>
+        </div>
+        <p class="inspector-desc" data-inspector-desc>Herhangi bir katman kartına dokunduğunuzda görevini, çekirdek modunu ve üç ana işletim sistemindeki somut karşılıklarını burada göreceksiniz.</p>
+        <div class="os-comparison-pills">
+          <div class="os-pill win"><strong>Windows:</strong> <span data-inspector-win>Win32 / NT Kernel</span></div>
+          <div class="os-pill lnx"><strong>Linux:</strong> <span data-inspector-lnx>POSIX / Monolithic Kernel</span></div>
+          <div class="os-pill mac"><strong>macOS:</strong> <span data-inspector-mac>XNU / Darwin Subsystems</span></div>
+        </div>
+        <div class="inspector-tip">
+          <strong>Mühendislik Notu:</strong> <span data-inspector-tip>İşletim sistemi olmadan bir program çalıştırmak (bare-metal) bu soyutlamaların tamamından vazgeçmek anlamına gelir.</span>
+        </div>
+      </aside>
+    </div></section><section class="lesson-section" id="simulasyon-lab" aria-labelledby="simulasyon-lab-title"><h2 id="simulasyon-lab-title">İşletim Sistemleri Simülasyon Laboratuvarı</h2><div class="system-sim-lab" data-sim-lab>
+      <div class="sim-tabs" role="tablist" aria-label="Simülasyon Modülleri">
+        <button type="button" role="tab" id="tab-cpu" aria-controls="panel-cpu" aria-selected="true" data-sim-tab="cpu">
+          ⚡ 1. İşlemci (CPU) & Çoklu Görev
+        </button>
+        <button type="button" role="tab" id="tab-mem" aria-controls="panel-mem" aria-selected="false" data-sim-tab="mem">
+          🧠 2. Sanal Bellek & Sayfa Takası (Swap)
+        </button>
+        <button type="button" role="tab" id="tab-ports" aria-controls="panel-ports" aria-selected="false" data-sim-tab="ports">
+          🔌 3. Donanım & Ağ Portları İstasyonu
+        </button>
+      </div>
+
+      <!-- PANEL 1: CPU SCHEDULING SIMULATOR -->
+      <div class="sim-panel" id="panel-cpu" role="tabpanel" aria-labelledby="tab-cpu" data-sim-panel="cpu">
+        <div class="sim-header">
+          <div>
+            <span class="eyebrow">İNTERAKTİF SİMÜLATÖR</span>
+            <h3>4 Çekirdekli CPU Zamanlayıcı & Multitasking</h3>
+            <p>Modern işletim sistemlerinde CPU Zamanlayıcı (Scheduler), süreçleri çekirdeklere dağıtır ve zaman dilimleri (time slices) bitince bağlam değişimi (context switch) yapar.</p>
+          </div>
+          <div class="sim-stats-badge">
+            <span class="badge-label">Aktif Algoritma:</span>
+            <strong>Round Robin (Kuantum: 2 Tick)</strong>
+          </div>
+        </div>
+
+        <div class="cpu-cores-grid" aria-label="CPU Çekirdekleri">
+          <div class="cpu-core-box" data-core="0">
+            <div class="core-top"><span>Çekirdek 0</span><strong data-core-pct="0">0%</strong></div>
+            <div class="core-meter"><div class="meter-bar" data-core-bar="0" style="width:0%"></div></div>
+            <div class="core-active-task" data-core-task="0">Boşta (Idle)</div>
+          </div>
+          <div class="cpu-core-box" data-core="1">
+            <div class="core-top"><span>Çekirdek 1</span><strong data-core-pct="1">0%</strong></div>
+            <div class="core-meter"><div class="meter-bar" data-core-bar="1" style="width:0%"></div></div>
+            <div class="core-active-task" data-core-task="1">Boşta (Idle)</div>
+          </div>
+          <div class="cpu-core-box" data-core="2">
+            <div class="core-top"><span>Çekirdek 2</span><strong data-core-pct="2">0%</strong></div>
+            <div class="core-meter"><div class="meter-bar" data-core-bar="2" style="width:0%"></div></div>
+            <div class="core-active-task" data-core-task="2">Boşta (Idle)</div>
+          </div>
+          <div class="cpu-core-box" data-core="3">
+            <div class="core-top"><span>Çekirdek 3</span><strong data-core-pct="3">0%</strong></div>
+            <div class="core-meter"><div class="meter-bar" data-core-bar="3" style="width:0%"></div></div>
+            <div class="core-active-task" data-core-task="3">Boşta (Idle)</div>
+          </div>
+        </div>
+
+        <div class="process-queue-section">
+          <div class="queue-heading">
+            <strong>Hazır Süreç Kuyruğu (Ready Queue):</strong>
+            <span data-queue-count>4 Süreç Bekliyor</span>
+          </div>
+          <div class="process-pills-list" data-process-queue>
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+
+        <div class="sim-controls-bar">
+          <button type="button" class="primary" data-cpu-action="play">▶️ Otomatik Yürüt</button>
+          <button type="button" data-cpu-action="step">⏭️ 1 Tick İlerle</button>
+          <button type="button" data-cpu-action="add">➕ Yeni Süreç Ekle</button>
+          <button type="button" data-cpu-action="reset">🔄 Sıfırla</button>
+          <div class="sim-live-metrics">
+            <span>Bağlam Değişimi (Context Switch): <strong data-context-count>0</strong></span>
+            <span>Toplam CPU: <strong data-cpu-total>0%</strong></span>
+          </div>
+        </div>
+        <p class="sim-explainer"><strong>Gözlem:</strong> Bir sürecin işlemciyi kesintisiz tekeline alamadığını; kuantum süresi bitince sıradaki sürece yer verdiğini ve çekirdekler arası yük dengelendiğini izleyin.</p>
+      </div>
+
+      <!-- PANEL 2: MEMORY & PAGING SIMULATOR -->
+      <div class="sim-panel" id="panel-mem" role="tabpanel" aria-labelledby="tab-mem" data-sim-panel="mem" hidden>
+        <div class="sim-header">
+          <div>
+            <span class="eyebrow">İNTERAKTİF SİMÜLATÖR</span>
+            <h3>Sanal Bellek, Sayfalama (Paging) ve Swap Deneyi</h3>
+            <p>Süreçler sanal sayfa (Virtual Page) ister. Sayfa fiziksel RAM'deyse <strong>HIT</strong> olur. RAM'de yoksa <strong>PAGE FAULT</strong> tetiklenir ve diskten takas yapılır.</p>
+          </div>
+          <div class="sim-status-indicator" data-mem-status-badge>
+            <span class="dot"></span> <strong data-mem-status-text>Sistem Normal · Bellek Hazır</strong>
+          </div>
+        </div>
+
+        <div class="memory-blocks-layout">
+          <div class="mem-column">
+            <h4>Fiziksel RAM (4 Çerçeve / Frame)</h4>
+            <div class="frames-grid" data-ram-frames>
+              <div class="frame-slot empty" data-frame="0"><span>Çerçeve 0</span><strong>Boş</strong></div>
+              <div class="frame-slot empty" data-frame="1"><span>Çerçeve 1</span><strong>Boş</strong></div>
+              <div class="frame-slot empty" data-frame="2"><span>Çerçeve 2</span><strong>Boş</strong></div>
+              <div class="frame-slot empty" data-frame="3"><span>Çerçeve 3</span><strong>Boş</strong></div>
+            </div>
+            <small>Hızlı Erişim: ~10 ns gecikme</small>
+          </div>
+
+          <div class="mem-mmu-column">
+            <div class="mmu-chip">
+              <strong>MMU</strong>
+              <small>Adres Çevirici</small>
+            </div>
+            <div class="mmu-event-card" data-mmu-event>
+              <strong data-mmu-event-title>Olay Bekleniyor</strong>
+              <p data-mmu-event-desc>Sayfa talep düğmelerine basarak adres çözümlemesini tetikleyin.</p>
+            </div>
+          </div>
+
+          <div class="mem-column">
+            <h4>Disk Takas Alanı (Swap / Pagefile)</h4>
+            <div class="frames-grid swap-grid" data-swap-frames>
+              <div class="frame-slot swap-slot empty" data-swap="0"><span>Swap Yuva 0</span><strong>Boş</strong></div>
+              <div class="frame-slot swap-slot empty" data-swap="1"><span>Swap Yuva 1</span><strong>Boş</strong></div>
+              <div class="frame-slot swap-slot empty" data-swap="2"><span>Swap Yuva 2</span><strong>Boş</strong></div>
+              <div class="frame-slot swap-slot empty" data-swap="3"><span>Swap Yuva 3</span><strong>Boş</strong></div>
+            </div>
+            <small>Yavaş Depolama: ~5 ms gecikme (500.000x daha yavaş!)</small>
+          </div>
+        </div>
+
+        <div class="virtual-pages-palette">
+          <strong>Erişilmek İstenen Sanal Sayfa (Virtual Page):</strong>
+          <div class="page-buttons" data-page-triggers>
+            <button type="button" data-vpage="0">Sayfa 0 (Kod)</button>
+            <button type="button" data-vpage="1">Sayfa 1 (Yığın)</button>
+            <button type="button" data-vpage="2">Sayfa 2 (Veri)</button>
+            <button type="button" data-vpage="3">Sayfa 3 (Öbek)</button>
+            <button type="button" data-vpage="4">Sayfa 4 (Sensör Buffer)</button>
+            <button type="button" data-vpage="5">Sayfa 5 (Grafik)</button>
+            <button type="button" data-vpage="6">Sayfa 6 (Ağ Paketi)</button>
+            <button type="button" data-vpage="7">Sayfa 7 (Dosya Önbellek)</button>
+          </div>
+        </div>
+
+        <div class="sim-controls-bar">
+          <button type="button" class="primary" data-mem-action="random">🎲 Rastgele Sayfa İste</button>
+          <button type="button" data-mem-action="fill">⚡ RAM'i Doldur ve Swap Zorla</button>
+          <button type="button" data-mem-action="thrash">⚠️ Thrashing (Aşırı Sayfalama) Testi</button>
+          <button type="button" data-mem-action="reset">🔄 Belleği Sıfırla</button>
+          <div class="sim-live-metrics">
+            <span>RAM Hit: <strong data-mem-hits>0</strong></span>
+            <span>Page Fault: <strong data-mem-faults>0</strong></span>
+            <span>Swap Sayısı: <strong data-mem-swaps>0</strong></span>
+          </div>
+        </div>
+        <p class="sim-explainer"><strong>Mühendislik Çıkarımı:</strong> RAM dolduğunda işletim sistemi en az kullanılan sayfayı diske atar (Page Out). Eğer sürekli diske gidip gelinirse <em>Thrashing</em> oluşur ve bilgisayar kilitlenir.</p>
+      </div>
+
+      <!-- PANEL 3: HARDWARE & NETWORK PORTS LAB -->
+      <div class="sim-panel" id="panel-ports" role="tabpanel" aria-labelledby="tab-ports" data-sim-panel="ports" hidden>
+        <div class="sim-header">
+          <div>
+            <span class="eyebrow">İNTERAKTİF DENEY İSTASYONU</span>
+            <h3>Donanım Portları (USB/COM) ve Mantıksal Ağ Soketleri</h3>
+            <p>Fiziksel aygıt bağlantısı (USB-UART dönüştürücüler) ile TCP/IP ağ soket portları (HTTP, SSH, API) arasındaki farkı canlı deneyle öğrenin.</p>
+          </div>
+        </div>
+
+        <div class="ports-dual-grid">
+          <!-- SUB-COL 1: HARDWARE PORT (ESP32 / SERIAL) -->
+          <div class="port-sublab">
+            <div class="sublab-head">
+              <h4>1. Donanım & Seri COM Port Deneyi</h4>
+              <span class="sublab-tag">Fiziksel Katman</span>
+            </div>
+            <p class="sublab-desc">Bir ESP32 mikrodenetleyicisini USB ile bilgisayara bağlayın. PnP tespiti, sürücü eşleşmesi ve sanal COM portu oluşumunu izleyin.</p>
+            
+            <div class="hardware-connection-visual">
+              <div class="device-card" data-device-state="disconnected">
+                <div class="dev-icon">🔌</div>
+                <div class="dev-info">
+                  <strong data-device-title>ESP32 DevKit V1</strong>
+                  <span data-device-sub>USB Bağlantısı Yok</span>
+                </div>
+                <button type="button" class="primary" data-port-action="toggle-usb">USB Kablosunu Tak</button>
+              </div>
+
+              <div class="os-pnp-log" data-pnp-log>
+                <div class="log-line info">[Sistem] USB Denetleyici hazır, aygıt bekleniyor...</div>
+              </div>
+
+              <div class="serial-terminal" data-serial-term>
+                <div class="term-header">
+                  <span>Seri Monitör (<strong data-active-com>COM Kapalı</strong>)</span>
+                  <div class="term-controls">
+                    <select data-baud-select aria-label="Baud Hızı">
+                      <option value="115200">115200 Baud</option>
+                      <option value="9600">9600 Baud</option>
+                    </select>
+                    <button type="button" data-port-action="toggle-serial" disabled>Portu Aç</button>
+                  </div>
+                </div>
+                <div class="term-body" data-serial-output>
+                  <span class="muted">Seri port kapalı. Aygıt takıp portu açınız.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUB-COL 2: NETWORK PORTS (TCP SOCKETS) -->
+          <div class="port-sublab">
+            <div class="sublab-head">
+              <h4>2. Mantıksal Ağ Portları (TCP Dinleyici)</h4>
+              <span class="sublab-tag">Ağ Katmanı</span>
+            </div>
+            <p class="sublab-desc">1-65535 arası ağ portları; gelen veri paketlerinin hangi sürece (process) ait olduğunu belirler. Soketleri açıp test istekleri gönderin.</p>
+
+            <div class="network-ports-table-wrap">
+              <table class="sim-table" aria-label="Ağ Portları Durumu">
+                <thead>
+                  <tr>
+                    <th>Port</th>
+                    <th>Servis / Protokol</th>
+                    <th>Durum</th>
+                    <th>İşlem</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-net-row="80">
+                    <td><strong>80</strong></td>
+                    <td>HTTP Web Sunucusu (Nginx/Apache)</td>
+                    <td><span class="status-pill closed" data-port-state="80">CLOSED</span></td>
+                    <td><button type="button" data-toggle-net="80">Servisi Başlat</button></td>
+                  </tr>
+                  <tr data-net-row="443">
+                    <td><strong>443</strong></td>
+                    <td>HTTPS Güvenli Web</td>
+                    <td><span class="status-pill closed" data-port-state="443">CLOSED</span></td>
+                    <td><button type="button" data-toggle-net="443">Servisi Başlat</button></td>
+                  </tr>
+                  <tr data-net-row="22">
+                    <td><strong>22</strong></td>
+                    <td>SSH Uzak Terminal Bağlantısı</td>
+                    <td><span class="status-pill closed" data-port-state="22">CLOSED</span></td>
+                    <td><button type="button" data-toggle-net="22">Servisi Başlat</button></td>
+                  </tr>
+                  <tr data-net-row="8080">
+                    <td><strong>8080</strong></td>
+                    <td>IoT Sıcaklık Ölçüm API Servisi</td>
+                    <td><span class="status-pill closed" data-port-state="8080">CLOSED</span></td>
+                    <td><button type="button" data-toggle-net="8080">Servisi Başlat</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="client-packet-tester">
+              <strong>İstemci Paketi Gönder (Soket Testi):</strong>
+              <div class="packet-actions">
+                <button type="button" class="primary" data-send-packet="80">HTTP GET / (Port 80)</button>
+                <button type="button" data-send-packet="8080">POST /api/olcum (Port 8080)</button>
+                <button type="button" data-send-packet="22">SSH Bağlantı İsteği (Port 22)</button>
+              </div>
+              <div class="packet-result-log" data-packet-log>
+                <span class="muted">Bir servisi başlatın ve paket göndererek TCP soket el sıkışmasını (SYN-ACK) test edin.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></section><section class="lesson-section" id="ornek" aria-labelledby="ornek-title"><h2 id="ornek-title">Gerçek Dünya Örneği</h2><p>Laboratuvarda bir ESP32 kartı USB üzerinden PC&#x27;ye bağlandığında: Cihaz yönetimi kartı CH340/CP2102 sürücüsüyle bir COM/ttyUSB portu olarak işletim sistemine tanıtır. Geliştirici kodu derlediğinde işlemci yönetimi derleme sürecini çekirdeklere dağıtır. Yükleme aracı seri port üzerinden veriyi aktarır. Cihaz Wi-Fi üzerinden ölçüm gönderdiğinde ise ağ portu (ör. 8080) soketi dinleyen sunucu süreci tarafından okunur.</p></section><section class="lesson-section" id="uygulama" aria-labelledby="uygulama-title"><h2 id="uygulama-title">Uygulama</h2><ul><li>PowerShell veya Bash üzerinden en çok bellek ve CPU kullanan ilk 5 süreci listeyin.</li><li>Sistemde açık ve dinlemede olan ağ portlarını (listening ports) komut satırından tespit edin.</li><li>Bilgisayarınıza bağlı tak-çalıştır aygıtları ve sanal seri/COM portları listeleyin.</li><li>Bir test klasörü oluşturup erişim izinlerini komut satırından (icacls veya ls -l) inceleyin.</li></ul><div class="code-wrap"><pre><code># PowerShell (Windows)
 Get-Process | Sort-Object WorkingSet -Descending | Select-Object -First 5 Name, CPU, WorkingSet
 Get-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess -First 5
 Get-PnpDevice -Class Ports, USB -Status OK | Select-Object FriendlyName, InstanceId -First 5

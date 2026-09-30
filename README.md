@@ -49,15 +49,18 @@ weeks/week01.html           Ayrıntılı ilk hafta
 weeks/week02.html           Ayrıntılı ikinci hafta
 weeks/week03.html           Ayrıntılı üçüncü hafta
 css/style.css               Tema ve ortak tasarım
+css/system-lab.css          3. hafta simülasyon ve mimari stilleri
 css/responsive.css          Ekran, hareket ve yazdırma kuralları
 css/presentation.css        Sunum görünümü
 js/theme.js                 Tema tercihi
 js/main.js                  Arama, kopyalama ve ilerleme
 js/presentation.js          Slayt ve tam ekran denetimi
+js/system-lab.js            3. hafta etkileşimli CPU, bellek ve port simülatörleri
 js/demos.js                 İlerideki dersler için örnek etkileşimler
 content/weeks.json          Yayındaki derslerin içerik kaynağı
 content/syllabus.json       14 haftalık plan
 scripts/build.py            Kaynaktan statik HTML üretimi
+scripts/system_lab.py       3. hafta etkileşimli bileşen üretimi
 scripts/check.py            Bağlantı ve içerik denetimi
 assets/icons/               Yerel SVG favicon
 assets/images/              İleride eklenecek görseller
