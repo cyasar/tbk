@@ -513,5 +513,210 @@
         "lsof -i, netstat -an"
       ]
     ]
+  },
+  {
+    "title": "İnternet ve Ağ Teknolojilerinin Temelleri",
+    "intro": "Bir web adresinden veri paketine: internet altyapısını, web sunucularını ve web yazılım teknolojilerini (HTML, CSS, JS, PHP, Python, React) keşfedin.",
+    "group": "Ağ",
+    "category": "systems",
+    "concepts": [
+      [
+        "İnternet vs. Web (WWW)",
+        "İnternet küresel ağ donanımı ve yönlendirme altyapısıdır; Web ise bu altyapıda HTTP protokolüyle çalışan bağlantılı sayfalar ve uygulamalar bütünüdür."
+      ],
+      [
+        "IP Adresi & DNS",
+        "IP cihazların ağdaki sayısal kimliğidir; DNS (Alan Adı Sistemi) ise alan adlarını IP adresine dönüştüren dağıtık bir isim rehberidir."
+      ],
+      [
+        "TCP/IP ve Paket Anahtarlama",
+        "Verilerin küçük paketlere ayrılarak ağ üzerinden hedefe güvenli, sıralı ve hata denetimli iletilmesini sağlayan temel iletişim protokolü."
+      ],
+      [
+        "Web Sunucusu (Web Server)",
+        "HTTP/HTTPS isteklerini (Port 80/443) dinleyen, statik dosyaları sunan veya uygulama motoruna ileten yazılımdır (Nginx, Apache, IIS)."
+      ],
+      [
+        "Frontend (İstemci Tarafı)",
+        "Kullanıcının tarayıcısında çalışan arayüz teknolojileri: HTML (yapı), CSS (görünüm), JavaScript ve React (dinamik davranış)."
+      ],
+      [
+        "Backend (Sunucu Tarafı)",
+        "Sunucu tarafında veritabanı, kimlik doğrulama ve iş mantığını yürüten diller: PHP, Python, Node.js, Java, ASP.NET (C#)."
+      ],
+      [
+        "DHCP (Dinamik IP Dağıtımı)",
+        "Ağa bağlanan cihazlara otomatik olarak IP adresi, ağ geçidi ve DNS bilgilerini kiralayan protokoldür (DORA süreci)."
+      ],
+      [
+        "NAT (Ağ Adres Çevirisi)",
+        "Yerel özel IP'leri tek bir genel IP'ye eşleyerek IPv4 yetersizliğini çözen ve iç ağı gizleyen mekanizmadır."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · İnternet ve ağ teknolojilerinin temelleri",
+        "İnternet, bilgisayarları ve aygıtları birbirine bağlayan küresel bir ağlar ağıdır (network of networks). Veriler kesintisiz bir akış olarak değil, paket adı verilen küçük parçalara bölünerek (paket anahtarlama) iletilir.\nHer aygıt ağda bir IP adresine (IPv4 veya IPv6) ve fiziksel bir MAC adresine sahiptir. Yönlendiriciler (routers), paketlerin en uygun yol üzerinden hedefe ulaşmasını sağlar.\nTCP/IP protokol ailesi iletişimin kurallarını belirler: TCP bağlantı kurarak (3'lü el sıkışma - 3-way handshake) paketlerin eksiksiz ve sıralı gitmesini garanti eder; UDP ise hız öncelikli olup hata kontrolü yapmadan veri gönderir (canlı yayınlar, VoIP, sensör akışları)."
+      ],
+      [
+        "Web ve İnternet arasındaki temel farklar: Otoyol ile araçlar",
+        "İnternet ile Web (World Wide Web) sıklıkla birbirine karıştırılır ancak aynı şey değildir. İnternet devasa bir fiziksel ve mantıksal otoyol altyapısıdır; Web ise bu otoyolda seyahat eden araç türlerinden yalnızca biridir.\nİnternet 1960'larda ARPANET ile başlayan kablolar, uydular, fiber hatlar ve yönlendiricilerden oluşan donanım ağıdır.\nWeb (WWW), 1989 yılında Tim Berners-Lee tarafından CERN'de geliştirilmiştir. Bu altyapı üzerinde HTTP/HTTPS protokolleriyle köprü metin (hypertext) belgelerinin ve web uygulamalarının paylaşılmasını sağlar.\nE-posta (SMTP/IMAP), dosya transferi (FTP), güvenli uzak terminal (SSH), sesli görüşme (VoIP) ve IoT cihaz haberleşmesi (MQTT) doğrudan internet üzerinde çalışır fakat birer Web (HTTP) servisi değildir."
+      ],
+      [
+        "Ağ Yönetim Protokolleri: DHCP, DNS ve NAT Üçlüsü",
+        "Bir aygıtın ağa dahil olup web sitelerine erişebilmesi bu üç kritik protokolün işbirliğiyle gerçekleşir:\n1. DHCP (Dynamic Host Configuration Protocol - Port 67/68 UDP): Cihaz Wi-Fi veya Ethernet'e bağlandığı anda DORA adımlarıyla çalışır: Discover (Cihaz yayın yapar), Offer (DHCP sunucusu IP önerir), Request (Cihaz kabul eder), Acknowledge (Sunucu onaylayıp IP, alt ağ maskesi, ağ geçidi ve DNS adresini kiralar).\n2. NAT (Network Address Translation): IPv4 adres kısıtını (yaklaşık 4.3 milyar adres) çözmek için geliştirilmiştir. Ev veya ofisinizdeki tüm aygıtlar yerel özel IP (Private IP: 192.168.x.x, 10.x.x.x) kullanır. Modem/yönlendirici, dış dünyaya çıkarken bu yerel IP'leri tek bir genel IP'ye (Public IP) ve port numaralarına (PAT - Port Address Translation) dönüştürür. Böylece hem IP tasarrufu yapılır hem de iç ağ dışarıdan doğrudan erişilemez hale gelerek güvenlik sağlanır.\n3. DNS (Domain Name System - Port 53 UDP): Cihaz IP aldıktan sonra kullanıcının girdiği 'comu.edu.tr' alan adını sayısal hedef IP'ye çevirerek bağlantının başlamasını sağlar."
+      ],
+      [
+        "DNS nasıl çalışır? Alan adından IP adresine yolculuk",
+        "İnsanlar web sitelerini isimleriyle (ör. www.comu.edu.tr) hatırlar; bilgisayarlar ve yönlendiriciler ise yalnızca sayısal IP adresleriyle (ör. 193.255.140.18) iletişim kurabilir.\nTarayıcı adres çubuğuna bir URL yazıldığında DNS (Domain Name System) şu hiyerarşik adımlarla adresi çözer:\n1. Tarayıcı ve İşletim Sistemi Önbelleği: Adres daha önce sorgulandıysa doğrudan kullanılır.\n2. Yerel DNS Çözümleyici (Resolver): İnternet servis sağlayıcınızın DNS sunucusuna sorulur.\n3. Kök Ad Sunucuları (Root DNS - '.'): İsteği ilgili üst düzey etki alanına (TLD) yönlendirir.\n4. TLD Ad Sunucuları (.tr, .com, .edu): Ülke veya kurum düzeyindeki yetkili sunucuyu bildirir.\n5. Yetkili Ad Sunucusu (Authoritative DNS): Alan adının kesin IP adresini döner.\nElde edilen IP adresi belirli bir süre (TTL - Time to Live) önbelleğe alınır ve TCP bağlantısı başlatılır."
+      ],
+      [
+        "Web sunucu türleri: Nginx, Apache, IIS ve Caddy",
+        "Web sunucusu; istemcilerden (tarayıcılar, mobil uygulamalar, ESP32 gibi IoT cihazları) gelen HTTP/HTTPS isteklerini karşılayan ve uygun yanıtı döndüren yazılımdır.\nApache HTTP Server: Açık kaynaklı, modüler yapılı, her dizin için .htaccess yapılandırması sunan en köklü web sunucusudur.\nNginx: Olay güdümlü (event-driven) ve asenkron mimarisi sayesinde binlerce eşzamanlı bağlantıyı çok düşük bellek tüketimiyle karşılar. Modern mimarilerde sıklıkla Ters Vekil (Reverse Proxy) ve Yük Dengeleyici (Load Balancer) olarak konumlandırılır.\nMicrosoft IIS: Windows Server işletim sistemiyle derin entegrasyon sunar; ASP.NET uygulamaları ve Active Directory tabanlı kurumsal kimlik doğrulama için optimize edilmiştir.\nCaddy / Gömülü Sunucular: Otomatik SSL/TLS sertifikası (Let's Encrypt) yönetimi ve mikroservis mimarilerinde dahili HTTP sunucusu (Node.js HTTP, Python Waitress) olarak tercih edilir."
+      ],
+      [
+        "Web yazılım teknolojileri: Frontend (İstemci Tarafı)",
+        "Frontend, kullanıcının doğrudan etkileşime girdiği ve kodlarının tarayıcı üzerinde çalıştığı katmandır.\nHTML5 (HyperText Markup Language): Web sayfasının iskeletini ve anlamsal yapısını oluşturur (başlıklar, paragraflar, formlar, semantik etiketler).\nCSS3 (Cascading Style Sheets): Sayfanın görsel tasarımını, renklerini, yazı tiplerini ve farklı ekran boyutlarına uyumunu (Responsive Tasarım, Flexbox, Grid) belirler.\nJavaScript (JS): Tarayıcının yerel programlama dilidir. Sayfaya dinamik davranış kazandırır, kullanıcı tıklamalarını dinler, sayfayı yenilemeden arka planda sunucudan veri çeker (AJAX / Fetch API).\nReact, Vue, Angular: Modern bileşen tabanlı (component-based) kütüphanelerdir. Büyük web uygulamalarında durum yönetimini (state management) ve sanal DOM (Virtual DOM) ile yüksek performansı sağlar."
+      ],
+      [
+        "Web yazılım teknolojileri: Backend (Sunucu Tarafı)",
+        "Backend; sunucu üzerinde çalışan, veritabanı işlemlerini, güvenliği, kullanıcı oturumlarını ve iş mantığını yürüten yazılım katmanıdır.\nPHP: Web dünyasının en yaygın dinamik dillerindendir; HTML içine gömülebilmesiyle popülerleşmiştir. WordPress, Drupal ve Laravel çatısı ile modern API'ler ve kurumsal platformlar geliştirilir.\nPython (Flask, Django, FastAPI): Temiz ve okunabilir sözdizimi ile hızlı prototipleme, yapay zekâ modelleri entegrasyonu ve IoT veri toplama servislerinde yaygın kullanılır.\nNode.js (JavaScript): Sunucu tarafında JavaScript çalıştırmayı sağlar; asenkron I/O mimarisiyle gerçek zamanlı sohbet, telemetri ve soket uygulamalarında çok hızlıdır.\nJava (Spring Boot): Güçlü tip güvenliği, kurumsal mimariler, bankacılık ve yüksek ölçekli dağıtık sistemlerin temel standardıdır.\nASP.NET / ASPX (C#): Microsoft tarafından geliştirilen, derlenen, yüksek performanslı ve kurumsal güvenlik standartlarına sahip arka uç geliştirme çerçevesidir."
+      ],
+      [
+        "İstemci-Sunucu mimarisi ve HTTP İstek-Yanıt döngüsü",
+        "Web iletişimi İstemci-Sunucu (Client-Server) modeline dayanır. İstemci (tarayıcı veya ESP32) bir HTTP İsteği (Request) gönderir, sunucu bunu işleyip bir HTTP Yanıtı (Response) döndürür.\nTemel HTTP Metotları: GET (kaynak okuma), POST (yeni veri gönderme), PUT/PATCH (güncelleme), DELETE (kaynak silme).\nHTTP Durum Kodları: 200 OK (başarılı), 301/302 (yönlendirme), 400 Bad Request (hatalı istek), 403 Forbidden (erişim yasak), 404 Not Found (kaynak bulunamadı), 500 Internal Server Error (sunucu hatası), 502 Bad Gateway (ters vekil hatası).\nStatik Sayfa İstekleri doğrudan diskten okunurken; dinamik istekler arka uç motorunda (PHP/Python) derlenip veritabanı sorgusuyla üretilir."
+      ]
+    ],
+    "diagram": "İstemci (Tarayıcı / ESP32)          İnternet / Ağ Altyapısı              Web Sunucusu & Backend\n[HTML / CSS / JS / React]    →   [DNS: comu.edu.tr → IP]       →     [Nginx / Apache (Port 80/443)]\n                                             ↓                                       ↓\n[Kullanıcı Arayüzü & DOM]   ←   [TCP/IP Paket İletimi]        ←     [PHP / Python / Node / C#]\n                                                                                     ↕\n                                                                            [Veritabanı / SQL]",
+    "architecture": "İstemci tarayıcısı DNS üzerinden çözümlenen IP adresine HTTP isteği gönderir; Nginx veya Apache web sunucusu bu isteği karşılayıp statik dosyayı doğrudan, dinamik isteği ise PHP/Python/Node backend motoruna ileterek üretilen yanıtı TCP/IP üzerinden geri gönderir.",
+    "example": "Laboratuvarda bir ESP32 sıcaklık sensörü Wi-Fi ağına bağlanır. 'comu.edu.tr/api/olcum' adresine HTTP POST ile JSON ölçüm verisi gönderir. Nginx web sunucusu bu isteği alır, Python Flask backend servisine yönlendirir. Backend veriyi MySQL veritabanına kaydeder. Kullanıcı bilgisayarının tarayıcısını açıp sayfaya girdiğinde React arayüzü bu veriyi Fetch API ile çekerek ekranda canlı grafik olarak çizer.",
+    "practice": [
+      "ipconfig /renew (Windows) veya dhclient (Linux) ile yönlendiriciden DHCP IP kiralama sürecini deneyimleyin.",
+      "ipconfig /displaydns ve ipconfig /flushdns ile yerel DNS önbelleğini inceleyip temizleyin.",
+      "Resolve-DnsName veya dig komutu ile bir alan adının DNS sorgulama aşamalarını ve IP adresini tespit edin.",
+      "curl -I komutu ile bir web sitesine HTTP başlık sorgusu gönderip web sunucusu türünü (Server header) inceleyin.",
+      "tracert (veya traceroute) ile hedef sunucuya giden ağ paketlerinin yönlendirici atlamalarını (hop) izleyin."
+    ],
+    "code": "# PowerShell (Windows)\n# 1. DHCP IP Yenileme & DNS Önbellek Temizliği:\nipconfig /release\nipconfig /renew\nipconfig /flushdns\n\n# 2. DNS Çözümleme ve Alan Adı Sorgusu:\nResolve-DnsName www.comu.edu.tr\n\n# 3. Web Sunucusu Başlık (Header) Sorgulama:\ncurl.exe -I https://www.comu.edu.tr\n\n# 4. Paket Rotalama ve Yönlendirici (Hop) Takibi:\ntracert www.comu.edu.tr\n\n# Linux / macOS Terminali\n# sudo dhclient -r && sudo dhclient\n# dig www.comu.edu.tr +trace\n# curl -I https://www.comu.edu.tr\n# traceroute www.comu.edu.tr",
+    "prompt": "İnternet ile Web (WWW) arasındaki mimari ve kavramsal farkı bir mühendislik öğrencisine açıkla. Bir bilgisayar ağa bağlandığında DHCP ile IP alma, NAT ile genel ağa çıkma, DNS ile alan adı çözümleme, Nginx/Apache web sunucusu ve PHP/Python backend çalışma adımlarını detaylandır.",
+    "quiz": [
+      [
+        "İnternet ile Web (World Wide Web) arasındaki temel fark nedir?",
+        "İnternet bilgisayarları birbirine bağlayan küresel ağ ve donanım altyapısıdır; Web ise bu altyapı üzerinde HTTP/HTTPS ile çalışan birbirine bağlı belgeler ve uygulamalar bütünüdür."
+      ],
+      [
+        "DHCP ve NAT protokollerinin ağdaki temel görevleri nelerdir?",
+        "DHCP ağa katılan cihaza otomatik olarak IP, ağ geçidi ve DNS kiralar (DORA); NAT ise yerel özel IP'leri tek bir genel IP'ye dönüştürerek internete çıkışı ve IPv4 tasarrufunu sağlar."
+      ],
+      [
+        "DNS (Domain Name System) sisteminin görevi nedir?",
+        "İnsanların hatırlayabileceği alan adlarını (örn. www.comu.edu.tr) yönlendiricilerin ve bilgisayarların haberleşebileceği sayısal IP adreslerine dönüştürmektir."
+      ],
+      [
+        "Nginx web sunucusunun Apache'ye göre en belirgin mimari avantajı nedir?",
+        "Nginx'in olay güdümlü (event-driven) asenkron mimarisi, çok az bellek tüketimiyle on binlerce eşzamanlı bağlantıyı karşılamasını ve üstün bir Ters Vekil (Reverse Proxy) olmasını sağlar."
+      ],
+      [
+        "Frontend (İstemci) ile Backend (Sunucu) teknolojileri arasındaki fark nedir?",
+        "Frontend (HTML, CSS, JS, React) kullanıcının tarayıcısında çalışarak arayüzü sunar; Backend (PHP, Python, Java, ASP.NET) sunucuda çalışarak veritabanı, güvenlik ve iş mantığını yönetir."
+      ]
+    ],
+    "task": "Kendi belirlediğiniz iki farklı web sitesi için terminalden DNS sorgulaması (Resolve-DnsName / dig) ve HTTP başlık sorgulaması (curl -I) yaparak elde ettiğiniz IP adreslerini, web sunucusu türlerini (Apache, Nginx, Cloudflare vb.) ve durum kodlarını hafta04/ag_ve_web_analizi.md dosyası olarak hazırlayın.",
+    "goals": [
+      "İnternet ağ altyapısı ile Web (WWW) servisleri arasındaki farkı ayırt etmek.",
+      "DNS hiyerarşisini ve bir web adresinin IP adresine dönüşüm sürecini açıklamak.",
+      "TCP ve UDP protokollerinin farklarını ve paket anahtarlama mantığını kavramak.",
+      "Apache, Nginx, IIS ve Caddy web sunucularının mimarilerini ve kullanım alanlarını karşılaştırmak.",
+      "Frontend (HTML, CSS, JS, React) ile Backend (PHP, Python, Java, ASP.NET) teknolojilerini rol ve çalışma yeri açısından sınıflandırmak.",
+      "HTTP istek-yanıt döngüsünü ve durum kodlarını (200, 301, 404, 500) analiz edebilmek."
+    ],
+    "verify": [
+      "Üretilen açıklamayı W3C, IETF RFC standartları ve resmi web sunucusu dokümantasyonlarıyla karşılaştırın.",
+      "Resolve-DnsName ve curl -I komutlarını çalıştırıp dönen Server ve HTTP durum kodlarını doğrulayın.",
+      "İnternet ile Web kavramlarının birbirinin yerine hatalı şekilde kullanılmadığını kontrol edin."
+    ],
+    "sources": [
+      [
+        "Mozilla Developer Network (MDN) · How the Web works",
+        "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+      ],
+      [
+        "Cloudflare Learning Center · What is DNS?",
+        "https://www.cloudflare.com/learning/dns/what-is-dns/"
+      ],
+      [
+        "Nginx Documentation · Architecture & Reverse Proxy",
+        "https://nginx.org/en/docs/"
+      ],
+      [
+        "W3C Web Standards & Architecture",
+        "https://www.w3.org/standards/"
+      ]
+    ],
+    "table": [
+      [
+        "Teknoloji",
+        "Katman",
+        "Çalıştığı Ortam",
+        "Temel Görevi",
+        "Tipik Kullanım"
+      ],
+      [
+        "HTML5",
+        "Frontend",
+        "Kullanıcı Tarayıcısı",
+        "İskelet ve anlamsal yapı oluşturma",
+        "Tüm web sayfalarının temel doküman yapısı"
+      ],
+      [
+        "CSS3",
+        "Frontend",
+        "Kullanıcı Tarayıcısı",
+        "Görsel tasarım, renkler, yerleşim (Flex/Grid)",
+        "Duyarlı (responsive) ve mobil uyumlu arayüzler"
+      ],
+      [
+        "JavaScript",
+        "Frontend / Backend",
+        "Tarayıcı & Node.js Sunucu",
+        "Dinamik davranış, DOM manipülasyonu, API istekleri",
+        "İnteraktif web sayfaları ve gerçek zamanlı servisler"
+      ],
+      [
+        "React",
+        "Frontend Kütüphanesi",
+        "Kullanıcı Tarayıcısı",
+        "Bileşen tabanlı arayüz ve sanal DOM yönetimi",
+        "Tek Sayfa Uygulamaları (SPA) ve karmaşık paneller"
+      ],
+      [
+        "PHP",
+        "Backend",
+        "Sunucu (PHP-FPM)",
+        "Dinamik sayfa üretimi, veritabanı iletişimi",
+        "Klasik web siteleri, WordPress, Laravel API'leri"
+      ],
+      [
+        "Python",
+        "Backend",
+        "Sunucu (WSGI / ASGI)",
+        "Hızlı API geliştirme, veri işleme ve makine öğrenimi",
+        "Django ve Flask web servisleri, IoT veri toplama"
+      ],
+      [
+        "Java",
+        "Backend",
+        "Sunucu (JVM)",
+        "Güçlü tipli, yüksek ölçeklenebilir kurumsal mimariler",
+        "Spring Boot mikroservisleri ve bankacılık sistemleri"
+      ],
+      [
+        "ASP.NET (C#)",
+        "Backend",
+        "Sunucu (.NET Core / CLR)",
+        "Derlenen, güvenli ve yüksek performanslı kurumsal altyapı",
+        "Kurumsal web portalları, Windows Server entegrasyonu"
+      ]
+    ]
   }
 ]

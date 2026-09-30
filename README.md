@@ -2,13 +2,13 @@
 
 Çanakkale Onsekiz Mart Üniversitesi, Mühendislik Fakültesi, Elektrik-Elektronik Mühendisliği için **2026–2027** ders portalı ve web tabanlı sunum sistemi.
 
-**Durum:** İlk üç haftanın dersleri hazırdır. 4–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
+**Durum:** İlk dört haftanın dersleri hazırdır. 5–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
 
 ## Amaç
 
 Donanım, işletim sistemleri, ağ, web, bulut, veri analizi, gömülü sistemler ve yapay zekâ arasındaki ilişkileri öğretmek. Öğrenme döngüsü: **Teori → Gerçek Sistem → Küçük Uygulama → GitHub Çalışması**.
 
-İlk hafta bilgisayar tarihi, modern mimari, bileşenler, portlar ve platform karşılaştırmalarını; ikinci hafta kernel, süreç/thread, bellek, dosya sistemleri, boot, işletim sistemi aileleri ve RTOS/bare-metal ayrımını; üçüncü hafta ise Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetiminin mühendislik detaylarını kapsar. Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi vardır.
+İlk hafta bilgisayar tarihi, modern mimari, bileşenler, portlar ve platform karşılaştırmalarını; ikinci hafta kernel, süreç/thread, bellek, dosya sistemleri, boot, işletim sistemi aileleri ve RTOS/bare-metal ayrımını; üçüncü hafta Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetiminin mühendislik detaylarını; dördüncü hafta ise internet ve ağ teknolojilerinin temellerini, Web ile İnternet ayrımını, DHCP, NAT ve DNS protokollerini, web sunucu mimarilerini (Nginx, Apache, IIS, Caddy) ve web yazılım teknolojilerini (HTML, CSS, JS, React, PHP, Python, Java, ASP.NET) kapsar. Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi vardır.
 
 ## Yerel çalıştırma
 
@@ -48,19 +48,23 @@ index.html                  Ana sayfa ve 14 haftalık plan
 weeks/week01.html           Ayrıntılı ilk hafta
 weeks/week02.html           Ayrıntılı ikinci hafta
 weeks/week03.html           Ayrıntılı üçüncü hafta
+weeks/week04.html           Ayrıntılı dördüncü hafta (İnternet & Ağ Teknolojileri)
 css/style.css               Tema ve ortak tasarım
 css/system-lab.css          3. hafta simülasyon ve mimari stilleri
+css/network-lab.css         4. hafta ağ ve web simülasyon stilleri
 css/responsive.css          Ekran, hareket ve yazdırma kuralları
 css/presentation.css        Sunum görünümü
 js/theme.js                 Tema tercihi
 js/main.js                  Arama, kopyalama ve ilerleme
 js/presentation.js          Slayt ve tam ekran denetimi
 js/system-lab.js            3. hafta etkileşimli CPU, bellek ve port simülatörleri
+js/network-lab.js           4. hafta etkileşimli DNS, DHCP, NAT, Web Server ve Tech Stack simülatörleri
 js/demos.js                 İlerideki dersler için örnek etkileşimler
 content/weeks.json          Yayındaki derslerin içerik kaynağı
 content/syllabus.json       14 haftalık plan
 scripts/build.py            Kaynaktan statik HTML üretimi
 scripts/system_lab.py       3. hafta etkileşimli bileşen üretimi
+scripts/network_lab.py      4. hafta etkileşimli ağ ve web bileşeni üretimi
 scripts/check.py            Bağlantı ve içerik denetimi
 assets/icons/               Yerel SVG favicon
 assets/images/              İleride eklenecek görseller

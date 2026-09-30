@@ -1,0 +1,822 @@
+/* Network Architecture & Interactive Simulation Lab Styles (Week 4) */
+
+/* 1. Architecture Explorer */
+.net-architecture-explorer {
+  margin: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.net-arch-lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.net-arch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.net-arch-node {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 110px;
+  justify-content: center;
+}
+.net-arch-node:hover {
+  border-color: var(--accent);
+  background: var(--soft);
+  transform: translateY(-2px);
+}
+.net-arch-node[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--soft);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.net-arch-node .node-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+}
+.net-arch-node .node-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.net-arch-node .node-text strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.3;
+}
+.net-arch-node .node-text small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.net-arch-inspector {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.net-arch-inspector .inspector-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+.net-arch-inspector h3 {
+  margin: 4px 0 2px;
+  font-size: 20px;
+  color: var(--ink);
+}
+.net-arch-inspector .inspector-en {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+.net-arch-inspector .inspector-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+.net-spec-pills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.spec-pill {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+  border: 1px solid var(--line);
+  background: var(--bg);
+}
+.spec-pill strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.spec-pill.proto strong { color: #0078d4; }
+.spec-pill.stack strong { color: #24705b; }
+.spec-pill.role strong { color: #b86214; }
+
+/* 2. Simulation Lab Layout */
+.network-sim-lab {
+  margin: 28px 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.network-sim-lab .sim-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  overflow-x: auto;
+}
+.network-sim-lab .sim-tabs button {
+  flex: 1;
+  min-height: 48px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 12px 16px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.network-sim-lab .sim-tabs button:hover {
+  color: var(--ink);
+  background: var(--soft);
+}
+.network-sim-lab .sim-tabs button[aria-selected="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  background: var(--surface);
+}
+.network-sim-lab .sim-panel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.network-sim-lab .sim-panel[hidden] {
+  display: none !important;
+}
+.network-sim-lab .sim-header h3 {
+  margin: 4px 0 6px;
+  font-size: 20px;
+}
+.network-sim-lab .sim-header p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* 3. Panel 1: DNS & Packet Journey */
+.dns-input-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dns-input-bar label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.input-action-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.input-action-group select {
+  flex: 1;
+  min-width: 260px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+}
+.dns-pipeline-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+.dns-stage {
+  flex: 1;
+  min-width: 110px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+.dns-stage .stage-num {
+  display: inline-block;
+  align-self: center;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 11px;
+}
+.dns-stage strong {
+  font-size: 12px;
+  line-height: 1.2;
+}
+.dns-stage small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.dns-stage.active-stage {
+  border-color: #24705b;
+  background: rgba(36, 112, 91, 0.12);
+  transform: scale(1.04);
+  box-shadow: 0 4px 12px rgba(36, 112, 91, 0.2);
+}
+.dns-stage.resolved-stage {
+  border-color: #0078d4;
+  background: rgba(0, 120, 212, 0.1);
+}
+.dns-arrow {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 16px;
+  user-select: none;
+}
+.packet-routing-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.routing-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 10px;
+}
+.routing-head [data-resolved-ip] {
+  font-family: monospace;
+  background: var(--soft);
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: var(--accent);
+  font-weight: 600;
+}
+.hops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hop-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  font-family: monospace;
+  font-size: 12px;
+  animation: hopIn 0.3s ease;
+}
+@keyframes hopIn {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.hop-item .hop-num {
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 20px;
+}
+.hop-item .hop-latency {
+  margin-left: auto;
+  color: #24705b;
+  font-weight: 600;
+}
+.hop-item.placeholder {
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 13px;
+  font-style: italic;
+  justify-content: center;
+}
+/* Subprotocol Navigation & Subviews */
+.proto-subnav {
+  display: flex;
+  gap: 8px;
+  background: var(--bg);
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+.subnav-btn {
+  flex: 1;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.subnav-btn:hover {
+  color: var(--ink);
+  background: var(--surface);
+}
+.subnav-btn.active {
+  background: var(--surface);
+  color: var(--accent);
+  border-color: var(--line);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.subproto-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.subproto-view[hidden] {
+  display: none !important;
+}
+
+/* DHCP DORA Simulator Styles */
+.dhcp-explain-banner {
+  background: var(--soft);
+  border-left: 4px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.dhcp-explain-banner strong {
+  color: var(--ink);
+  display: block;
+  margin-bottom: 2px;
+}
+.dhcp-explain-banner p {
+  margin: 0;
+  color: var(--ink);
+}
+.dhcp-dora-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.dora-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+.dora-card .dora-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--accent);
+}
+.dora-card strong {
+  font-size: 13px;
+  color: var(--ink);
+}
+.dora-card p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.4;
+  flex: 1;
+}
+.dora-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.dora-card.active-step {
+  border-color: #24705b;
+  background: rgba(36, 112, 91, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(36, 112, 91, 0.15);
+}
+.dora-card.active-step .dora-status {
+  color: #24705b;
+  border-color: #24705b;
+  background: rgba(36, 112, 91, 0.15);
+}
+.dora-card.done-step {
+  border-color: #0078d4;
+  background: rgba(0, 120, 212, 0.06);
+}
+.dora-card.done-step .dora-status {
+  color: #0078d4;
+}
+
+/* NAT / PAT Simulator Styles */
+.nat-translation-table-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.nat-table-header {
+  padding: 12px 16px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.nat-table-header .badge {
+  font-family: monospace;
+  font-size: 12px;
+  background: var(--soft);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  font-weight: 600;
+}
+.nat-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.nat-data-table th, .nat-data-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+.nat-data-table th {
+  background: var(--bg);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.nat-data-table td code {
+  font-family: monospace;
+  background: var(--soft);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+.nat-data-table tbody tr:hover {
+  background: var(--soft);
+}
+.proto-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0, 120, 212, 0.1);
+  color: #0078d4;
+}
+
+/* 4. Panel 2: Web vs Internet Highway */
+.highway-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.highway-roadbed {
+  background: var(--bg);
+  border: 2px dashed var(--line);
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.road-label {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.road-status {
+  font-size: 13px;
+}
+.services-traffic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+.service-vehicle {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.25s ease;
+}
+.service-vehicle .veh-icon {
+  font-size: 28px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--soft);
+  border-radius: 10px;
+}
+.service-vehicle .veh-info {
+  flex: 1;
+}
+.service-vehicle .veh-info strong {
+  display: block;
+  font-size: 14px;
+  color: var(--ink);
+}
+.service-vehicle .veh-info small {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.service-vehicle button {
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  transition: all 0.2s ease;
+}
+.service-vehicle button:hover {
+  background: var(--soft);
+}
+.service-vehicle.disabled {
+  opacity: 0.45;
+  border-style: dashed;
+  background: var(--bg);
+}
+.service-vehicle.disabled .veh-icon {
+  filter: grayscale(1);
+}
+
+/* 5. Panel 3: Web Server Flow */
+.client-server-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 24px 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+.flow-box {
+  flex: 1;
+  min-width: 140px;
+  padding: 16px 14px;
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+.flow-box .box-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.flow-box strong {
+  font-size: 14px;
+  color: var(--ink);
+}
+.flow-box p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.flow-box.active-pulse {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(0, 120, 212, 0.3);
+  transform: translateY(-3px);
+}
+.flow-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  color: var(--muted);
+  gap: 2px;
+  min-width: 70px;
+  text-align: center;
+}
+.flow-arrow span {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.flow-arrow.active-stream {
+  color: #24705b;
+}
+.flow-arrow.active-stream span {
+  color: #24705b;
+}
+.sim-controls-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.sim-controls-bar button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.sim-controls-bar button:hover {
+  background: var(--soft);
+  border-color: var(--accent);
+}
+.sim-controls-bar button.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* 6. Panel 4: Web Tech Stack Split */
+.tech-stack-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.tech-col {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.tech-col h4 {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 8px;
+}
+.tech-pills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tech-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tech-btn:hover {
+  background: var(--soft);
+  border-color: var(--accent);
+}
+.tech-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+.tech-preview-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow);
+}
+.preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+.preview-head h3 {
+  margin: 2px 0 0;
+  font-size: 18px;
+}
+.tech-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--soft);
+  color: var(--accent);
+  border: 1px solid var(--line);
+}
+.tech-preview-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.code-wrap pre {
+  margin: 0;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 12px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+/* Responsive Layout */
+@media (max-width: 960px) {
+  .net-arch-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .net-spec-pills {
+    grid-template-columns: 1fr;
+  }
+  .services-traffic-grid {
+    grid-template-columns: 1fr;
+  }
+  .tech-stack-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .net-arch-grid {
+    grid-template-columns: 1fr;
+  }
+  .dns-pipeline-visual {
+    flex-direction: column;
+  }
+  .dns-arrow {
+    transform: rotate(90deg);
+  }
+  .client-server-flow {
+    flex-direction: column;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+  }
+}
