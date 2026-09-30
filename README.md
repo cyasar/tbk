@@ -8,7 +8,42 @@
 
 Donanım, işletim sistemleri, ağ, web, bulut, veri analizi, gömülü sistemler ve yapay zekâ arasındaki ilişkileri öğretmek. Öğrenme döngüsü: **Teori → Gerçek Sistem → Küçük Uygulama → GitHub Çalışması**.
 
-İlk hafta bilgisayar tarihi, modern mimari, bileşenler, portlar ve platform karşılaştırmalarını; ikinci hafta kernel, süreç/thread, bellek, dosya sistemleri, boot, işletim sistemi aileleri ve RTOS/bare-metal ayrımını; üçüncü hafta Windows, Linux ve macOS ortamlarında işlemci, bellek, dosya, cihaz ve port yönetiminin mühendislik detaylarını; dördüncü hafta ise internet ve ağ teknolojilerinin temellerini, Web ile İnternet ayrımını, DHCP, NAT ve DNS protokollerini, web sunucu mimarilerini (Nginx, Apache, IIS, Caddy) ve web yazılım teknolojilerini (HTML, CSS, JS, React, PHP, Python, Java, ASP.NET) kapsar. Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi vardır.
+Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitHub görevi bulunur.
+
+## Hazır Haftalık İçerikler ve Laboratuvar Modülleri
+
+- **01 / HAFTA: Bilgisayar Sistemleri ve Donanım Temelleri**
+  - Bilgisayarların tarihsel gelişimi ve etkileşimli zaman çizgisi.
+  - Modern von Neumann mimarisi, CPU, RAM, depolama ve veri yolları.
+  - Fiziksel ve mantıksal portlar (USB, PCIe, UART, I2C, SPI) ve platform karşılaştırmaları.
+- **02 / HAFTA: İşletim Sistemleri, Çekirdek (Kernel) ve Mimariler**
+  - Çekirdek (Monolitik vs. Mikroçekirdek) ve kullanıcı/ayrıcalıklı mod (User/Kernel space).
+  - Süreç (process), iş parçacığı (thread), bellek hiyerarşisi ve dosya sistemleri.
+  - Masaüstü/sunucu işletim sistemleri ile RTOS ve bare-metal mikrodenetleyici farkları.
+- **03 / HAFTA: İşlemci, Bellek, Dosya ve Sistem Yönetimi**
+  - Windows, Linux ve macOS ortamlarında sistem yönetimi ve CLI komutları (`Get-Process`, `top`, `ss -tuln`, `lsof`).
+  - Disk bakımı, dosya sistemleri (NTFS, ext4, APFS), takas alanı (swap/pagefile) ve Görev Yöneticisi optimizasyonları.
+  - **İşletim Sistemleri Simülasyon Laboratuvarı:** CPU Zamanlayıcı (Round Robin, FCFS, Priority), Bellek & Sayfalama (Paging, Swap, OOM), Port Yönetimi ve Canlı Görev Yöneticisi.
+- **04 / HAFTA: İnternet ve Ağ Teknolojilerinin Temelleri**
+  - **Temel Ağ Yönetim Protokolleri (DHCP, NAT, DNS):**
+    - **DHCP (UDP 67/68):** DORA süreci (**D**iscover $\rightarrow$ **O**ffer $\rightarrow$ **R**equest $\rightarrow$ **A**CK) ile otomatik IP kiralama, alt ağ maskesi, gateway ve DNS yapılandırması.
+    - **NAT / PAT (RFC 1631):** IPv4 yetersizliğine çözüm; yerel özel IP'lerin (`192.168.x.x`) yönlendirici çıkışında tek bir Genel IP (`Public IP`) ve dinamik portlarla dış dünyaya bağlanması, iç ağın güvenliği.
+    - **DNS (UDP 53):** Hiyerarşik alan adı çözümleme (Önbellek $\rightarrow$ ISS Resolver $\rightarrow$ Kök `.` $\rightarrow$ TLD `.tr` $\rightarrow$ Yetkili Sunucu) ve TCP/IP Traceroute yönlendirici atlamaları (hop).
+  - **Web (WWW) ve İnternet Arasındaki Fark:**
+    - İnternet küresel fiber optik, uydu ve yönlendirici otoyoludur; Web (HTTP/HTTPS) bu otoyoldaki araçlardan yalnızca biridir. Web servisi kapansa bile e-posta (SMTP), SSH ve IoT telemetrisi (MQTT) çalışmayı sürdürür.
+  - **Web Sunucu Türleri:**
+    - **Nginx:** Olay güdümlü, asenkron, yüksek eşzamanlılık, ters vekil (Reverse Proxy) ve statik dosya sunumu.
+    - **Apache HTTP Server:** Modüler mimari, `.htaccess` desteği.
+    - **Microsoft IIS:** Windows Server derin entegrasyonu, ASP.NET Core optimizasyonu.
+    - **Caddy:** Otomatik Let's Encrypt SSL/TLS sertifika yönetimi.
+  - **Web Yazılım Teknolojileri Yığını:**
+    - **Frontend:** HTML5 (yapı), CSS3 (görsel/responsive), JavaScript (dinamik etkileşim/Fetch API), React (bileşen tabanlı UI/Virtual DOM).
+    - **Backend:** PHP (dinamik derleme/WordPress/Laravel), Python (Flask/FastAPI/Django/AI/IoT REST API), Node.js (asenkron I/O/WebSocket), Java (Spring Boot kurumsal mimari), ASP.NET Core (C# derlenen yüksek performans).
+  - **Ağ ve Web Simülasyon Laboratuvarı:**
+    - Sekme 1: DNS Çözümleme & Traceroute + DHCP DORA IP Kiralama + Canlı NAT/PAT Çeviri Tablosu.
+    - Sekme 2: Web vs. İnternet Otoyolu Trafik Kontrolü.
+    - Sekme 3: Nginx Web Sunucusu Statik (1.4 ms) vs. Dinamik (38.6 ms PHP/MySQL) İstek Akışı.
+    - Sekme 4: Web Yazılım Teknolojileri Kılavuzu ve Canlı Kod Kartları.
 
 ## Yerel çalıştırma
 
