@@ -8,6 +8,7 @@ from architecture import render_architecture
 from system_lab import render_system_architecture, render_system_lab
 from network_lab import render_network_architecture, render_network_lab
 from web_history import render_web_history
+from interactive_quiz import render_interactive_quiz
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / 'content/weeks.json').read_text(encoding='utf-8'))
@@ -75,6 +76,8 @@ for n,w in enumerate(DATA,1):
     if n==10: practice+='''<form class="demo" id="power-demo"><h3>Güç ve enerji hesaplayıcı</h3><label>Gerilim (V) <input name="voltage" type="number" min="0" step="0.1" value="12"></label><label>Akım (A) <input name="current" type="number" min="0" step="0.01" value="0.5"></label><label>Süre (saat) <input name="hours" type="number" min="0" step="0.1" value="2"></label><output id="power-result" aria-live="polite"></output></form>'''
     if n==11: practice+='''<h3>Örnek sıcaklık serisi</h3><div class="result-chart" role="img" aria-label="09:00 22 derece, 10:00 24 derece, 11:00 28 derece, 12:00 26 derece. Sütun tabanı sıfır derecedir."><div class="bar" style="height:73.3%">22°C</div><div class="bar" style="height:80%">24°C</div><div class="bar" style="height:93.3%">28°C</div><div class="bar" style="height:86.7%">26°C</div></div><p>Sırasıyla 09:00, 10:00, 11:00, 12:00 · Eksen tabanı: 0 °C. Değerler örnek CSV dosyasından alınmıştır.</p><a href="../assets/data/olcumler.csv" download>CSV verisini indir</a>'''
     sections.append(('uygulama','Uygulama',practice))
+    if n == 4:
+        sections.append(('etkilesimli-degerlendirme','İnteraktif Değerlendirme & Mühendislik Soruları (10 Soru)',render_interactive_quiz()))
     sections.append(('ai-calisma','Yapay Zekâ ile Çalışma',code(w['prompt'])+'<h3>Doğrulama kontrolü</h3>'+ul(w['verify'])))
     quiz=''.join(f'<details><summary>{i}. {esc(q)}</summary><p>{esc(a)}</p></details>' for i,(q,a) in enumerate(w['quiz'],1))
     sections.append(('test','Kendini Test Et',quiz))

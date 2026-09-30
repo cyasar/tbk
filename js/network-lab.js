@@ -15,6 +15,7 @@
     initWebVsNetSim();
     initWebServerSim();
     initTechStackSim();
+    initInteractiveQuiz();
   });
 
   /* ----------------------------------------------------
@@ -567,5 +568,147 @@
         if (codeEl) codeEl.textContent = data.code;
       });
     });
+  }
+
+  /* ----------------------------------------------------
+   * 7. Interactive Engineering Assessment (10 Questions)
+   * ---------------------------------------------------- */
+  function initInteractiveQuiz() {
+    const container = document.querySelector('[data-quiz-lab]');
+    if (!container) return;
+
+    const cards = container.querySelectorAll('.quiz-q-card');
+    const scoreDisplay = container.querySelector('[data-score-display]');
+    const checkAllBtn = container.querySelector('[data-action="check-all-quiz"]');
+    const resetBtn = container.querySelector('[data-action="reset-quiz"]');
+
+    const EXPLANATIONS = {
+      1: {
+        correct: 'Tebrikler! DHCP kiralama süreci tam olarak DORA (Discover → Offer → Request → Acknowledge) sırasıyla işler: İstemci önce arama yayını yapar, sunucu boş IP teklif eder, istemci onay ister, sunucu kira parametrelerini onaylar.',
+        wrong: 'Hatalı sıralama! DHCP süreci D-O-R-A akrostişi ile hatırlanır: 1. Discover (Keşif), 2. Offer (Teklif), 3. Request (İstek), 4. ACK (Onay).'
+      },
+      2: {
+        correct: 'Doğru! NAT (PAT - Port Address Translation), yerel cihazın Özel IP (Private IP) adresini siler; yerine yönlendiricinin tek Genel IP (Public IP) adresini ve benzersiz dinamik bir dış portu eşleyerek paket başlığını değiştirir.',
+        wrong: 'Hatalı! NAT hedef adresi değiştirmez, kaynak Özel IP adresini yönlendiricinin Genel IP\'si ve dinamik bir port ile değiştirerek iç ağı dış dünyadan izole eder.'
+      },
+      3: {
+        correct: 'Harika analiz! DNS hiyerarşisi ters ağaç yapısındadır: Yerel önbellekte yoksa ISS Resolver önce dünyadaki 13 Kök Ad Sunucusuna (.), ardından üst düzey alan (.tr) TLD sunucusuna, en son alan adından sorumlu Yetkili Sunucuya (ns1.comu.edu.tr) gider.',
+        wrong: 'Hatalı! DNS çözümlemesi hiyerarşik aşağıdan yukarı değil, Kök (.) → TLD (.tr) → Yetkili Sunucu (Authoritative) sırasıyla yürütülür.'
+      },
+      4: {
+        correct: 'Tebrikler! Web (Port 80/443 HTTP/HTTPS) kapalı olsa bile İnternet altyapısı çalışır; Port 22 SSH uzak yönetimi ve Port 1883 MQTT telemetrisi bağımsız IP protokolleri olarak çalışmaya devam eder.',
+        wrong: 'Hatalı! Port 80 ve 443 Web (HTTP/HTTPS) servisleridir. REST API ve web siteleri bu portları kullandığı için durur; ancak SSH (Port 22) ve MQTT (Port 1883) internet üzerinde kesintisiz çalışır.'
+      },
+      5: {
+        correct: 'Doğru! Nginx, her bağlantı için yeni bir süreç/thread açmak yerine tek bir işlemde asenkron (non-blocking event-driven) epoll mimarisi kullandığından çok düşük bellekle on binlerce eşzamanlı bağlantıyı yönetir.',
+        wrong: 'Hatalı! Apache prefork her bağlantı için yeni süreç açarak yüksek belleğe yol açar. Olay güdümlü asenkron yapı Nginx\'in temel gücüdür.'
+      },
+      6: {
+        correct: 'Eksiksiz eşleştirme! Web 1.0 salt okunur statik HTML çağıdır; Web 2.0 AJAX ve sosyal ağlarla okur-yazar katılımcı webdir; Web 3.0 ise semantik veri, Wasm ve yapay zekâ entegrasyonudur.',
+        wrong: 'Eşleştirme eksik veya hatalı! Web 1.0 (Salt Okunur), Web 2.0 (AJAX & Sosyal), Web 3.0 (Semantik Ağ & Yapay Zekâ) olmalıdır.'
+      },
+      7: {
+        correct: 'Mükemmel teşhis! PHP/Python motoru çöktüğünde Nginx 502 Bad Gateway döner; bulunamayan kaynak 404 Not Found\'dur; yeni bir kaynak başarıyla oluşturulduğunda REST API standardı 201 Created döndürür.',
+        wrong: 'Durum kodları hatalı! Backend motoru ile iletişim kopuksa 502 Bad Gateway, dosya yoksa 404 Not Found, yeni veri eklenmişse 201 Created döner.'
+      },
+      8: {
+        correct: 'Doğru! PHP ve Python backend dilleri olup sunucuda çalışır ve dinamik çıktı üretir; HTML, CSS ve JavaScript/React ise kullanıcının tarayıcısında (Client DOM) yorumlanır.',
+        wrong: 'Hatalı! PHP veya Python asla doğrudan tarayıcıya indirilip Chrome\'da çalıştırılmaz; sunucu üzerinde derlenip istemciye salt HTML/JSON gönderilir.'
+      },
+      9: {
+        correct: 'Kesinlikle doğru! Tim Berners-Lee 1994\'te W3C\'yi kurarak web standartlarının açık, patentsiz ve herkes için ücretsiz bir küresel kamu malı olarak kalmasını sağlamıştır.',
+        wrong: 'Hatalı! Tim Berners-Lee web standartlarını satmamış; tam aksine patentsiz ve kamu malı kalması için W3C\'yi kurmuştur.'
+      },
+      10: {
+        correct: 'Harika bir mühendislik kararı! Sensör veritabanı kaydında hiçbir ölçüm kaybolmamalıdır (TCP garanti eder); canlı video yayınında ise anlık akış hızı öncelikli olup küçük paket kayıpları tolere edilebilir (UDP kullanılır).',
+        wrong: 'Hatalı seçim! Eksiksiz veri aktarımı için TCP 3-way handshake gereklidir; canlı düşük gecikmeli görüntü/ses akışları için ise doğrulamasız UDP tercih edilir.'
+      }
+    };
+
+    function evaluateQuestion(card) {
+      const qNum = Number(card.dataset.q);
+      const feedbackEl = card.querySelector('[data-feedback="' + qNum + '"]');
+      let isCorrect = false;
+
+      if (qNum === 1) {
+        const s1 = card.querySelector('[data-user-step="1"]').value;
+        const s2 = card.querySelector('[data-user-step="2"]').value;
+        const s3 = card.querySelector('[data-user-step="3"]').value;
+        const s4 = card.querySelector('[data-user-step="4"]').value;
+        isCorrect = (s1 === 'D' && s2 === 'O' && s3 === 'R' && s4 === 'A');
+      } else if (qNum === 6) {
+        const e1 = card.querySelector('[data-era-match="1"]').value;
+        const e2 = card.querySelector('[data-era-match="2"]').value;
+        const e3 = card.querySelector('[data-era-match="3"]').value;
+        isCorrect = (e1 === 'web1' && e2 === 'web2' && e3 === 'web3');
+      } else if (qNum === 7) {
+        const h1 = card.querySelector('[data-http-match="1"]').value;
+        const h2 = card.querySelector('[data-http-match="2"]').value;
+        const h3 = card.querySelector('[data-http-match="3"]').value;
+        isCorrect = (h1 === '502' && h2 === '404' && h3 === '201');
+      } else {
+        const selected = card.querySelector('input[type="radio"]:checked');
+        const correctVal = card.dataset.correct;
+        isCorrect = (selected && selected.value === correctVal);
+      }
+
+      card.classList.remove('answered-correct', 'answered-wrong');
+      card.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+
+      if (feedbackEl) {
+        feedbackEl.removeAttribute('hidden');
+        feedbackEl.className = 'q-feedback ' + (isCorrect ? 'success' : 'error');
+        feedbackEl.innerHTML = (isCorrect ? '✅ ' : '❌ ') + (isCorrect ? EXPLANATIONS[qNum].correct : EXPLANATIONS[qNum].wrong);
+      }
+
+      return isCorrect;
+    }
+
+    function updateScore() {
+      let correctCount = 0;
+      cards.forEach(function(card) {
+        if (card.classList.contains('answered-correct')) {
+          correctCount++;
+        }
+      });
+      if (scoreDisplay) {
+        scoreDisplay.textContent = correctCount + ' / ' + cards.length;
+      }
+    }
+
+    cards.forEach(function(card) {
+      const qNum = card.dataset.q;
+      const checkBtn = card.querySelector('[data-check-q="' + qNum + '"]');
+      if (checkBtn) {
+        checkBtn.addEventListener('click', function() {
+          evaluateQuestion(card);
+          updateScore();
+        });
+      }
+    });
+
+    if (checkAllBtn) {
+      checkAllBtn.addEventListener('click', function() {
+        cards.forEach(function(card) {
+          evaluateQuestion(card);
+        });
+        updateScore();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        cards.forEach(function(card) {
+          card.classList.remove('answered-correct', 'answered-wrong');
+          const fb = card.querySelector('.q-feedback');
+          if (fb) fb.setAttribute('hidden', '');
+          const selects = card.querySelectorAll('select');
+          selects.forEach(function(s) { s.value = ''; });
+          const radios = card.querySelectorAll('input[type="radio"]');
+          radios.forEach(function(r) { r.checked = false; });
+        });
+        if (scoreDisplay) scoreDisplay.textContent = '0 / ' + cards.length;
+      });
+    }
   }
 })();

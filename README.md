@@ -44,6 +44,8 @@ Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitH
     - Sekme 2: Web vs. İnternet Otoyolu Trafik Kontrolü.
     - Sekme 3: Nginx Web Sunucusu Statik (1.4 ms) vs. Dinamik (38.6 ms PHP/MySQL) İstek Akışı.
     - Sekme 4: Web Yazılım Teknolojileri Kılavuzu ve Canlı Kod Kartları.
+  - **İnteraktif Değerlendirme & Mühendislik Soruları (10 Soru):**
+    - DHCP DORA sıralaması (Combobox), NAT/PAT kaynak port eşleme mantığı, hiyerarşik DNS çözümleme rotası, Web vs. İnternet servis bağımsızlığı, Nginx asenkron mimarisi, Web 1.0/2.0/3.0 eşleştirmesi, 502/404/201 HTTP durum kodu teşhisi, Frontend/Backend yürütme ortamları, W3C açık standartları ve TCP vs. UDP telemetri seçimi.
 
 ## Yerel çalıştırma
 
@@ -103,6 +105,7 @@ scripts/build.py            Kaynaktan statik HTML üretimi
 scripts/system_lab.py       3. hafta etkileşimli bileşen üretimi
 scripts/network_lab.py      4. hafta etkileşimli ağ ve web bileşeni üretimi
 scripts/web_history.py      4. hafta etkileşimli web tarihi bileşeni üretimi
+scripts/interactive_quiz.py 4. hafta 10 interaktif mühendislik sorusu üretimi
 scripts/check.py            Bağlantı ve içerik denetimi
 assets/icons/               Yerel SVG favicon
 assets/images/web_history/  Web tarihi vektörel çizimleri
