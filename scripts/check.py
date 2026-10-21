@@ -28,5 +28,5 @@ for path,page in pages.items():
         if page.questions!=5:errors.append(f'Expected 5 questions: {path.name}')
         if page.sections<10:errors.append(f'Missing lesson sections: {path.name}')
 assert not errors,'\n'.join(errors)
-assert len(pages)==8,'Expected 8 published pages: index + week01 to week07'
+assert len(pages)==9,'Expected 9 published pages: index + week01 to week08'
 print(f'PASS: {len(pages)} pages; local links, anchors, unique IDs, sections and quizzes.')

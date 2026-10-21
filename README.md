@@ -2,7 +2,7 @@
 
 Çanakkale Onsekiz Mart Üniversitesi, Mühendislik Fakültesi, Elektrik-Elektronik Mühendisliği için **2026–2027** ders portalı ve web tabanlı sunum sistemi.
 
-**Durum:** İlk 7 haftanın dersleri hazırdır. 8–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
+**Durum:** İlk 8 haftanın dersleri hazırdır. 9–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
 
 ## Amaç
 
@@ -65,6 +65,13 @@ Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitH
   - **Asenkron Programlama & Fetch API:** `Promises`, `async/await` ve JSON formatıyla sayfayı yenilemeden arka planda sensör telemetrisi alışverişi.
   - **Elektrik-Elektronik Mühendisliği Uygulaması:** Web arayüzünden sanal LED / röle durumu değiştirme (`aria-pressed`), canlı sıcaklık simülasyonu ve form üzerinden anlık elektriksel güç hesabı ($P = V \cdot I$).
   - **Hata Ayıklama & Yayınlama:** DevTools Console/Breakpoints, **Google DeepMind Antigravity** AI hata ayıklama ve GitHub Pages üzerinden istemci taraflı interaktif uygulama sunumu.
+- **08 / HAFTA: Google Ekosistemi, Google Drive ve Bulut Teknolojileri**
+  - **Bulut Bilişim Modelleri:** IaaS (altyapı), PaaS (platform), SaaS (Google Workspace) katmanları ve sorumluluk paylaşımı.
+  - **Depolama Mimarileri:** Yerel disk (SSD/HDD), bulut dosya depolama (Drive) ve nesne depolama (Cloud Storage) gecikme ve ölçeklenebilirlik farkları; senkronizasyon vs. yedekleme.
+  - **Google Drive Yönetimi:** Klasör hiyerarşisi, sürüm geçmişi (Version History), çevrimdışı çalışma ve gelişmiş arama filtreleri (`type:`, `owner:`, `before:`).
+  - **Erişim Yönetimi & IAM:** En Az Ayrıcalık (Least Privilege) ilkesi, Görüntüleyen/Yorumcu/Düzenleyen rolleri, bağlantı paylaşım riskleri ve 2FA güvenliği.
+  - **Workspace & Tek Kimlik:** OAuth 2.0 / SSO ile üçüncü parti mühendislik araçlarına güvenli entegrasyon; Docs, Sheets ve Forms arası canlı veri köprüleri.
+  - **IoT Bulut Entegrasyonu (Apps Script Webhook):** ESP32 mikrokontrolcüsünden gelen HTTP POST telemetrisini Google Sheets'e otomatik kaydeden sunucusuz (serverless) kod mimarisi.
 
 ## Yerel çalıştırma
 
@@ -108,6 +115,7 @@ weeks/week04.html           Ayrıntılı dördüncü hafta (İnternet & Ağ Tekn
 weeks/week05.html           Ayrıntılı beşinci hafta (Web Teknolojilerine Giriş & HTML)
 weeks/week06.html           Ayrıntılı altıncı hafta (CSS ve Web Tasarımı)
 weeks/week07.html           Ayrıntılı yedinci hafta (JavaScript Temelleri)
+weeks/week08.html           Ayrıntılı sekizinci hafta (Google Ekosistemi & Bulut)
 css/style.css               Tema ve ortak tasarım
 css/system-lab.css          3. hafta simülasyon ve mimari stilleri
 css/network-lab.css         4. hafta ağ ve web simülasyon stilleri

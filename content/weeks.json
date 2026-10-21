@@ -1217,5 +1217,169 @@
         "Agent hata ayıklama ve refactoring"
       ]
     ]
+  },
+  {
+    "title": "Google Ekosistemi, Google Drive ve Bulut Teknolojileri",
+    "intro": "Dosyalarınızı düzenleyin, erişimi yönetin ve bulut ile yerel depolamanın rollerini ayırın; IaaS, PaaS, SaaS modellerini ve Google ekosistemiyle IoT veri entegrasyonunu keşfedin.",
+    "group": "Bulut",
+    "category": "cloud",
+    "concepts": [
+      [
+        "Bulut Bilişim Modelleri (IaaS, PaaS, SaaS)",
+        "Donanım sunucularından (IaaS), uygulama platformlarına (PaaS) ve doğrudan kullanılan bulut yazılımlarına (SaaS - Google Workspace) uzanan katmanlı hizmet mimarisi."
+      ],
+      [
+        "Yerel Depolama vs. Bulut Depolama",
+        "Yerel disklerin (SSD/HDD) fiziksel bağımlılığına karşılık; yüksek erişilebilirlik, coğrafi yedeklilik, nesne depolama (Object Storage) ve otomatik senkronizasyon."
+      ],
+      [
+        "Google Drive & Klasör Hiyerarşisi",
+        "Akademik ve mühendislik projelerinde tekilleştirilmiş veri yapısı, sürüm geçmişi (Version History) ve gelişmiş arama operatörleri (type:, owner:, before:)."
+      ],
+      [
+        "Erişim Kontrolü & IAM (Görüntüleyen, Yorumcu, Düzenleyen)",
+        "En az ayrıcalık ilkesi (Least Privilege), bağlantı paylaşımı riskleri, iki faktörlü kimlik doğrulama (2FA) ve kurumsal alan adı güvenliği."
+      ],
+      [
+        "Google Workspace & Tek Kimlik (SSO / OAuth 2.0)",
+        "Drive, Docs, Sheets, Gmail ve Cloud servislerinin tek bir güvenli kimlik altyapısıyla birbirine bağlanması ve üçüncü parti yetkilendirme."
+      ],
+      [
+        "Bulut Entegrasyonu & Webhook (Google Apps Script)",
+        "Gömülü sistemlerden (ESP32) veya web sayfalarından buluta ölçüm verisi aktaran HTTP Webhook ve RESTful API köprüsü."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · Bulut Bilişim Nedir? Hizmet Modelleri (IaaS, PaaS, SaaS)",
+        "Bulut bilişim; bilgi işlem gücü, depolama, veritabanı ve ağ kaynaklarının internet üzerinden isteğe bağlı (on-demand) olarak ve 'kullandıkça öde' modeliyle sunulmasıdır. Donanım satın alma, veri merkezi kurma ve kesintisiz güç kaynağı gibi yüksek başlangıç maliyetlerini ortadan kaldırır.\nHizmet modelleri üç ana katmana ayrılır:\n1. IaaS (Infrastructure as a Service): Sanal makineler, depolama alanları ve sanal ağlar sunulur (AWS EC2, Google Compute Engine). İşletim sistemi ve yazılım yönetimi kullanıcıya aittir.\n2. PaaS (Platform as a Service): Geliştiriciye işletim sistemi veya sunucu altyapısıyla uğraşmadan yalnızca kodunu çalıştırabileceği bir ortam sağlar (Google App Engine, Firebase, Heroku).\n3. SaaS (Software as a Service): Kullanıcının herhangi bir kurulum yapmadan doğrudan tarayıcı üzerinden kullandığı uçtan uca yazılımlardır (Google Drive, Gmail, Docs, Figma, Office 365)."
+      ],
+      [
+        "Depolama Mimarileri: Yerel Disk, Blok, Dosya ve Nesne Depolama",
+        "Mühendislik verilerinin nerede saklanacağı; erişim hızı, maliyet, güvenlik ve ölçeklenebilirlik kriterlerine göre belirlenir.\nYerel depolama (Local SSD/HDD), doğrudan bilgisayar veri yollarına (NVMe/SATA) bağlıdır; çok düşük gecikmeyle (mikrosaniye düzeyinde) çalışır ancak donanım arızasında veri kaybı riski taşır ve fiziksel cihaza bağımlıdır.\nBulut Dosya Depolama (Google Drive, NFS), hiyerarşik dizin yapısı sunarak ekiplerin dosyaları ortak düzenlemesini sağlar. Nesne Depolama (Google Cloud Storage / AWS S3) ise dosya hiyerarşisi yerine her veriyi benzersiz bir kimlik (ID) ve zengin üst veriyle (metadata) tutarak petabaytlarca sensör telemetrisini ve yedekleri sınırsız ölçekler.\nSenkronizasyon (Sync) ile Yedekleme (Backup) aynı şey değildir: Senkronizasyon yerelde silinen dosyayı buluttan da siler; gerçek bir yedekleme ise değişmez (immutable) ve geçmişe dönük kurtarılabilir olmalıdır."
+      ],
+      [
+        "Google Drive ile Mühendislik Dokümantasyonu ve Gelişmiş Arama",
+        "Mühendislik projelerinde dağınık dosyalar ('deney_raporu_son_v2_gercek.docx') zaman kaybına ve kritik hatalara neden olur. Google Drive, bulut üzerinde tek ve yaşayan bir dosya (Single Source of Truth) oluşturur.\nSürüm Geçmişi (Version History), bir dosyada yapılan tüm değişiklikleri zaman damgası ve yazar bazında saklar; istenen herhangi bir ana tek tıkla geri dönülmesini sağlar. Çevrimdışı (Offline) modu ise internet bağlantısı koptuğunda çalışmayı sürdürmeyi ve bağlantı geldiğinde otomatik eşleşmeyi mümkün kılar.\nGelişmiş Arama Operatörleri ile binlerce dosya arasından teknik dokümanlar saniyeler içinde bulunur: type:spreadsheet (tablolar), owner:me (benim oluşturduklarım), has:attachment (eki olanlar), before:2026-10-01 (belirli tarihten öncekiler) ve parent:klasor_id."
+      ],
+      [
+        "Erişim Yönetimi, Paylaşım Güvenliği ve İki Faktörlü Doğrulama",
+        "Bulut depolamada güvenlik duvarı kullanıcının erişim yönetimidir (IAM - Identity & Access Management). Google Drive üç temel rol sunar: Görüntüleyen (Viewer - yalnızca okur), Yorumcu (Commenter - öneri ve not ekler) ve Düzenleyen (Editor - içeriği silip değiştirebilir).\n'Bağlantıya sahip olan herkes' (Anyone with the link) seçeneği, teknik veri sayfaları ve açık kaynak çalışmalar için pratik olsa da hassas devre tasarımları veya öğrenci kişisel verileri için ciddi bir güvenlik riski oluşturur.\nEn Az Ayrıcalık İlkesi (Principle of Least Privilege): Bir kullanıcıya yalnızca görevini yapmasına yetecek en düşük yetki (mümkünse Yorumcu veya süreli erişim) verilmelidir. Kurumsal hesaplarda (ör. @comu.edu.tr) paylaşımlar üniversite alanı ile sınırlandırılmalı ve iki adımlı doğrulama (2FA / MFA) mutlaka etkinleştirilmelidir."
+      ],
+      [
+        "Google Workspace Entegrasyonu ve Tek Kimlik (SSO / OAuth 2.0)",
+        "Google Ekosisteminin en büyük gücü, araçların birbirleriyle konuşması ve tek bir kimlik üzerinden yetkilendirilmesidir.\nGoogle Kimliği (Google Identity), OAuth 2.0 protokolüyle çalışır. Üçüncü parti bir mühendislik platformuna (ör. GitHub, Overleaf, Tinkercad veya Arduino Cloud) giriş yaparken şifrenizi paylaşmak yerine güvenli yetkilendirme jetonu (token) kullanılır.\nGoogle Drive, Dokümanlar, E-Tablolar (Sheets) ve Formlar arasındaki otomatik veri akışı sayesinde: Bir Google Form ile toplanan laboratuvar ölçümleri anında Google Sheets'e satır olarak eklenir, Sheets'teki grafikler dinamik olarak Google Docs deney raporuna bağlanır ve dosya güncellendiğinde rapordaki grafik de tek tuşla yenilenir."
+      ],
+      [
+        "Gömülü Sistemler ve IoT İçin Bulut Entegrasyonu (Google Apps Script Webhook)",
+        "Elektrik-elektronik projelerinde mikrokontrolcülerden (ESP32, Arduino, Raspberry Pi) toplanan sıcaklık, akım ve voltaj verilerini buluta aktarmanın en pratik yolu Google Apps Script (GAS) Webhook mimarisidir.\nGoogle E-Tablolar'a bağlı bir Apps Script kodu yazılarak bir Web Uygulaması (Web App) olarak dağıtılır. Bu script, mikrokontrolcünün HTTP POST veya GET isteğiyle gönderdiği JSON ölçüm paketini karşılar (doPost(e) fonksiyonu).\nGelen veriyi ayrıştırıp tablonun son satırına anlık zaman damgasıyla ekler. Böylece herhangi bir sunucu kurmadan ve hosting ödemeden, IoT cihazınız doğrudan buluttaki Google Sheets veritabanına telemetri kaydeder."
+      ]
+    ],
+    "diagram": "[ESP32 / IoT Sensör] ──► [HTTP POST (JSON)] ──► [Google Apps Script Webhook]\n                                                          │\n                 ┌────────────────────────────────────────┴────────────────────────────────────────┐\n                 ▼                                                                                 ▼\n     [Google Sheets (Canlı Tablo)]                                                    [Google Drive (Yedek & Rapor)]\n                 │                                                                                 │\n                 ▼                                                                                 ▼\n      [Dinamik Grafik / Analiz] ◄────────────── [OAuth 2.0 / SSO] ─────────────► [Google Docs (Deney Raporu)]",
+    "architecture": "Bulut bilişimin SaaS katmanındaki Google Workspace; OAuth 2.0 tabanlı tek kimlik yönetimi, Google Drive'ın nesne/dosya depolama güvenliği ve Apps Script Webhook servisiyle birleşerek sensörlerden karar destek raporlarına uzanan kesintisiz ve sunucusuz (serverless) bir veri ekosistemi sağlar.",
+    "example": "Güneş paneli verimlilik deneyinde ESP32 kartı her 10 saniyede bir panel voltajını ve akımını ölçer. Hazırlanan Google Apps Script Webhook adresine HTTP POST ile ölçümü yollar. Veri Google Drive'daki E-Tabloya canlı satır olarak eklenir. Tablodaki anlık güç grafiği, Google Docs'ta hazırlanan ortak deney raporuna dinamik bağlıdır; takım arkadaşları farklı bilgisayarlardan raporu yazarken grafikler arka planda canlı olarak güncellenir.",
+    "practice": [
+      "Google Drive üzerinde mühendislik dönem projeniz için standart bir klasör hiyerarşisi oluşturun (01_Donanim, 02_Yazilim, 03_Raporlar, 04_Olcumler).",
+      "Bir dosyayı 'Yorumcu' ve 'Düzenleyen' yetkileriyle takım arkadaşlarınızla paylaşıp sürüm geçmişinden (Version History) önceki bir revizyona geri dönmeyi deneyin.",
+      "Google E-Tablolar üzerinde bir Apps Script Webhook kodu oluşturup tarayıcıdan veya curl komutuyla test JSON verisi göndererek tablonun güncellenmesini sağlayın.",
+      "Google Drive gelişmiş arama çubuğunda type:spreadsheet, owner:me ve after: filtrelerini kullanarak teknik arama pratiği yapın."
+    ],
+    "code": "// Google Apps Script (GAS) - IoT Sensör Telemetrisi Webhook'u\n// Google E-Tablo -> Uzantılar -> Apps Script alanına yapıştırıp 'Web Uygulaması' olarak dağıtın.\n\nfunction doPost(e) {\n  try {\n    // 1. Gelen JSON verisini ayrıştır\n    const data = JSON.parse(e.postData.contents);\n    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();\n    \n    // 2. Zaman damgası ve sensör değerlerini hazırla\n    const timestamp = new Date();\n    const sensorName = data.sensor || 'LM35_Sicaklik';\n    const voltage = parseFloat(data.voltage) || 0.0;\n    const current = parseFloat(data.current) || 0.0;\n    const power = (voltage * current).toFixed(2);\n    \n    // 3. Tabloya yeni satır olarak ekle\n    sheet.appendRow([timestamp, sensorName, voltage, current, power]);\n    \n    // 4. İstemciye (ESP32) başarılı JSON yanıtı dön\n    return ContentService.createTextOutput(JSON.stringify({\n      status: 'SUCCESS',\n      message: 'Ölçüm Google Drive tablosuna kaydedildi.',\n      receivedAt: timestamp\n    })).setMimeType(ContentService.MimeType.JSON);\n    \n  } catch (error) {\n    return ContentService.createTextOutput(JSON.stringify({\n      status: 'ERROR',\n      message: error.toString()\n    })).setMimeType(ContentService.MimeType.JSON);\n  }\n}",
+    "prompt": "Bir elektrik-elektronik mühendisliği IoT ortam izleme projesi için Google Drive ve Google Workspace ekosisteminin veri depolama mimarisini açıkla. ESP32'den gelen analog sensör telemetrisinin (sıcaklık, nem, gerilim) Google Apps Script Webhook ile Google Sheets'e nasıl kaydedileceğini adım adım anlat. Yerel depolama ile bulut depolama farklarını, IAM erişim güvenliğini (Least Privilege) ve OAuth 2.0 kimlik doğrulama ilkelerini mühendislik kriterleriyle değerlendir.",
+    "quiz": [
+      [
+        "Bulut bilişimde IaaS, PaaS ve SaaS modelleri arasındaki temel sorumluluk farkı nedir?",
+        "IaaS'ta kullanıcı sanal sunucu ve işletim sistemini yönetir; PaaS'ta altyapı sağlayıcıya ait olup kullanıcı yalnızca uygulama kodunu yükler; SaaS'ta ise tüm altyapı ve yazılım sağlayıcı tarafından sunulur, kullanıcı doğrudan uygulamayı tüketir."
+      ],
+      [
+        "Google Drive'da bir dosyayı 'Bağlantıya sahip olan herkes düzenleyebilir' yerine 'Belirli kişilere Düzenleyen / Yorumcu' olarak paylaşmanın mühendislik önemi nedir?",
+        "En Az Ayrıcalık (Least Privilege) ilkesine uyarak yetkisiz kişilerin devre tasarımlarını veya ölçüm tablolarını kazara silmesini/değiştirmesini engeller ve veri güvenliği denetim izini korur."
+      ],
+      [
+        "Yerel depolama (SSD/HDD) ile Google Drive gibi bulut depolama sistemleri arasındaki temel fark nedir?",
+        "Yerel depolama yüksek hız ve düşük gecikme sunar ancak fiziksel cihaza bağımlıdır ve donanım arızasında veri kaybı riski taşır; bulut depolama ise coğrafi yedeklilik, her yerden erişim ve sürüm geçmişi sağlar."
+      ],
+      [
+        "Google Apps Script ile oluşturulan bir Webhook'un IoT projelerindeki görevi nedir?",
+        "Mikrokontrolcülerden (ESP32) gelen HTTP POST isteklerini karşılayıp sensör verilerini ek bir sunucu maliyeti olmadan doğrudan Google Sheets tablosuna yazan sunucusuz (serverless) bir köprü görevi görür."
+      ],
+      [
+        "Senkronizasyon (Sync) ile Yedekleme (Backup) kavramları neden birbirinin yerine kullanılamaz?",
+        "Senkronizasyon iki ortamı anlık eşitler; yerelde yapılan bir silme veya fidye yazılımı (ransomware) bozulması buluta da yansır. Gerçek yedekleme ise bağımsız, değişmez ve geçmiş zaman noktalarına dönülebilen kopyalardır."
+      ]
+    ],
+    "task": "Mühendislik dönem projeniz için Google Drive üzerinde standart bir klasör mimarisi kurun; bir Google Form ve bağlı Google Sheets oluşturup örnek 5 sensör ölçümünü kaydedin; erişim izinlerini 'Yorumcu' olarak yapılandırıp hafta08/bulut_raporu.md dosyası içinde paylaşım bağlantısı, klasör ekran görüntüsü ve Apps Script kodunuzu belgeleyin.",
+    "goals": [
+      "Bulut bilişim mimarisini ve IaaS, PaaS, SaaS modellerini ayırt etmek.",
+      "Yerel depolama ile bulut depolamanın gecikme, güvenlik ve yedeklilik farklarını kavramak.",
+      "Google Drive klasör hiyerarşisini, sürüm geçmişini ve gelişmiş arama filtrelerini uygulamak.",
+      "En Az Ayrıcalık (Least Privilege) ilkesiyle IAM ve paylaşım izinlerini güvenli yapılandırmak.",
+      "Google Workspace araçları (Sheets, Docs, Forms) arasındaki canlı entegrasyonu kurmak.",
+      "Google Apps Script Webhook ile IoT ve mikrokontrolcü telemetrisini buluta aktarmak."
+    ],
+    "verify": [
+      "Google Drive paylaşım ayarlarında 'Bağlantıya sahip herkes düzenleyebilir' gibi güvensiz açık izinler bırakılmadığını kontrol edin.",
+      "Google Apps Script Webhook uç noktasına curl veya Postman ile örnek JSON gönderip tablonun otomatik güncellendiğini doğrulayın.",
+      "Senkronizasyon ve yedekleme kavramlarının raporda teknik farklarıyla açıklandığını teyit edin."
+    ],
+    "sources": [
+      [
+        "Google Cloud Architecture Center · Cloud Fundamentals",
+        "https://cloud.google.com/architecture"
+      ],
+      [
+        "Google Workspace Learning Center · Drive & Collaboration",
+        "https://support.google.com/a/users"
+      ],
+      [
+        "Google Apps Script Documentation · Web Apps",
+        "https://developers.google.com/apps-script/guides/web"
+      ],
+      [
+        "NIST Special Publication 800-145 · The NIST Definition of Cloud Computing",
+        "https://csrc.nist.gov/publications/detail/sp/800-145/final"
+      ],
+      [
+        "Google Identity & OAuth 2.0 Protocols",
+        "https://developers.google.com/identity/protocols/oauth2"
+      ]
+    ],
+    "table": [
+      [
+        "Depolama & Bulut Modeli",
+        "Yönetici Sorumluluğu",
+        "Erişim Biçimi",
+        "Gecikme & Hız",
+        "Mühendislik Kullanım Senaryosu"
+      ],
+      [
+        "Yerel NVMe SSD",
+        "Kullanıcı (Donanım/İşletim Sistemi)",
+        "Yerel PCIe / Dosya Sistemi",
+        "Aşırı Düşük (< 0.1 ms)",
+        "Gerçek zamanlı CAD çizimleri, simülasyonlar, derleme"
+      ],
+      [
+        "Google Drive (SaaS)",
+        "Google Altyapısı (Sıfır Bakım)",
+        "Tarayıcı, Mobil, Drive Client",
+        "Ağ Gecikmesi (20-100 ms)",
+        "Takım dokümantasyonu, deney raporları, proje arşivi"
+      ],
+      [
+        "Google Cloud Storage (IaaS)",
+        "Kullanıcı (Kova/Bucket Güvenliği)",
+        "RESTful API / SDK / gsutil",
+        "Ağ Gecikmesi (Yüksek Bant Genişliği)",
+        "Büyük sensör telemetrisi, ham veri setleri, kalıcı yedekler"
+      ],
+      [
+        "Google Apps Script (PaaS/FaaS)",
+        "Google (Sunucusuz Yürütme)",
+        "HTTP Webhook / Tetikleyici",
+        "İstek Başına (200-500 ms)",
+        "ESP32 telemetrisini Google Sheets'e kaydetme"
+      ]
+    ]
   }
 ]
