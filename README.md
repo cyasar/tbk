@@ -2,7 +2,7 @@
 
 Çanakkale Onsekiz Mart Üniversitesi, Mühendislik Fakültesi, Elektrik-Elektronik Mühendisliği için **2026–2027** ders portalı ve web tabanlı sunum sistemi.
 
-**Durum:** İlk dört haftanın dersleri hazırdır. 5–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
+**Durum:** İlk 7 haftanın dersleri hazırdır. 8–14. haftalar yalnızca ders planında “Yakında” olarak gösterilir. Ders 2 saat/hafta, toplam 14 hafta / 28 saattir. Bu depo henüz üniversite tarafından onaylanmış resmî yayın olarak tanımlanmamaktadır.
 
 ## Amaç
 
@@ -45,7 +45,26 @@ Her derste hedefler, kavramlar, uygulama, AI promptu, cevaplı beş soru ve GitH
     - Sekme 3: Nginx Web Sunucusu Statik (1.4 ms) vs. Dinamik (38.6 ms PHP/MySQL) İstek Akışı.
     - Sekme 4: Web Yazılım Teknolojileri Kılavuzu ve Canlı Kod Kartları.
   - **İnteraktif Değerlendirme & Mühendislik Soruları (10 Soru):**
-    - DHCP DORA sıralaması (Combobox), NAT/PAT kaynak port eşleme mantığı, hiyerarşik DNS çözümleme rotası, Web vs. İnternet servis bağımsızlığı, Nginx asenkron mimarisi, Web 1.0/2.0/3.0 eşleştirmesi, 502/404/201 HTTP durum kodu teşhisi, Frontend/Backend yürütme ortamları, W3C açık standartları ve TCP vs. UDP telemetri seçimi.
+    - DHCP DORA sıralaması, NAT/PAT kaynak port eşleme mantığı, hiyerarşik DNS çözümleme rotası, Web vs. İnternet servis bağımsızlığı, Nginx asenkron mimarisi, Web 1.0/2.0/3.0 eşleştirmesi, 502/404/201 HTTP durum kodu teşhisi, Frontend/Backend yürütme ortamları, W3C açık standartları ve TCP vs. UDP telemetri seçimi.
+- **05 / HAFTA: Web Teknolojilerine Giriş ve HTML**
+  - **Semantik HTML5 İskeleti:** `<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`, DOM hiyerarşisi ve W3C erişilebilirlik (ARIA).
+  - **Ölçüm Tabloları ve Kontrol Formları:** `<table>` ile sensör telemetrisi sunumu; `<form>`, `<input>`, `<label>`, `<button>` ile gömülü cihazlara parametre aktarımı.
+  - **Statik Web Yayıncılığı:** **GitHub Pages** ile sunucu gerektirmeyen, ücretsiz, HTTPS destekli, Git commit tetiklemeli statik web barındırma ve `.nojekyll` yapılandırması.
+  - **Kodsuz / Düşük Kodlu Portallar:** **Google Sites** ile Google Workspace (Drive, Docs, Sheets, Forms) entegre proje dokümantasyonu ve takım raporlama sayfaları.
+  - **Yapay Zekâ Destekli Geliştirme:** **Google DeepMind Antigravity** ile ajan tabanlı (agentic) semantik web tasarımı, şablon üretimi ve kod doğrulama.
+- **06 / HAFTA: CSS ve Web Tasarımı**
+  - **Kutu Modeli (Box Model):** Content, padding, border, margin katmanları ve `box-sizing: border-box` kuralının yerleşim mimarisindeki önemi.
+  - **Modern Yerleşim Mimarileri:** **Flexbox** (tek boyutlu satır/sütun akışı, ana ve çapraz eksenler, `gap`) ve **CSS Grid** (iki boyutlu şebeke sistemi, `auto-fit`, `minmax()`, gösterge paneli alanları).
+  - **Duyarlı Tasarım (Responsive Design):** Medya sorguları (`@media`), Mobil Öncelikli (Mobile-First) yaklaşım, esnek ve göreli birimler (`rem`, `vw`, `vh`, `%`, `clamp()`).
+  - **Tasarım Sistemleri & Modern UI Trendleri:** CSS Değişkenleri (`:root`), Koyu/Açık tema (Dark Mode) desteği, cam efekti (Glassmorphism: `backdrop-filter: blur()`), gölgeler ve mikro geçişler (`transition`).
+  - **Geliştirici Araçları:** Tarayıcı DevTools ile kutu modeli denetimi, **Antigravity** ile görsel CSS optimizasyonu ve GitHub Pages canlı doğrulama.
+- **07 / HAFTA: JavaScript Temelleri**
+  - **Modern ECMAScript (ES6+) Standartları:** Blok kapsamlı `let` ve `const`, veri türleri, şablon dizgileri (Template Literals) ve ok fonksiyonları (`arrow functions`).
+  - **DOM (Document Object Model) Ağacı:** `querySelector`, `textContent`, `classList.toggle` ile tarayıcı belleğindeki elemanları dinamik olarak değiştirme.
+  - **Olay Dinleyicileri (Event Listeners):** `click`, `input`, `change` olaylarıyla reaktif kullanıcı etkileşimi ve form doğrulama.
+  - **Asenkron Programlama & Fetch API:** `Promises`, `async/await` ve JSON formatıyla sayfayı yenilemeden arka planda sensör telemetrisi alışverişi.
+  - **Elektrik-Elektronik Mühendisliği Uygulaması:** Web arayüzünden sanal LED / röle durumu değiştirme (`aria-pressed`), canlı sıcaklık simülasyonu ve form üzerinden anlık elektriksel güç hesabı ($P = V \cdot I$).
+  - **Hata Ayıklama & Yayınlama:** DevTools Console/Breakpoints, **Google DeepMind Antigravity** AI hata ayıklama ve GitHub Pages üzerinden istemci taraflı interaktif uygulama sunumu.
 
 ## Yerel çalıştırma
 
@@ -86,6 +105,9 @@ weeks/week01.html           Ayrıntılı ilk hafta
 weeks/week02.html           Ayrıntılı ikinci hafta
 weeks/week03.html           Ayrıntılı üçüncü hafta
 weeks/week04.html           Ayrıntılı dördüncü hafta (İnternet & Ağ Teknolojileri)
+weeks/week05.html           Ayrıntılı beşinci hafta (Web Teknolojilerine Giriş & HTML)
+weeks/week06.html           Ayrıntılı altıncı hafta (CSS ve Web Tasarımı)
+weeks/week07.html           Ayrıntılı yedinci hafta (JavaScript Temelleri)
 css/style.css               Tema ve ortak tasarım
 css/system-lab.css          3. hafta simülasyon ve mimari stilleri
 css/network-lab.css         4. hafta ağ ve web simülasyon stilleri

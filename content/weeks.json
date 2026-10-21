@@ -718,5 +718,504 @@
         "Kurumsal web portalları, Windows Server entegrasyonu"
       ]
     ]
+  },
+  {
+    "title": "Web Teknolojilerine Giriş ve HTML",
+    "intro": "Elektrik-elektronik projeniz için erişilebilir, anlamlı ve bağlantılı ilk web sayfasını oluşturun; Google Sites, GitHub Pages ve Antigravity araçlarıyla modern web yayıncılığına adım atın.",
+    "group": "Web",
+    "category": "web",
+    "concepts": [
+      [
+        "HTML5 & DOM Ağacı",
+        "Web sayfalarının iskeletini ve tarayıcı belleğindeki nesne hiyerarşisini (Document Object Model) oluşturan açık işaretleme dili standardı."
+      ],
+      [
+        "Semantik Etiketler",
+        "<div> karmaşası yerine içeriğin anlamını ve rolünü belirten <header>, <nav>, <main>, <article>, <section>, <aside> ve <footer> etiketleri."
+      ],
+      [
+        "Formlar & Girdi Elemanları",
+        "Kullanıcıdan ve sensörlerden veri almak, kontrol parametrelerini iletmek için kullanılan <form>, <input>, <select> ve <button> yapıları."
+      ],
+      [
+        "GitHub Pages (Statik Yayıncılık)",
+        "Git sürüm kontrol sistemiyle doğrudan GitHub deposu üzerinden ücretsiz, HTTPS destekli, sunucusuz statik web barındırma teknolojisi."
+      ],
+      [
+        "Google Sites (Kodsuz Portfolyo)",
+        "Google Workspace ekosistemiyle (Drive, Docs, Sheets) entegre, sürükle-bırak yöntemiyle hızlı proje belgelendirme ve ekip portalları oluşturma aracı."
+      ],
+      [
+        "Google DeepMind Antigravity",
+        "Ajan tabanlı (agentic) yapay zekâ destekli modern kodlama ortamı; doğal dilden semantik HTML/CSS/JS üretimi, responsive denetim ve akıllı refactoring sağlar."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · Web'in Temel Taşı: HTML5 ve Semantik Belge Yapısı",
+        "HTML (HyperText Markup Language), web tarayıcılarına metinlerin, bağlantıların, tabloların ve formların nasıl yapılandırılacağını bildiren standart işaretleme dilidir. Bir HTML5 belgesi <!doctype html> bildirimiyle başlar; üst veri ve karakter kodlamasını (<meta charset=\"utf-8\">) barındıran <head> ile ekranda kullanıcıya sunulan <body> katmanından oluşur.\nKlasik web tasarımındaki anlamsız <div> blokları yerine HTML5 semantik etiketleri getirmiştir: <header> sayfa veya bölüm başlığını, <nav> gezinme menüsünü, <main> belgenin birincil içeriğini, <article> bağımsız dağıtılabilir yazıyı, <section> tematik içeriği, <aside> yan içeriği ve <footer> dipnot/telif bilgilerini belirtir.\nSemantik yapı; görme engelli bireyler için ekran okuyucuların (screen readers) sayfayı doğru seslendirmesini sağlar, arama motorlarının (SEO) içeriği doğru indekslemesini kolaylaştırır ve mühendislik takımlarında kodun bakım maliyetini düşürür."
+      ],
+      [
+        "Bağlantılar, Tablolar, Medya ve Mühendislik Göstergeleri",
+        "Web'in doğuş nedeni köprü metinlerdir (hypertext). <a href=\"...\"> etiketiyle sayfalar, teknik veri sayfaları (datasheet) ve harici kaynaklar birbirine bağlanır. Göreli yollar (../index.html) proje içi hiyerarşiyi korurken, mutlak yollar tam internet adreslerini hedefler.\nElektrik-elektronik ölçümlerinin düzenli listelenmesi için <table>, <thead>, <tbody>, <tr>, <th> ve <td> etiketleri kullanılır; voltaj, akım ve güç ölçümleri tabular yapıda kullanıcıya sunulur.\nGörsel ve devre şemaları için <img> etiketi ve erişilebilirlik için zorunlu olan açıklayıcı alt özniteliği kullanılır. Semantik figürler için <figure> ve <figcaption> tercih edilir."
+      ],
+      [
+        "Mühendislik Projelerinde Formlar ve Veri Toplama",
+        "Gömülü sistemlere (ör. ESP32 web sunucusu) parametre göndermek veya laboratuvar test sonuçlarını kaydetmek için HTML formları kullanılır.\n<form> kapsayıcısı içinde <label> ile erişilebilir biçimde etiketlenen <input> elemanları yer alır: sayısal sensör eşikleri için type=\"number\", analog ayarlar için type=\"range\", mantıksal durumlar için type=\"checkbox\" ve type=\"radio\" kullanılır.\n<button type=\"submit\"> veya <button type=\"button\"> kullanıcı eylemlerini tetikler. Form özniteliklerindeki action verinin gideceği adresi, method ise HTTP protokolünü (GET veya POST) belirler."
+      ],
+      [
+        "Web Yayıncılığı: GitHub Pages ile Canlıya Alma",
+        "Geliştirilen HTML sayfalarını yerel bilgisayardan (localhost) çıkarıp internette herkesin erişimine açmanın en modern ve mühendisçe yolu GitHub Pages'tir.\nGitHub deposundaki main dalı veya gh-pages dalı, sunucu yönetimi veya aylık hosting maliyeti olmadan statik web sitesi olarak yayınlanır (ör. kullanici.github.io/depoadi).\nGitHub Pages doğrudan Git commit geçmişiyle entegre çalışır; yapılan her git push işlemi GitHub Actions altyapısında otomatik işlenerek siteyi günceller. Statik sayfalarda .nojekyll dosyası Jekyll ön işlemcisini devre dışı bırakarak dosya yollarının güvenle sunulmasını sağlar."
+      ],
+      [
+        "Hızlı Dokümantasyon ve Ekip Portalı: Google Sites",
+        "Google Sites, kod yazmadan (no-code / low-code) modern ve duyarlı web sayfaları tasarlamayı sağlayan bulut tabanlı bir Google Workspace aracıdır.\nEn büyük avantajı Google Ekosistemiyle derin entegrasyonudur: Google Drive klasörleri, Google Dokümanlar deney raporları, Google Sheets canlı çizelgeleri ve Google Forms anketleri tek tıklamayla sayfaya canlı bileşen olarak gömülür (embed).\nGitHub Pages vs. Google Sites: GitHub Pages tam kaynak kodu kontrolü, özel CSS/JS mimarisi ve sürüm yönetimi sağlarken; Google Sites kodsuz hızlı prototipleme, işbirlikli takım raporlaması ve idari proje sunumları için idealdir."
+      ],
+      [
+        "Yeni Nesil Kodlama: Google DeepMind Antigravity ile Web Tasarımı",
+        "Google DeepMind tarafından geliştirilen Antigravity, yazılım geliştirme sürecini yapay zekâ ajanlarıyla (agentic AI) güçlendiren yeni nesil bir geliştirme ortamıdır.\nAntigravity, yalnızca basit kod tamamlama yapmaz; tüm proje yapısını analiz eder, semantik HTML şablonları üretir, eksik etiket ve erişilebilirlik hatalarını (W3C standartları, ARIA öznitelikleri) anında tespit eder.\nGeliştirici doğal dilde 'ESP32 sıcaklık telemetrisi için semantik bir HTML5 tablosu ve kontrol formu hazırla' dediğinde Antigravity mühendislik standartlarına tam uyumlu, temiz ve bağlantılı kodu üretir."
+      ]
+    ],
+    "diagram": "[Geliştirici / Antigravity AI] ──► [Semantik HTML5: header, nav, main, table, form]\n                                                  │\n               ┌──────────────────────────────────┴──────────────────────────────────┐\n               ▼                                                                     ▼\n[GitHub Sürüm Kontrolü]                                                    [Google Workspace]\n       │                                                                             │\n       ▼                                                                             ▼\n[GitHub Pages Yayını]                                                       [Google Sites Portalı]\n(kullanici.github.io/proje)                                               (Canlı Drive & Tablo Gömmeleri)",
+    "architecture": "HTML5 etiketleri tarayıcıda Document Object Model (DOM) hiyerarşisini oluşturur; Antigravity yapay zekâ araçları semantik iskeleti inşa ederken, GitHub Pages kod tabanlı statik yayını, Google Sites ise kodsuz kurumsal belgelendirmeyi sağlar.",
+    "example": "Elektrik-elektronik laboratuvarında bir fotovoltaik panel test düzeneği kurulur. Öğrenciler HTML5 ile ölçüm tablosu ve röle kontrol formunu içeren semantik bir sayfa yazar. Sayfa GitHub Pages üzerinde yayınlanarak ESP32 telemetrisiyle eşleştirilir; projenin idari raporu ve takım tanıtımı ise Google Sites üzerinde Google Drive dokümanlarıyla birlikte sunulur.",
+    "practice": [
+      "Semantik HTML5 etiketleriyle (<header>, <nav>, <main>, <table>, <form>, <footer>) bir IoT laboratuvar kontrol paneli iskeleti kodlayın.",
+      "Sayfanızı GitHub Pages üzerinde (Settings -> Pages -> Deploy from a branch: main) canlıya alın ve bağlantısını test edin.",
+      "Google Sites üzerinde projeniz için bir tanıtım sayfası oluşturun; bir Google Drive tablosunu sayfaya gömün.",
+      "Google DeepMind Antigravity ortamında semantik HTML doğrulama ve erişilebilirlik (ARIA) denetimi gerçekleştirin."
+    ],
+    "code": "<!doctype html>\n<html lang=\"tr\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Laboratuvar IoT Kontrol Paneli</title>\n</head>\n<body>\n  <header>\n    <h1>ÇOMÜ IoT Test İstasyonu</h1>\n    <nav><a href=\"#olcumler\">Ölçümler</a> | <a href=\"#kontrol\">Kontrol</a></nav>\n  </header>\n  <main>\n    <section id=\"olcumler\">\n      <h2>Canlı Sensör Verileri</h2>\n      <table>\n        <thead><tr><th>Sensör</th><th>Değer</th><th>Birim</th></tr></thead>\n        <tbody><tr><td>Sıcaklık (LM35)</td><td>24.6</td><td>°C</td></tr></tbody>\n      </table>\n    </section>\n    <section id=\"kontrol\">\n      <h2>Röle Kontrol Formu</h2>\n      <form action=\"/api/relay\" method=\"POST\">\n        <label for=\"fan-relay\">Soğutma Fanı: </label>\n        <input type=\"checkbox\" id=\"fan-relay\" name=\"fan\">\n        <button type=\"submit\">Durumu Güncelle</button>\n      </form>\n    </section>\n  </main>\n  <footer><p>© 2026 ÇOMÜ Elektrik-Elektronik · GitHub Pages & Antigravity</p></footer>\n</body>\n</html>",
+    "prompt": "Elektrik-elektronik laboratuvarında ESP32 tabanlı sıcaklık ve gerilim izleme projesi için W3C standartlarına uygun semantik bir HTML5 sayfası tasarla. header, nav, main, section, table, form ve footer etiketlerini doğru hiyerarşiyle kullan. Sayfanın GitHub Pages üzerinde barındırılacağını ve proje raporunun Google Sites ile eşleştirileceğini dikkate alarak Antigravity AI destekli erişilebilirlik (ARIA) önerilerini ekle.",
+    "quiz": [
+      [
+        "Semantik HTML etiketleri (header, main, article, footer) kullanmanın salt <div> etiketlerine göre en temel mühendislik faydası nedir?",
+        "Ekran okuyucuların (screen readers) ve arama motorlarının belge yapısını ve hiyerarşisini doğru anlamasını sağlayarak erişilebilirliği (accessibility) artırır ve kod bakımını kolaylaştırır."
+      ],
+      [
+        "GitHub Pages üzerinde yayınlanan bir web projesinde .nojekyll dosyasının bulunmasının amacı nedir?",
+        "GitHub Pages'in arka planda çalışan Jekyll motorunun alt çizgiyle (_) başlayan klasörleri veya özel dosyaları yok saymasını önleyerek saf statik HTML/CSS/JS dosyalarının olduğu gibi sunulmasını sağlar."
+      ],
+      [
+        "Google Sites ile GitHub Pages arasındaki en belirgin mimari ve kullanım farkı nedir?",
+        "GitHub Pages doğrudan Git sürüm kontrolüyle ham HTML/CSS/JS kodlarını sunarken, Google Sites kod yazmadan Google Workspace bileşenlerini sürükle-bırak yöntemiyle birleştiren bir kurumsal portal aracıdır."
+      ],
+      [
+        "HTML formlarında <label for=\"id\"> özniteliğinin <input id=\"id\"> ile eşleştirilmesinin önemi nedir?",
+        "Metne tıklandığında ilgili girdi kutusunun odaklanmasını (focus) sağlar; mobil cihazlarda dokunmatik hedefi genişletir ve yardımcı erişilebilirlik teknolojilerine girdinin amacını bildirir."
+      ],
+      [
+        "Google DeepMind Antigravity geliştirme ortamının geleneksel kod editörlerinden temel farkı nedir?",
+        "Ajan tabanlı (agentic) yapay zekâ desteğiyle tüm proje bağlamını anlayarak semantik kod üretimi, tarayıcı denetimi ve responsive hata ayıklamayı otomatik yönetmesidir."
+      ]
+    ],
+    "task": "Semantik HTML5 etiketleriyle hazırlanmış, sensör tablosu ve röle kontrol formu içeren hafta05/index.html dosyasını oluşturun; çalışmanızı GitHub Pages üzerinde yayınlayın ve Google Sites dokümantasyon bağlantısını hafta05/README.md içine ekleyin.",
+    "goals": [
+      "HTML5 belge yapısını ve temel meta etiketlerini kavramak.",
+      "Semantik etiketleri (header, nav, main, section, table, form, footer) doğru hiyerarşiyle uygulamak.",
+      "Erişilebilir (a11y) formlar ve ölçüm veri tabloları oluşturabilmek.",
+      "GitHub Pages ile bir web projesini internet ortamında canlıya almak.",
+      "Google Sites ile kodsuz proje dokümantasyonu ve Google Workspace entegrasyonu kurmak.",
+      "Google DeepMind Antigravity araçlarıyla yapay zekâ destekli semantik web geliştirme pratiği kazanmak."
+    ],
+    "verify": [
+      "Hazırlanan HTML belgesini W3C Markup Validation servisiyle (validator.w3.org) test edip sözdizimi hatası olmadığını doğrulayın.",
+      "GitHub Pages dağıtım adresinin (kullanici.github.io/depo/hafta05) tarayıcıda hatasız açıldığını kontrol edin.",
+      "<div> etiketleri yerine amaca uygun semantik etiketlerin (main, table, label) kullanıldığını teyit edin."
+    ],
+    "sources": [
+      [
+        "W3C HTML5 Specification & Standards",
+        "https://www.w3.org/standards/webdesign/htmlcss"
+      ],
+      [
+        "MDN Web Docs · HTML Basics & Semantics",
+        "https://developer.mozilla.org/en-US/docs/Learn/HTML"
+      ],
+      [
+        "GitHub Pages Official Documentation",
+        "https://docs.github.com/en/pages"
+      ],
+      [
+        "Google Sites Help & Workspace Integration",
+        "https://support.google.com/sites"
+      ],
+      [
+        "Google DeepMind AI & Modern Development Tools",
+        "https://deepmind.google/"
+      ]
+    ],
+    "table": [
+      [
+        "Platform / Teknoloji",
+        "Geliştirme Türü",
+        "Barındırma Ortamı",
+        "Veri & Servis Entegrasyonu",
+        "Tipik Mühendislik Senaryosu"
+      ],
+      [
+        "HTML5 & CSS",
+        "Kod tabanlı (Standart)",
+        "Herhangi bir Web Sunucusu",
+        "Doğrudan DOM & API",
+        "Özelleştirilmiş IoT panelleri ve web uygulamaları"
+      ],
+      [
+        "GitHub Pages",
+        "Sürüm kontrollü (Git)",
+        "GitHub CDN / Bulut",
+        "Statik dosyalar, JSON API",
+        "Mühendislik portfolyosu, teknik dokümantasyon, canlı demo"
+      ],
+      [
+        "Google Sites",
+        "Kodsuz (No-Code / Low-Code)",
+        "Google Bulut Altyapısı",
+        "Google Drive, Sheets, Docs, Forms",
+        "Dönem projesi raporları, ekip işbirliği sayfaları"
+      ],
+      [
+        "Antigravity (DeepMind)",
+        "Yapay zekâ destekli (Agentic)",
+        "Yerel / Bulut IDE",
+        "LLM destekli semantik kod üretimi",
+        "Akıllı kodlama, şablon çıkarma, çok dosyalı refactoring"
+      ]
+    ]
+  },
+  {
+    "title": "CSS ve Web Tasarımı",
+    "intro": "HTML projenize görsel düzen kazandırın; Flexbox, CSS Grid, Responsive tasarım, modern temalandırma ve Antigravity araçlarıyla esnek arayüzler geliştirin.",
+    "group": "Web",
+    "category": "web",
+    "concepts": [
+      [
+        "CSS3 & Kutu Modeli (Box Model)",
+        "Margin, border, padding ve content katmanlarından oluşan, box-sizing: border-box ile yönetilen görsel boyutlandırma standardı."
+      ],
+      [
+        "Flexbox (1 Boyutlu Yerleşim)",
+        "Elemanları satır veya sütun ekseninde dinamik olarak hizalayan, dağıtan ve esneten modern yerleşim modeli."
+      ],
+      [
+        "CSS Grid (2 Boyutlu Izgara)",
+        "Sayfayı satır ve sütunlardan oluşan şebeke sistemine bölerek karmaşık gösterge panelleri (dashboard) oluşturan yerleşim mimarisi."
+      ],
+      [
+        "Duyarlı Tasarım & Medya Sorguları",
+        "@media sorguları ve esnek birimlerle (rem, vw, vh, %) arayüzü masaüstü, tablet ve mobil ekranlara uyarlayan yaklaşım."
+      ],
+      [
+        "CSS Değişkenleri & Modern UI",
+        ":root üzerinde tanımlanan Custom Properties, Dark/Light tema geçişi, camlaştırma (glassmorphism) ve mikro animasyonlar."
+      ],
+      [
+        "Antigravity ile Görsel Tasarım",
+        "Google DeepMind Antigravity ortamında prompt güdümlü CSS tasarımı, uyumluluk analizi ve anında arayüz iyileştirme."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · CSS Sözdizimi, Seçiciler ve Kutu Modeli",
+        "CSS (Cascading Style Sheets), semantik HTML belgesinin ekranda, kağıtta veya cihazlarda nasıl görüneceğini belirler. Seçiciler (etiket, sınıf ., kimlik #) aracılığıyla HTML elemanları hedeflenir ve stil kuralları uygulanır.\nKutu Modeli (Box Model) CSS'in temel yapı taşıdır: En içte içerik (content), çevresinde iç boşluk (padding), sınır çizgisi (border) ve en dışta diğer elemanlarla mesafeyi belirleyen dış boşluk (margin) bulunur.\nGeleneksel modelde padding ve border elemanın toplam genişliğine eklenerek hesaplama hatalarına yol açar. Modern web mühendisliğinde * { box-sizing: border-box; } kuralı uygulanarak genişliğin padding ve border'ı içermesi sağlanır."
+      ],
+      [
+        "Modern Yerleşim Mimarisi 1: Flexbox ile Esnek Düzenler",
+        "Flexbox (display: flex), tek boyutlu (1D - satır veya sütun) akış düzenlerini kusursuz yönetmek için geliştirilmiştir.\nAna Eksen (Main Axis) ve Çapraz Eksen (Cross Axis) üzerinde kontrol sağlar. justify-content ana eksendeki hizalamayı (center, space-between), align-items çapraz eksendeki dikey ortalamayı yönetir.\ngap özelliği elemanlar arasına temiz boşluk koyarken, flex-wrap: wrap taşan elemanların bir alt satıra geçmesini sağlar. Navigasyon menüleri, buton grupları ve yatay sensör kartları için Flexbox standart çözümdür."
+      ],
+      [
+        "Modern Yerleşim Mimarisi 2: CSS Grid ile İki Boyutlu Şebeke Sistemi",
+        "CSS Grid (display: grid), sayfayı aynı anda hem satırlar hem de sütunlar (2D) halinde ızgara sistemine böler.\ngrid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) ifadesi, ekran genişliğine göre kendiliğinden sütun sayısını ayarlayan son derece güçlü ve modern bir kalıptır.\ngrid-template-areas ile karmaşık mühendislik dashboardları harita gibi adlandırılabilir: sol panel (nav), orta panel (canlı grafik), sağ panel (sensör kartları) ve alt panel (durum bilgisi). Flexbox ile Grid birbirinin rakibi değil; bileşen düzeyinde Flexbox, sayfa iskeletinde Grid bir arada kullanılır."
+      ],
+      [
+        "Duyarlı Web Tasarımı (Responsive Design) ve Medya Sorguları",
+        "Duyarlı web tasarımı, web sayfasının masaüstü monitörden cep telefonuna ve Raspberry Pi'ye bağlı küçük bir LCD ekrana kadar her boyutta kusursuz görünmesini sağlar.\nMedya Sorguları (@media (max-width: 768px)), ekran genişliğine göre farklı CSS kurallarını devreye alır. Modern mühendislik standardı 'Mobil Öncelikli' (Mobile-First) tasarımdır: Temel stiller mobil için yazılır, @media (min-width: 768px) ile büyük ekranlara özellik eklenir.\nSabit piksel (px) yerine esnek ve ölçeklenebilir birimler tercih edilir: kök yazı tipine göre rem, ekran genişliğine göre vw, ekran yüksekliğine göre vh ve dinamik ölçekleme için clamp() fonksiyonu kullanılır."
+      ],
+      [
+        "Tasarım Sistemleri: CSS Değişkenleri, Temalandırma ve Cam Efekti",
+        "CSS Değişkenleri (Custom Properties - :root { --bg: #ffffff; --primary: #0066cc; }), tek bir noktadan tüm sayfanın renk paletini ve tipografisini yönetmeyi sağlar.\nKullanıcının sistem tercihine (@media (prefers-color-scheme: dark)) veya bir tema butonuna göre değişkenler güncellenerek saniyeler içinde Koyu Tema (Dark Mode) desteği sunulur.\nModern UI trendlerinde cam efekti (glassmorphism: background: rgba(255,255,255,0.1); backdrop-filter: blur(10px);), yumuşak gölgeler (box-shadow) ve etkileşim geçişleri (transition: all 0.3s ease) arayüze profesyonel bir mühendislik estetiği kazandırır."
+      ],
+      [
+        "Yayınlama ve Geliştirme: DevTools, GitHub Pages & Antigravity",
+        "Tarayıcı Geliştirici Araçları (F12 / DevTools), CSS kurallarını canlı olarak test etmenin, kutu modelini incelemenin ve farklı mobil ekranları simüle etmenin en hızlı aracıdır.\nGitHub Pages üzerinde yayınlanan projelere harici CSS (<link rel=\"stylesheet\" href=\"style.css\">) sorunsuz bağlanır; Google Sites üzerinde ise 'HTML/CSS Göm' (Embed) aracıyla özel stil verilmiş mühendislik kartları eklenebilir.\nGoogle DeepMind Antigravity ortamında yapay zekâ asistanı, arayüzün responsive kırılma noktalarını (breakpoints) denetler, kontrast oranlarını (WCAG erişilebilirlik) doğrular ve CSS kodunu optimize eder."
+      ]
+    ],
+    "diagram": "┌─────────────────────────────────────────────────────────────────┐\n│ :root { --primary: #0066cc; --bg: #121212; } (CSS Değişkenleri)  │\n├─────────────────────────────────────────────────────────────────┤\n│ [CSS Grid]: Sayfa İskeleti (2D Izgara: 1fr 2fr 1fr)              │\n│ ┌───────────────┬───────────────────────────────┬─────────────┐ │\n│ │ Sol Menü      │ [Flexbox]: Canlı Sensör Kartı │ Sağ Uyarı   │ │\n│ │ (Navigasyon)  │ ┌──────────┐ ┌──────────────┐ │ (Bildirim)  │ │\n│ │               │ │ Sıcaklık │ │ Voltaj / Akım│ │             │ │\n│ │               │ └──────────┘ └──────────────┘ │             │ │\n│ └───────────────┴───────────────────────────────┴─────────────┘ │\n├─────────────────────────────────────────────────────────────────┤\n│ @media (max-width: 768px) ──► Mobilde Tek Sütunlu Esnek Akış    │\n└─────────────────────────────────────────────────────────────────┘",
+    "architecture": "CSS3 mimarisi, CSS değişkenleri ile global tasarım ilkelerini kurar; CSS Grid ile makro sayfa düzenini, Flexbox ile mikro bileşen yerleşimini sağlar ve medya sorgularıyla her ekran çözünürlüğünde duyarlı çalışır.",
+    "example": "Güneş enerjisi santrali izleme paneli için hazırlanan CSS arayüzü; kontrol odasındaki geniş ekranda 3 sütunlu Grid ile üretim grafiği, inverter durumları ve hava verilerini gösterirken; sahadaki teknisyenin cep telefonunda otomatik olarak tek sütunlu dokunmatik kartlara dönüşür.",
+    "practice": [
+      "Flexbox kullanarak ortalanmış ve esnek boşluklu (gap) bir mühendislik navigasyon çubuğu ve sensör kartları dizin.",
+      "CSS Grid kullanarak 3 sütunlu duyarlı bir telemetri gösterge paneli (dashboard) inşa edin.",
+      ":root değişkenleriyle Dark ve Light tema renk paleti hazırlayıp test edin.",
+      "Antigravity AI desteği ile cam efekti (glassmorphism) kart tasarımı üretip GitHub Pages üzerinde doğrulayın."
+    ],
+    "code": ":root {\n  --bg-color: #0f172a;\n  --card-bg: rgba(30, 41, 59, 0.7);\n  --accent: #38bdf8;\n  --text: #f8fafc;\n  --radius: 12px;\n}\nbody {\n  background: var(--bg-color);\n  color: var(--text);\n  font-family: system-ui, sans-serif;\n  margin: 0;\n  padding: 20px;\n}\n.dashboard-grid {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));\n  gap: 20px;\n}\n.sensor-card {\n  background: var(--card-bg);\n  backdrop-filter: blur(8px);\n  border: 1px solid rgba(255, 255, 255, 0.1);\n  border-radius: var(--radius);\n  padding: 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  transition: transform 0.2s ease, border-color 0.2s ease;\n}\n.sensor-card:hover {\n  transform: translateY(-4px);\n  border-color: var(--accent);\n}\n@media (max-width: 600px) {\n  body { padding: 10px; }\n}",
+    "prompt": "Elektrik-elektronik IoT ölçüm paneli için modern CSS3 stilleri hazırla. :root değişkenleri ile koyu tema renk paleti oluştur. Kartlar için CSS Grid ve auto-fit kullan. Navigasyon için Flexbox uygula. Cam efekti (glassmorphism: backdrop-filter) ve buton hover mikro animasyonları ekle. Antigravity AI destekli mobil uyumlu (@media) responsive kuralları dahil et.",
+    "quiz": [
+      [
+        "CSS'te box-sizing: border-box kuralı neden modern web tasarımının vazgeçilmez standardıdır?",
+        "Elemana verilen padding (iç boşluk) ve border (kenarlık) değerlerini toplam genişliğin (width) içine dahil ederek taşmaları önler ve yerleşim hesaplamalarını tutarlı kılar."
+      ],
+      [
+        "Flexbox ile CSS Grid arasındaki temel mimari fark ve kullanım alanı ayrımı nedir?",
+        "Flexbox tek boyutlu (1D - satır veya sütun) akışlar ve bileşen hizalamaları için idealken; CSS Grid aynı anda iki boyutlu (2D - satırlar ve sütunlar) sayfa şebekesi ve dashboard düzenleri için kullanılır."
+      ],
+      [
+        "CSS Değişkenleri (:root Custom Properties) kullanmanın geleneksel sabit değerlere göre avantajı nedir?",
+        "Renk, boşluk ve yazı tipi değerlerini tek merkezden yönetmeyi sağlar; çalışma anında JavaScript veya medya sorgularıyla değiştirilerek Dark/Light tema geçişlerini zahmetsiz hale getirir."
+      ],
+      [
+        "Duyarlı tasarımda rem birimi ile px (piksel) birimi arasındaki fark nedir?",
+        "Piksel (px) sabit ve mutlak bir ölçüdür; rem ise kök (root) HTML yazı tipi boyutuna göre dinamik ölçeklenir, bu da kullanıcı yazı boyutunu büyüttüğünde arayüzün erişilebilir biçimde uyum sağlamasını garantiler."
+      ],
+      [
+        "Google DeepMind Antigravity ortamında CSS geliştirirken yapay zekâ ajanları tasarımcıya nasıl avantaj sağlar?",
+        "Doğal dil komutlarıyla modern renk paletleri ve yerleşim şablonları üretir, kırılma noktalarını (breakpoints) analiz eder ve kontrast erişilebilirlik (WCAG) standartlarına uygunluğu denetler."
+      ]
+    ],
+    "task": "Hafta 05'te hazırladığınız HTML iskeletine modern, duyarlı ve koyu temalı bir görünüm kazandıran hafta06/style.css dosyasını yazın; Flexbox ve Grid yapılarını uygulayarak GitHub Pages üzerinde yayınlayın ve Google Sites üzerinde arayüz ekran görüntüleriyle belgeleyin.",
+    "goals": [
+      "CSS Kutu Modelini (Box Model) ve box-sizing ilkelerini hatasız uygulamak.",
+      "Flexbox ile tek boyutlu esnek hizalama ve dağıtım kurallarını kavramak.",
+      "CSS Grid ile iki boyutlu duyarlı gösterge paneli (dashboard) şebekesi kurmak.",
+      "Medya sorguları (@media) ve esnek birimlerle (rem, fr) mobil uyumlu tasarım geliştirmek.",
+      "CSS Değişkenleri (:root) ile Koyu/Açık tema ve tasarım sistemi oluşturmak.",
+      "Antigravity AI ortamı ve DevTools ile stil hatalarını ayıklayıp GitHub Pages üzerinde test etmek."
+    ],
+    "verify": [
+      "Tarayıcı DevTools ile mobil cihaz emülasyonunda (iPhone/Android) arayüzün yatayda taşma (horizontal scroll) yapmadığını doğrulayın.",
+      ":root değişkenlerinin stil dosyasında etkin olarak kullanıldığını kontrol edin.",
+      "Flexbox ve CSS Grid kurallarının en az birer kez amaca uygun şekilde yer aldığını teyit edin."
+    ],
+    "sources": [
+      [
+        "MDN Web Docs · CSS First Steps & Layout",
+        "https://developer.mozilla.org/en-US/docs/Learn/CSS"
+      ],
+      [
+        "CSS-Tricks · A Complete Guide to Flexbox",
+        "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+      ],
+      [
+        "CSS-Tricks · A Complete Guide to CSS Grid",
+        "https://css-tricks.com/snippets/css/complete-guide-grid/"
+      ],
+      [
+        "W3C Web Accessibility Initiative (WAI) · Contrast & CSS",
+        "https://www.w3.org/WAI/"
+      ],
+      [
+        "Google DeepMind Antigravity Developer Guide",
+        "https://deepmind.google/"
+      ]
+    ],
+    "table": [
+      [
+        "CSS Özelliği / Yerleşim Modeli",
+        "Boyut / Eksen",
+        "Temel Kullanım Amacı",
+        "En Uygun Bileşen Türü",
+        "Mobil Uyum Yeteneği"
+      ],
+      [
+        "Flexbox",
+        "Tek Boyutlu (1D: Satır / Sütun)",
+        "Hizalama, dağıtım, buton grupları",
+        "Navigasyon çubuğu, etiketler, butonlar",
+        "flex-wrap ile alt satıra geçiş"
+      ],
+      [
+        "CSS Grid",
+        "İki Boyutlu (2D: Satır + Sütun)",
+        "Karmaşık şebeke ve sayfa iskeleti",
+        "Ölçüm dashboardu, kart galerisi",
+        "repeat(auto-fit, minmax(...)) ile dinamik sütun"
+      ],
+      [
+        "CSS Değişkenleri (:root)",
+        "Global Tasarım Belirteçleri",
+        "Tema, renk, tipografi yönetimi",
+        "Tüm arayüz renk ve boşluk sistemi",
+        "Koyu/Açık mod medya sorgusuyla entegre"
+      ],
+      [
+        "Medya Sorguları (@media)",
+        "Ekran Koşulları (Genişlik/Yön)",
+        "Cihaza özel stil uyarlaması",
+        "Mobil ve tablet kırılma noktaları",
+        "Kritik: Masaüstü düzenini mobilde tek sütuna çevirme"
+      ]
+    ]
+  },
+  {
+    "title": "JavaScript Temelleri",
+    "intro": "Sensör değerini güncelleyin, LED durumunu değiştirin ve web sayfasına davranış ekleyin; modern ES6+, DOM ve Antigravity araçlarıyla interaktif web sistemleri geliştirin.",
+    "group": "Web",
+    "category": "web",
+    "concepts": [
+      [
+        "JavaScript & ES6+ Sözdizimi",
+        "Değişkenler (let, const), veri tipleri, şablon dizgileri ve ok fonksiyonları (arrow functions)."
+      ],
+      [
+        "DOM (Document Object Model) Yönetimi",
+        "Tarayıcı bellek ağacından eleman seçme (querySelector), içerik değiştirme (textContent) ve stil sınıflarını yönetme (classList)."
+      ],
+      [
+        "Olay Dinleyicileri (Event Listeners)",
+        "Kullanıcı tıklamalarını (click), girdi değişikliklerini (input, change) ve klavye hareketlerini dinleyip işleyen fonksiyonlar."
+      ],
+      [
+        "Asenkron İletişim & Fetch API",
+        "Sayfayı yenilemeden arka planda HTTP istekleri atan, JSON verisi alan ve async/await ile çalışan modern iletişim mimarisi."
+      ],
+      [
+        "IoT & Sensör Simülasyonu",
+        "Web arayüzünden sanal LED yakıp söndürme, LM35 sıcaklık değeri güncelleme ve elektriksel hesaplamalar (P = V * I)."
+      ],
+      [
+        "Antigravity & Tarayıcı DevTools",
+        "Console loglama, breakpoint ile hata ayıklama ve Google DeepMind Antigravity AI desteğiyle akıllı JavaScript kodlama."
+      ]
+    ],
+    "lessons": [
+      [
+        "Ders İçeriği · Tarayıcının Dili: Modern JavaScript ve ES6+",
+        "HTML iskeleti, CSS görsel tasarımı oluştururken JavaScript web sayfalarına yaşam ve dinamik davranış kazandırır. Tarayıcıların içinde yerel olarak çalışan, olay güdümlü (event-driven) ve yüksek seviyeli bir programlama dilidir.\nModern ECMAScript (ES6+) standartlarıyla birlikte eski var yerini blok kapsamlı let ve sabit değerli const anahtarlarına bırakmıştır. Temel veri tipleri: Number, String, Boolean, Array (dizi) ve Object (nesne) yapılarıdır.\nŞablon dizgileri (Template Literals: `Sıcaklık: ${temp} °C`) string birleştirmeyi basitleştirirken; ok fonksiyonları (const carp = (a, b) => a * b;) daha temiz ve modern bir sözdizimi sunar."
+      ],
+      [
+        "DOM Ağacı ve Dinamik Sayfa Güncelleme",
+        "Tarayıcı bir HTML belgesini yüklediğinde onu Document Object Model (DOM) adı verilen hiyerarşik bir nesne ağacına dönüştürür. JavaScript bu ağaçtaki her düğüme erişebilir ve değiştirebilir.\ndocument.querySelector('#sensor-value') seçicisi ile istenen HTML elemanı yakalanır. Elemanın metni textContent, HTML yapısı innerHTML ile güncellenir.\nGörsel durum değişikliklerinde doğrudan inline stil yazmak yerine classList.add(), classList.remove() veya classList.toggle('active') metotları kullanılarak CSS sınıfları tetiklenir."
+      ],
+      [
+        "Olaylar (Events) ve Kullanıcı Etkileşimi",
+        "Web sayfaları reaktiftir; kullanıcının veya sistemin ürettiği olaylara yanıt verir.\naddEventListener('click', () => { ... }) metodu en temel etkileşim köprüsüdür. Kullanıcı bir butona bastığında, form doldurduğunda (input), seçenek seçtiğinde (change) veya sayfayı kaydırdığında JavaScript fonksiyonları çalışır.\nElektrik-elektronik projelerinde bir web butonuyla röle açıp kapatmak, butona basıldığı anda aria-pressed durumunu değiştirmek ve ekrandaki LED göstergesini yeşilden kırmızıya çevirmek olay dinleyicileriyle gerçekleştirilir."
+      ],
+      [
+        "Asenkron Programlama, JSON ve Fetch API",
+        "Gömülü bir cihazdan (ESP32) veya buluttan sensör verisi gelirken tarayıcının donmasını önlemek için asenkron (non-blocking) programlama kullanılır.\nJSON (JavaScript Object Notation), sensör telemetrisini ve yapılandırılmış veriyi taşımak için küresel standarttır ({ \"sensor\": \"DHT11\", \"temp\": 23.5 }).\nFetch API (fetch()) ve async / await sözdizimi ile tarayıcı sayfayı yenilemeden arka planda sunucudan veri çeker. Alınan JSON verisi doğrudan DOM'a basılarak canlı izleme sağlanır."
+      ],
+      [
+        "Elektrik-Elektronik Uygulaması: Canlı Telemetri ve Güç Hesabı",
+        "JavaScript mühendislik laboratuvarında doğrudan hesaplama ve gösterge aracı olarak çalışır.\nKullanıcının formdan girdiği gerilim (V) ve akım (A) değerlerini input olayıyla anlık okuyarak P = V * I formülüyle elektriksel gücü hesaplar ve ekrandaki <output> elemanına yazar.\nSensör simülatörü ile Math.random() kullanılarak belirlenen aralıkta (ör. 20–30 °C) test verileri üretilir ve periyodik olarak (setInterval) ekrandaki göstergeler canlı tutulur."
+      ],
+      [
+        "Hata Ayıklama ve Geliştirici Araçları: DevTools, GitHub Pages & Antigravity",
+        "Tarayıcı Geliştirici Araçları (DevTools) Console sekmesi, console.log() ve console.error() çıktılarıyla JavaScript kodunu adım adım takip etmeyi sağlar. Sources sekmesinde Breakpoint konularak değişkenlerin çalışma anındaki değerleri incelenir.\nGitHub Pages üzerinde çalışan projelerde istemci taraflı tüm JavaScript mantığı sorunsuz çalışır (sunucusuz SPA mimarisi).\nGoogle DeepMind Antigravity ortamı, karmaşık JavaScript fonksiyonlarında asenkron hata yakalama (try...catch), DOM bellek sızıntılarını önleme ve güvenli kod üretimi konularında mühendise akıllı ajan desteği sunar."
+      ]
+    ],
+    "diagram": "[Kullanıcı Tıklaması / Form Girişi / Zamanlayıcı]\n                        │\n                        ▼\n           [DOM Olayı: addEventListener]\n                        │\n                        ▼\n          [JavaScript İş Mantığı & Hesaplama]\n          (P = V * I  veya  Math.random())\n                        │\n            ┌───────────┴───────────┐\n            ▼                       ▼\n  [DOM Güncellemesi]        [Asenkron Fetch API]\n(textContent / classList)   (ESP32 / Bulut JSON)\n            │                       │\n            ▼                       ▼\n   [Sanal LED / Ekran]     [Canlı Telemetri Grafiği]",
+    "architecture": "JavaScript, tarayıcının tek iş parçacıklı (single-threaded) ve olay döngülü (event loop) çalışma mimarisinde olay dinleyicileri ve asenkron mekanizmalarla kullanıcı etkileşimini işler; DOM elemanlarını güncelleyerek donanım ve sensör simülasyonlarını ekranda canlı yürütür.",
+    "example": "Laboratuvardaki bir akıllı ev otomasyon paneli için hazırlanan JavaScript kodu; kullanıcı 'LED Yak' butonuna bastığında ekrandaki sanal göstergeyi aydınlatır, ESP32 web sunucusuna asenkron HTTP isteği yollar ve gelen sıcaklık ölçümünü sayfayı hiç yenilemeden 2 saniyede bir günceller.",
+    "practice": [
+      "querySelector ve addEventListener kullanarak bir butona tıklandığında ekrandaki sensör değerini güncelleyen fonksiyon yazın.",
+      "LED durumunu açık/kapalı olarak değiştiren, CSS sınıfını tetikleyen ve aria-pressed değerini güncelleyen bir etkileşim kurun.",
+      "Gerilim (V) ve akım (A) girdilerinden anlık güç (W) hesaplayan reaktif bir form geliştirin.",
+      "Antigravity AI asistanı ile JavaScript kodunuzda try/catch blokları ve DevTools konsol hata yakalama mekanizması oluşturun."
+    ],
+    "code": "// DOM Elemanlarını Seçme\nconst sensorBtn = document.querySelector('#sensor-read');\nconst sensorOut = document.querySelector('#sensor-value');\nconst ledBtn = document.querySelector('#led-toggle');\nconst ledState = document.querySelector('#led-state');\nconst ledIndicator = document.querySelector('#led');\n\n// Sensör Simülasyonu (20 - 30 °C aralığında rastgele değer)\nsensorBtn?.addEventListener('click', () => {\n  const randomTemp = (20 + Math.random() * 10).toFixed(1);\n  sensorOut.textContent = `${randomTemp} °C (Canlı Ölçüm)`;\n});\n\n// Sanal LED / Röle Durum Kontrolü\nledBtn?.addEventListener('click', () => {\n  const isPressed = ledBtn.getAttribute('aria-pressed') === 'true';\n  const nextState = !isPressed;\n  ledBtn.setAttribute('aria-pressed', String(nextState));\n  ledIndicator?.classList.toggle('on', nextState);\n  ledState.textContent = nextState ? 'LED Aktif (Açık)' : 'LED Pasif (Kapalı)';\n  console.log(`Donanım durumu güncellendi: ${nextState ? 'HIGH' : 'LOW'}`);\n});",
+    "prompt": "Elektrik-elektronik ölçüm arayüzü için modern JavaScript (ES6+) kodu yaz. querySelector ve addEventListener ile buton tıklamalarını dinle. Bir butonla sanal sensör sıcaklığını rastgele simüle ederek DOM'u güncelle. Diğer butonla sanal LED rölesini açıp kapat, aria-pressed ve classList.toggle yönet. Form üzerinden gerilim ve akım alıp P=V*I güç hesabını anlık yapan fonksiyonu ekle. Antigravity AI destekli try/catch hata yönetimi ve DevTools console loglarını dahil et.",
+    "quiz": [
+      [
+        "Modern JavaScript'te let ve const anahtar kelimelerinin eski var anahtarına göre en temel üstünlüğü nedir?",
+        "var fonksiyon kapsamlı (function scope) iken; let ve const süslü parantezlerle sınırlı blok kapsamına (block scope) sahiptir, değişkenlerin kaza eseri ezilmesini önler ve güvenli kod yazımını sağlar."
+      ],
+      [
+        "DOM (Document Object Model) manipülasyonunda textContent ile innerHTML arasındaki güvenlik farkı nedir?",
+        "textContent yalnızca düz metin ekler ve XSS (Cross-Site Scripting) saldırılarına karşı güvenlidir; innerHTML ise HTML etiketlerini derlediği için güvenilmeyen kullanıcı girdisi verildiğinde güvenlik açığı yaratabilir."
+      ],
+      [
+        "Bir butonun tıklanma durumunu yönetirken aria-pressed özniteliğini güncellemenin önemi nedir?",
+        "Görsel değişimin yanında yardımcı teknolojilere (ekran okuyucular) butonun açık/kapalı mantıksal durumunu bildirerek web erişilebilirliği (accessibility) standartlarını sağlar."
+      ],
+      [
+        "JavaScript'te asenkron programlama (async/await ve Fetch API) neden sensör telemetrisi için vazgeçilmezdir?",
+        "Ağdan veri gelirken tarayıcının ana iş parçacığını (UI thread) kilitlemeden arka planda veriyi alır, böylece kullanıcı arayüzü takılmadan sensör değerleri akıcı biçimde güncellenir."
+      ],
+      [
+        "Google DeepMind Antigravity ortamında JavaScript hata ayıklama süreci nasıl hızlanır?",
+        "Yapay zekâ ajanları DevTools konsol hatalarını ve asenkron Promise reddedilmelerini (unhandled rejections) otomatik analiz eder, olası mantık hatalarını kod içinde işaretleyip anında çözüm önerir."
+      ]
+    ],
+    "task": "Sensör değerini güncelleyen, sanal LED rölesini açıp kapatan ve elektriksel güç hesabı yapan hafta07/app.js dosyasını yazın; HTML/CSS ile entegre ederek GitHub Pages üzerinde test edin ve Google Sites üzerinde canlı çalışma videosu/ekran görüntüsüyle raporlayın.",
+    "goals": [
+      "Modern JavaScript (ES6+) sözdizimi ve değişken türlerini (let, const) doğru kullanmak.",
+      "DOM ağacından eleman seçimi (querySelector) ve içerik güncellemeyi kavramak.",
+      "Olay dinleyicileri (addEventListener) ile etkileşimli kontrol mekanizmaları kurmak.",
+      "JSON veri yapısını ve asenkron Fetch API mimarisini temel düzeyde anlamak.",
+      "Web arayüzünde sanal sensör telemetrisi ve elektriksel hesaplama formülleri çalıştırmak.",
+      "Tarayıcı DevTools ve Antigravity araçlarıyla JavaScript hatalarını ayıklayıp GitHub Pages üzerinde yayınlamak."
+    ],
+    "verify": [
+      "Tarayıcı Konsolunda (F12 -> Console) herhangi bir JavaScript Uncaught TypeError veya sözdizimi hatası olmadığını doğrulayın.",
+      "Sensör güncelleme ve LED butonlarının tıklandığında DOM elemanlarını ve aria-pressed değerini başarıyla değiştirdiğini test edin.",
+      "Sayfanın GitHub Pages üzerinde hatasız çalıştığını ve yerel dosya yollarının doğru bağlandığını teyit edin."
+    ],
+    "sources": [
+      [
+        "MDN Web Docs · JavaScript Guide & DOM",
+        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      ],
+      [
+        "JavaScript.info · The Modern JavaScript Tutorial",
+        "https://javascript.info/"
+      ],
+      [
+        "W3C ECMAScript 2026 Language Specification",
+        "https://www.ecma-international.org/publications-and-standards/standards/ecma-262/"
+      ],
+      [
+        "Google Chrome DevTools Documentation",
+        "https://developer.chrome.com/docs/devtools/"
+      ],
+      [
+        "Google DeepMind AI Tools & Code Intelligence",
+        "https://deepmind.google/"
+      ]
+    ],
+    "table": [
+      [
+        "JavaScript Kavramı",
+        "Sözdizimi / Metot",
+        "Çalışma Şekli",
+        "Elektrik-Elektronik Örneği",
+        "Hata Ayıklama (DevTools)"
+      ],
+      [
+        "Eleman Seçimi",
+        "document.querySelector('#id')",
+        "DOM ağacından ilk eşleşen düğümü getirir",
+        "Sensör gösterge kutusunu yakalama",
+        "Elements panelinde seçiciyi doğrulama"
+      ],
+      [
+        "Olay Dinleme",
+        "eleman.addEventListener('click', fn)",
+        "Olay gerçekleştiğinde geri çağırım (callback) çalıştırır",
+        "Röle butonuna basılınca LED yakma",
+        "Event Listeners sekmesinde dinleyiciyi izleme"
+      ],
+      [
+        "İçerik Değiştirme",
+        "eleman.textContent = '24.5 °C'",
+        "Düğümün metin değerini güvenli şekilde günceller",
+        "Canlı sıcaklık değerini ekrana basma",
+        "Console'da çıktı kontrolü"
+      ],
+      [
+        "Asenkron İletişim",
+        "fetch(url).then(...) / await",
+        "Arka planda HTTP isteği gönderir/alır",
+        "ESP32'den JSON telemetrisi çekme",
+        "Network sekmesinde HTTP paketini inceleme"
+      ],
+      [
+        "Antigravity Entegrasyonu",
+        "AI Code Diagnostics & Agents",
+        "Kodu analiz eder, hata ve a11y önerisi sunar",
+        "Sensör veri akışında try/catch oluşturma",
+        "Agent hata ayıklama ve refactoring"
+      ]
+    ]
   }
 ]
