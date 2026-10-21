@@ -789,16 +789,16 @@
     "prompt": "Elektrik-elektronik laboratuvarında ESP32 tabanlı sıcaklık ve gerilim izleme projesi için W3C standartlarına uygun semantik bir HTML5 sayfası tasarla. header, nav, main, section, table, form ve footer etiketlerini doğru hiyerarşiyle kullan. Sayfanın GitHub Pages üzerinde barındırılacağını ve proje raporunun Google Sites ile eşleştirileceğini dikkate alarak Antigravity AI destekli erişilebilirlik (ARIA) önerilerini ekle.",
     "quiz": [
       [
-        "Semantik HTML etiketleri (header, main, article, footer) kullanmanın salt <div> etiketlerine göre en temel mühendislik faydası nedir?",
-        "Ekran okuyucuların (screen readers) ve arama motorlarının belge yapısını ve hiyerarşisini doğru anlamasını sağlayarak erişilebilirliği (accessibility) artırır ve kod bakımını kolaylaştırır."
+        "Semantik HTML etiketleri (header, main, article, section, footer) kullanmanın salt <div> etiketlerine göre en temel mühendislik faydası nedir?",
+        "Ekran okuyucuların (screen readers) ve arama motoru botlarının (SEO) belge yapısını ve hiyerarşisini doğru anlamasını sağlayarak erişilebilirliği (a11y) artırır, kodun okunabilirliğini ve takım çalışmasındaki bakım maliyetini optimize eder."
       ],
       [
-        "GitHub Pages üzerinde yayınlanan bir web projesinde .nojekyll dosyasının bulunmasının amacı nedir?",
-        "GitHub Pages'in arka planda çalışan Jekyll motorunun alt çizgiyle (_) başlayan klasörleri veya özel dosyaları yok saymasını önleyerek saf statik HTML/CSS/JS dosyalarının olduğu gibi sunulmasını sağlar."
+        "GitHub Pages üzerinde yayınlanan bir web projesinde kök dizinde .nojekyll dosyasının bulunmasının amacı nedir?",
+        "GitHub Pages'in arka planda çalışan Jekyll derleme motorunun alt çizgiyle (_) başlayan klasörleri veya özel statik dosyaları yok saymasını önleyerek saf statik HTML/CSS/JS dosyalarının olduğu gibi sunulmasını garanti eder."
       ],
       [
         "Google Sites ile GitHub Pages arasındaki en belirgin mimari ve kullanım farkı nedir?",
-        "GitHub Pages doğrudan Git sürüm kontrolüyle ham HTML/CSS/JS kodlarını sunarken, Google Sites kod yazmadan Google Workspace bileşenlerini sürükle-bırak yöntemiyle birleştiren bir kurumsal portal aracıdır."
+        "GitHub Pages doğrudan Git sürüm kontrolüyle ham HTML/CSS/JS kodlarını sunucudan bağımsız sunarak tam kod denetimi sağlarken; Google Sites kod yazmadan Google Workspace bileşenlerini (Drive, Sheets, Docs) sürükle-bırak yöntemiyle birleştiren bir kurumsal portal ve dokümantasyon aracıdır."
       ],
       [
         "HTML formlarında <label for=\"id\"> özniteliğinin <input id=\"id\"> ile eşleştirilmesinin önemi nedir?",
@@ -806,7 +806,27 @@
       ],
       [
         "Google DeepMind Antigravity geliştirme ortamının geleneksel kod editörlerinden temel farkı nedir?",
-        "Ajan tabanlı (agentic) yapay zekâ desteğiyle tüm proje bağlamını anlayarak semantik kod üretimi, tarayıcı denetimi ve responsive hata ayıklamayı otomatik yönetmesidir."
+        "Ajan tabanlı (agentic) yapay zekâ desteğiyle tüm proje bağlamını anlayarak doğal dilden semantik kod üretimi, tarayıcı denetimi ve responsive hata ayıklamayı otomatik yönetmesidir."
+      ],
+      [
+        "Bir HTML belgesinin en başında yer alan <!doctype html> bildiriminin tarayıcı motoru için teknik işlevi nedir?",
+        "Tarayıcının sayfayı geriye dönük uyumluluk (Quirks Mode) yerine modern W3C HTML5 standart modunda (Standards Mode) işlemesini ve CSS yerleşim kurallarını doğru yorumlamasını sağlar."
+      ],
+      [
+        "Sensör telemetrisi sunulan bir HTML tablosunda <thead>, <tbody>, <th> ve scope=\"col\" kullanımının erişilebilirlik açısından önemi nedir?",
+        "Görme engelli kullanıcılara ekran okuyucunun her bir veri hücresini (<td>) okurken o sütunun başlığını (<th>) otomatik seslendirmesini sağlayarak verinin bağlamını kaybettirmez."
+      ],
+      [
+        "Web sayfalarında göreli (../assets/data.csv) ve mutlak (https://api.comu.edu.tr/data) URL kullanımı neye göre tercih edilir?",
+        "Göreli yollar projenin GitHub Pages veya yerel sunucu gibi farklı kök dizinlere taşındığında bağlantıların kırılmamasını sağlar; mutlak yollar ise harici web kaynaklarını ve genel API'leri hedefler."
+      ],
+      [
+        "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> etiketinin mobil cihazlardaki rolü nedir?",
+        "Mobil tarayıcının sayfayı masaüstü gibi 980px sanal ekrana sığdırmak için küçültmesini engeller; sayfa genişliğini cihazın fiziksel ekran genişliğine eşitler ve 1:1 ölçekle responsive CSS'i etkinleştirir."
+      ],
+      [
+        "HTML5'te aria-label, aria-hidden ve role özniteliklerinin (WAI-ARIA) mühendislik projelerindeki işlevi nedir?",
+        "Standart HTML etiketlerinin yetersiz kaldığı durumlarda yardımcı teknolojilere (screen reader) elemanın rolünü, durumunu ve görsel simgelerin gizlenip metinsel açıklamanın okunmasını bildirerek uluslararası erişilebilirlik standartlarını (WCAG) sağlar."
       ]
     ],
     "task": "Semantik HTML5 etiketleriyle hazırlanmış, sensör tablosu ve röle kontrol formu içeren hafta05/index.html dosyasını oluşturun; çalışmanızı GitHub Pages üzerinde yayınlayın ve Google Sites dokümantasyon bağlantısını hafta05/README.md içine ekleyin.",
@@ -966,11 +986,31 @@
       ],
       [
         "Duyarlı tasarımda rem birimi ile px (piksel) birimi arasındaki fark nedir?",
-        "Piksel (px) sabit ve mutlak bir ölçüdür; rem ise kök (root) HTML yazı tipi boyutuna göre dinamik ölçeklenir, bu da kullanıcı yazı boyutunu büyüttüğünde arayüzün erişilebilir biçimde uyum sağlamasını garantiler."
+        "Piksel (px) sabit ve mutlak bir ölçüdür; rem ise kök (html) yazı tipi boyutuna göre dinamik ölçeklenir, bu da kullanıcı yazı boyutunu büyüttüğünde arayüzün erişilebilir biçimde uyum sağlamasını garantiler."
       ],
       [
         "Google DeepMind Antigravity ortamında CSS geliştirirken yapay zekâ ajanları tasarımcıya nasıl avantaj sağlar?",
         "Doğal dil komutlarıyla modern renk paletleri ve yerleşim şablonları üretir, kırılma noktalarını (breakpoints) analiz eder ve kontrast erişilebilirlik (WCAG) standartlarına uygunluğu denetler."
+      ],
+      [
+        "Modern CSS mimarisinde 'Mobile-First' (Mobil Öncelikli) yaklaşım nasıl kodlanır ve neden tercih edilir?",
+        "Temel CSS kuralları mobil ekranlar için yazılır; daha geniş ekranlar için @media (min-width: 768px) ile ek özellikler eklenir. Bu sayede mobil cihazlar gereksiz masaüstü kurallarını ezmek zorunda kalmaz, sayfa daha hızlı yüklenir."
+      ],
+      [
+        "grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); kuralı bir gösterge panelinde (dashboard) ne işe yarar?",
+        "Kartların en az 280px olmasını sağlar; ekranda yer kaldıkça sütunları yan yana dizer, ekran daraldığında ise hiçbir medya sorgusuna ihtiyaç duymadan kartları otomatik olarak alt satıra kaydırır."
+      ],
+      [
+        "Modern arayüzlerde cam efekti (glassmorphism) oluşturmak için hangi CSS özellikleri bir arada kullanılır?",
+        "Yarı saydam bir arka plan rengi (background: rgba(...)), arkadaki içeriği bulanıklaştıran backdrop-filter: blur(...) ve derinlik hissi veren ince bir border ile box-shadow kullanılır."
+      ],
+      [
+        "CSS'te çakışan iki stil kuralında tarayıcının hangi kuralı uygulayacağını belirleyen özgüllük (specificity) sıralaması nasıldır?",
+        "Satır içi stil (inline style - 1000) > Kimlik seçici (#id - 100) > Sınıf/Sözde sınıf seçici (.class, :hover - 10) > Etiket seçici (div, p - 1) hiyerarşisi geçerlidir."
+      ],
+      [
+        "Bir butona hover efekti verirken transition: transform 0.2s ease kullanmanın kullanıcı deneyimi (UX) açısından etkisi nedir?",
+        "Butonun durum değişikliklerini anlık ve sert geçişler yerine yumuşak ve doğal bir ivmeyle canlandırarak arayüzün daha tepkisel, modern ve yaşayan bir his vermesini sağlar."
       ]
     ],
     "task": "Hafta 05'te hazırladığınız HTML iskeletine modern, duyarlı ve koyu temalı bir görünüm kazandıran hafta06/style.css dosyasını yazın; Flexbox ve Grid yapılarını uygulayarak GitHub Pages üzerinde yayınlayın ve Google Sites üzerinde arayüz ekran görüntüleriyle belgeleyin.",
@@ -1130,11 +1170,31 @@
       ],
       [
         "JavaScript'te asenkron programlama (async/await ve Fetch API) neden sensör telemetrisi için vazgeçilmezdir?",
-        "Ağdan veri gelirken tarayıcının ana iş parçacığını (UI thread) kilitlemeden arka planda veriyi alır, böylece kullanıcı arayüzü takılmadan sensör değerleri akıcı biçimde güncellenir."
+        "Ağdan veri gelirken tarayıcının ana iş parçacığını (UI thread) kilitlemeden arka planda veriyi alır, böylece kullanıcı arayüzü donmadan sensör değerleri akıcı biçimde güncellenir."
       ],
       [
         "Google DeepMind Antigravity ortamında JavaScript hata ayıklama süreci nasıl hızlanır?",
         "Yapay zekâ ajanları DevTools konsol hatalarını ve asenkron Promise reddedilmelerini (unhandled rejections) otomatik analiz eder, olası mantık hatalarını kod içinde işaretleyip anında çözüm önerir."
+      ],
+      [
+        "JavaScript'te 'Event Bubbling' (Olay Kabarcıklanması) nedir ve addEventListener ile nasıl yönetilir?",
+        "Bir elemana tıklandığında olayın en içteki elemandan başlayarak ebeveyn düğümlere doğru yukarı yayılmasıdır; event.stopPropagation() ile durdurulabilir veya tek bir üst ebeveyne dinleyici bağlanarak (Event Delegation) bellek tasarrufu sağlanır."
+      ],
+      [
+        "Sensör haberleşmesinde JSON.stringify() ve JSON.parse() metotlarının rolleri nedir?",
+        "JSON.stringify() bir JavaScript nesnesini ağdan gönderilecek JSON metin dizgisine dönüştürür; JSON.parse() ise ağdan gelen JSON metnini tarayıcıda işlenebilir bir JavaScript nesnesine çevirir."
+      ],
+      [
+        "Canlı sensör simülasyonunda setInterval() ile setTimeout() arasındaki fark nedir?",
+        "setTimeout() belirlenen süre sonunda tek seferlik bir fonksiyon çalıştırırken; setInterval() iptal edilene (clearInterval()) kadar belirlenen periyotlarla fonksiyonu sürekli tekrarlar."
+      ],
+      [
+        "Sayfa kapatılıp açıldığında kullanıcının Koyu/Açık tema tercihini korumak için localStorage nasıl kullanılır?",
+        "localStorage.setItem('theme', 'dark') ile anahtar-değer ikilisi halinde tarayıcı hafızasına yazılır ve localStorage.getItem('theme') ile okunarak sayfa yenilendiğinde tercih korunur."
+      ],
+      [
+        "ES6 Şablon Dizgilerinin (Template Literals - ters tırnak `...`) klasik string birleştirmeye (+) göre avantajları nelerdir?",
+        "Çok satırlı metinleri doğrudan yazabilme ve ${degisken} sözdizimiyle metin içine kolayca dinamik değer ve matematiksel işlem gömebilme esnekliği sunar."
       ]
     ],
     "task": "Sensör değerini güncelleyen, sanal LED rölesini açıp kapatan ve elektriksel güç hesabı yapan hafta07/app.js dosyasını yazın; HTML/CSS ile entegre ederek GitHub Pages üzerinde test edin ve Google Sites üzerinde canlı çalışma videosu/ekran görüntüsüyle raporlayın.",
@@ -1306,6 +1366,26 @@
       [
         "Senkronizasyon (Sync) ile Yedekleme (Backup) kavramları neden birbirinin yerine kullanılamaz?",
         "Senkronizasyon iki ortamı anlık eşitler; yerelde yapılan bir silme veya fidye yazılımı (ransomware) bozulması buluta da yansır. Gerçek yedekleme ise bağımsız, değişmez ve geçmiş zaman noktalarına dönülebilen kopyalardır."
+      ],
+      [
+        "Google Hesabı ile Giriş Yap (OAuth 2.0 / SSO) altyapısının mühendislik araçlarına şifre girmeye göre avantajı nedir?",
+        "Kullanıcının ana Google şifresi üçüncü parti uygulamayla paylaşılmaz; yalnızca belirli izinleri (ör. sadece e-posta okuma) kapsayan süreli bir yetkilendirme jetonu (access token) kullanılır."
+      ],
+      [
+        "Ortak çalışan bir mühendislik takımında Google Dokümanlar sürüm geçmişinin (Version History) faydası nedir?",
+        "Kimin hangi satırı, ne zaman eklediğini veya sildiğini renkli olarak gösterir ve herhangi bir hata veya çakışma durumunda tek tıkla projenin eski bir versiyonuna dönülmesini sağlar."
+      ],
+      [
+        "Google Cloud Storage (GCS) veya AWS S3 gibi nesne depolama servislerinin geleneksel dosya sistemlerine göre ölçekleme avantajı nedir?",
+        "Dizin ağacı ve dosya kilitleme kısıtlamaları yerine her veriyi benzersiz bir anahtar (key), veri gövdesi ve metadata ile tutarak milyarlarca sensör telemetrisi dosyasını sınırsız yatay ölçekler."
+      ],
+      [
+        "Binlerce dosya arasından 'type:spreadsheet owner:me after:2026-09-01' aramasının getireceği dosyalar nelerdir?",
+        "Yalnızca kullanıcının kendi oluşturduğu (owner:me), Google E-Tablo formatındaki (type:spreadsheet) ve 1 Eylül 2026 tarihinden sonra kaydedilmiş teknik tablolar listelenir."
+      ],
+      [
+        "Google Sheets'te çizilen bir sensör grafiğinin Google Docs deney raporuna 'Bağlantılı' (Linked) olarak yapıştırılmasının önemi nedir?",
+        "E-Tabloya yeni sensör verileri işlendiğinde rapordaki 'Güncelle' butonuyla raporun içindeki grafiğin de otomatik yenilenmesini sağlayarak manuel ekran görüntüsü alma zahmetini ortadan kaldırır."
       ]
     ],
     "task": "Mühendislik dönem projeniz için Google Drive üzerinde standart bir klasör mimarisi kurun; bir Google Form ve bağlı Google Sheets oluşturup örnek 5 sensör ölçümünü kaydedin; erişim izinlerini 'Yorumcu' olarak yapılandırıp hafta08/bulut_raporu.md dosyası içinde paylaşım bağlantısı, klasör ekran görüntüsü ve Apps Script kodunuzu belgeleyin.",

@@ -25,7 +25,9 @@ for path,page in pages.items():
         if not target.exists():errors.append(f'Broken link {path.name}: {link}')
         if url.fragment and target in pages and unquote(url.fragment) not in pages[target].ids:errors.append(f'Broken fragment {path.name}: {link}')
     if path.parent.name=='weeks':
-        if page.questions!=5:errors.append(f'Expected 5 questions: {path.name}')
+        week_num = int(path.stem.replace('week', ''))
+        expected_q = 10 if week_num >= 5 else 5
+        if page.questions != expected_q: errors.append(f'Expected {expected_q} questions for {path.name}, got {page.questions}')
         if page.sections<10:errors.append(f'Missing lesson sections: {path.name}')
 assert not errors,'\n'.join(errors)
 assert len(pages)==9,'Expected 9 published pages: index + week01 to week08'
