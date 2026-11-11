@@ -5,3 +5,6 @@ Thumbs.db
 node_modules/
 .env
 test-results/
+
+moodle_*.xml
+*.xml
