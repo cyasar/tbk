@@ -24,20 +24,8 @@
     "group": "Ağ"
   },
   {
-    "title": "Web Teknolojilerine Giriş ve HTML",
-    "intro": "Elektrik-elektronik projeniz için erişilebilir, anlamlı ve bağlantılı ilk web sayfasını oluşturun.",
-    "category": "web",
-    "group": "Web"
-  },
-  {
-    "title": "CSS ve Web Tasarımı",
-    "intro": "HTML projenize görsel düzen kazandırın; farklı ekranlarda çalışan esnek bir arayüz tasarlayın.",
-    "category": "web",
-    "group": "Web"
-  },
-  {
-    "title": "JavaScript Temelleri",
-    "intro": "Sensör değerini güncelleyin, LED durumunu değiştirin ve web sayfasına davranış ekleyin.",
+    "title": "Web Teknolojilerine Giriş, Google Sites ve Antigravity",
+    "intro": "Elektrik-elektronik projeniz için Google Sites, GitHub Pages ve Google DeepMind Antigravity ile modern web yayıncılığına adım atın.",
     "category": "web",
     "group": "Web"
   },
@@ -48,8 +36,8 @@
     "group": "Bulut"
   },
   {
-    "title": "Google Dokümanlar, Forms ve Ortak Çalışma",
-    "intro": "Ortak bir deney raporu hazırlayın ve yapılandırılmış ölçüm verisini formla toplayın.",
+    "title": "Google Dokümanlar, Slides, Forms ve Ortak Çalışma",
+    "intro": "Ortak deney raporları, etkileşimli sunumlar hazırlayın ve yapılandırılmış ölçüm verisini formla toplayın.",
     "category": "cloud",
     "group": "Bulut"
   },
@@ -66,14 +54,26 @@
     "group": "Veri"
   },
   {
-    "title": "Google Servisleri ve Dijital Üretkenlik",
+    "title": "Google Servisleri, Dijital Üretkenlik ve Otomasyon",
     "intro": "Akademik bir çalışmanın iletişim, planlama, kaynak araştırması ve raporlama akışını birleştirin.",
     "category": "cloud",
     "group": "Bulut"
   },
   {
-    "title": "Google Sites, GitHub ve Web Yayıncılığı",
-    "intro": "Projenizi belgeleyin, sürümleyin ve GitHub Pages ile erişilebilir bir web sitesine dönüştürün.",
+    "title": "CSS ve Web Tasarımı Prensipleri",
+    "intro": "Web projelerine görsel düzen kazandırma, arayüz tasarım ilkeleri ve modern stil yaklaşımları.",
+    "category": "web",
+    "group": "Web"
+  },
+  {
+    "title": "JavaScript ve Programlama Mantığı",
+    "intro": "Algoritmik düşünce, web etkileşimi ve modern betik dillerinin temel mantığı.",
+    "category": "web",
+    "group": "Web"
+  },
+  {
+    "title": "Google Sites, Portfolyo ve Web Yayıncılığı",
+    "intro": "Projenizi belgeleyin, sürümleyin ve erişilebilir bir web sitesine dönüştürün.",
     "category": "web",
     "group": "Yayıncılık"
   },

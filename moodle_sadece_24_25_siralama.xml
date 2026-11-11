@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- Kategori Tanımı -->
+  <question type="category">
+    <category>
+      <text>$course$/top/Temel Bilgi Teknolojileri - İlk 4 Hafta (25 Soru - 100 Puan)</text>
+    </category>
+    <info format="html">
+      <text><![CDATA[<p>İlk 4 haftayı kapsayan (İşletim Sistemleri, Windows, Denetim Masası, Bilgisayar Belleği, Bilgi Birimleri, Dosya ve Klasör Yönetimi, CMD ve ipconfig Komutları, Ağ Temelleri) 25 soruluk 100 puanlık Moodle soru bankası.</p>]]></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <!-- Soru 24: Bilgi Birimleri Sıralama (Hafta 1) -->
+  <question type="ordering">
+    <name>
+      <text>S24 - Bilgi ve Veri Ölçü Birimlerini Küçükten Büyüğe Sıralama</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Aşağıdaki dijital bilgi ve depolama ölçü birimlerini <strong>en küçük kapasiteden en büyük kapasiteye doğru</strong> (yukarıdan aşağıya) sıralayınız:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Bilgi birimleri küçükten büyüğe doğru: Bit (b) &lt; Byte (B) &lt; Kilobyte (KB) &lt; Megabyte (MB) &lt; Gigabyte (GB) &lt; Terabyte (TB) şeklinde sıralanır.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+    <idnumber>s24_ordering</idnumber>
+    <layouttype>VERTICAL</layouttype>
+    <selecttype>ALL</selecttype>
+    <selectcount>6</selectcount>
+    <gradingtype>ABSOLUTE_POSITION</gradingtype>
+    <showgrading>SHOW</showgrading>
+    <numberingstyle>none</numberingstyle>
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Tebrikler! Bilgi birimlerini küçükten büyüğe doğru sıraladınız.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Bazı bilgi birimlerinin sırası doğru, ancak tam sıralamayı kontrol ediniz.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Sıralama hatalı. Doğru sıra: Bit -&gt; Byte -&gt; Kilobyte -&gt; Megabyte -&gt; Gigabyte -&gt; Terabyte şeklindedir.</p>]]></text>
+    </incorrectfeedback>
+    <shownumcorrect>1</shownumcorrect>
+    <answer fraction="1" format="html">
+      <text>Bit (b) - Yalnızca 0 veya 1 değerini alan en küçük birim</text>
+      <feedback format="html">
+        <text>1. sıra: Bit</text>
+      </feedback>
+    </answer>
+    <answer fraction="2" format="html">
+      <text>Byte (B) - 8 Bitten oluşan temel karakter birimi</text>
+      <feedback format="html">
+        <text>2. sıra: Byte</text>
+      </feedback>
+    </answer>
+    <answer fraction="3" format="html">
+      <text>Kilobyte (KB) - 1024 Byte</text>
+      <feedback format="html">
+        <text>3. sıra: Kilobyte (KB)</text>
+      </feedback>
+    </answer>
+    <answer fraction="4" format="html">
+      <text>Megabyte (MB) - 1024 Kilobyte</text>
+      <feedback format="html">
+        <text>4. sıra: Megabyte (MB)</text>
+      </feedback>
+    </answer>
+    <answer fraction="5" format="html">
+      <text>Gigabyte (GB) - 1024 Megabyte</text>
+      <feedback format="html">
+        <text>5. sıra: Gigabyte (GB)</text>
+      </feedback>
+    </answer>
+    <answer fraction="6" format="html">
+      <text>Terabyte (TB) - 1024 Gigabyte</text>
+      <feedback format="html">
+        <text>6. sıra: Terabyte (TB)</text>
+      </feedback>
+    </answer>
+    <hint format="html">
+      <text>En küçük birim 0 veya 1 değerini alan Bit, ardından 8 bitten oluşan Byte gelir.</text>
+    </hint>
+    <hint format="html">
+      <text>Kilo (KB), Mega (MB), Giga (GB) ve Tera (TB) sırasını takip ediniz.</text>
+    </hint>
+  </question>
+
+  <!-- Soru 25: İşletim Sistemi Önyükleme (Boot) Süreci Sıralama (Hafta 2) -->
+  <question type="ordering">
+    <name>
+      <text>S25 - Bilgisayar ve İşletim Sistemi Açılış (Boot) Sürecini Sıralama</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Bir bilgisayarın güç düğmesine basıldığı andan Windows/Linux kullanıcı oturumunun açılmasına kadar gerçekleşen <strong>önyükleme (Boot) adımlarını gerçekleşme sırasına göre</strong> (ilkten sona doğru) sıralayınız:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Önyükleme (Boot) sırası: Güç verilmesi -&gt; UEFI/BIOS (Firmware) POST donanım testi -&gt; Bootloader'ın (Önyükleyici) çalışması -&gt; İşletim sistemi çekirdeğinin (Kernel) RAM'e yüklenmesi -&gt; Sistem servislerinin ve kullanıcı oturumunun (GUI/CLI) başlaması.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>4.0000000</defaultgrade>
+    <penalty>0.2500000</penalty>
+    <hidden>0</hidden>
+    <idnumber>s25_ordering</idnumber>
+    <layouttype>VERTICAL</layouttype>
+    <selecttype>ALL</selecttype>
+    <selectcount>5</selectcount>
+    <gradingtype>ABSOLUTE_POSITION</gradingtype>
+    <showgrading>SHOW</showgrading>
+    <numberingstyle>none</numberingstyle>
+    <correctfeedback format="html">
+      <text><![CDATA[<p>Tebrikler! Bilgisayarın Boot sürecini doğru kronolojik sırayla dizdiniz.</p>]]></text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text><![CDATA[<p>Bazı adımlar doğru sırada, ancak önyükleme zincirini tekrar gözden geçiriniz.</p>]]></text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text><![CDATA[<p>Sıralama hatalı. Doğru sıra: Güç -&gt; UEFI/BIOS Firmware -&gt; Bootloader -&gt; Kernel -&gt; Sistem Servisleri ve Kullanıcı Oturumu şeklindedir.</p>]]></text>
+    </incorrectfeedback>
+    <shownumcorrect>1</shownumcorrect>
+    <answer fraction="1" format="html">
+      <text>Güç düğmesine basılması ve güç kaynağının (PSU) anakarta kararlı enerji sağlaması</text>
+      <feedback format="html">
+        <text>1. adım: Güç verilmesi</text>
+      </feedback>
+    </answer>
+    <answer fraction="2" format="html">
+      <text>Anakart üzerindeki UEFI / BIOS (Firmware) yazılımının donanım bileşenlerini başlatması</text>
+      <feedback format="html">
+        <text>2. adım: UEFI / BIOS Firmware başlatması</text>
+      </feedback>
+    </answer>
+    <answer fraction="3" format="html">
+      <text>Önyükleyicinin (Bootloader) depolama biriminden işletim sistemi başlangıç verilerini seçip çağırması</text>
+      <feedback format="html">
+        <text>3. adım: Bootloader çalışması</text>
+      </feedback>
+    </answer>
+    <answer fraction="4" format="html">
+      <text>İşletim sistemi çekirdeğinin (Kernel) RAM belleğe yüklenerek sürücüleri ve bellek yönetimini hazırlaması</text>
+      <feedback format="html">
+        <text>4. adım: Kernel'in belleğe yüklenmesi</text>
+      </feedback>
+    </answer>
+    <answer fraction="5" format="html">
+      <text>Arka plan sistem servislerinin başlaması ve kullanıcı oturum ekranının (Masaüstü GUI / CLI) açılması</text>
+      <feedback format="html">
+        <text>5. adım: Servisler ve Kullanıcı Oturumu</text>
+      </feedback>
+    </answer>
+    <hint format="html">
+      <text>Süreç donanıma güç gelmesi ve anakart üzerindeki UEFI/BIOS yazılımıyla başlar.</text>
+    </hint>
+    <hint format="html">
+      <text>Bootloader çekirdeği (Kernel) yükler ve en son kullanıcı oturumu açılır.</text>
+    </hint>
+  </question>
+</quiz>
+
